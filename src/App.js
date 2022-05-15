@@ -1,19 +1,23 @@
 import "./App.css";
-import PersonalInfo from "./components/PersonalInfo";
-import Experience from "./components/Experience";
-import Education from "./components/Education";
-import Resume from "./components/Resume";
+import PersonalForm from "./components/Personal/PersonalForm";
+import ExperienceForm from "./components/Experience/ExperienceForm";
+import EducationForm from "./components/Education/EducationForm";
+import Personal from "./components/Personal/Personal";
+import Experience from "./components/Experience/Experience";
+import Education from "./components/Education/Education";
 
 function App() {
   return (
     <main>
       <div className="form-container">
-        <PersonalInfo />;
-        <Experience />
-        <Education />
+        <PersonalForm />
+        <ExperienceForm />
+        <EducationForm />
       </div>
       <div className="resume-container">
-        <Resume />
+        <Personal />
+        <Experience />
+        <Education />
       </div>
     </main>
   );
