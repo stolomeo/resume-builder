@@ -1,19 +1,23 @@
 import React from "react";
 
-export default function Education() {
+export default function Education(props) {
+  const { university, city, state, degree, major, graduationDate } =
+    props.educationValues;
   return (
     <section className="resume-section">
       <h2 className="section-title">EDUCATION</h2>
       <hr />
       <div className="section-top">
-        <p className="section-top-title">Florida Atlantic University</p>
-        <p className="section-top-date">December, 2020</p>
+        <p className="section-top-title">{university}</p>
+        <p className="section-top-date">{graduationDate}</p>
       </div>
       <div className="section-bottom">
         <p className="section-bottom-title">
-          Bachelors' of Business Administration
+          {degree}, {major}
         </p>
-        <p ckassName="section-bottom-location">Boca Raton, FL</p>
+        <p ckassName="section-bottom-location">
+          {city}, {state}
+        </p>
       </div>
     </section>
   );
