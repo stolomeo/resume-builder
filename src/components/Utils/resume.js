@@ -1,6 +1,6 @@
 export const personalItems = [
   {
-    firstName: "",
+    firstName: "John",
     lastName: "Smith",
     email: "john@smith.com",
     phone: "123-456-839",

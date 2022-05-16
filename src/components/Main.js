@@ -5,14 +5,21 @@ import EducationForm from "./Education/EducationForm";
 import Personal from "./Personal/Personal";
 import Experience from "./Experience/Experience";
 import Education from "./Education/Education";
-import { personalItems } from "./Utils/resume";
+import { personalItems, experienceItems } from "./Utils/resume";
 
 export default function Main() {
   const [personalValues, setPersonalValues] = useState(personalItems);
+  const [experienceValues, setExperienceValues] = useState(experienceItems);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setPersonalValues((oldValues) => {
+      return {
+        ...oldValues,
+        [name]: value,
+      };
+    });
+    setExperienceValues((oldValues) => {
       return {
         ...oldValues,
         [name]: value,
@@ -32,15 +39,34 @@ export default function Main() {
           state={personalValues.state}
           handleChange={handleChange}
         />
-        <ExperienceForm />
+        <ExperienceForm
+          employerName={experienceValues.employerName}
+          jobTitle={experienceValues.jobTitle}
+          city={experienceValues.city}
+          state={experienceValues.state}
+          startDate={experienceValues.startDate}
+          endDate={experienceValues.endDate}
+          handleChange={handleChange}
+        />
         <EducationForm />
       </div>
       <div className="resume-container">
         <Personal
           firstName={personalValues.firstName}
           lastName={personalValues.lastName}
+          email={personalValues.email}
+          phone={personalValues.phone}
+          city={personalValues.city}
+          state={personalValues.state}
         />
-        <Experience />
+        <Experience
+          employerName={experienceValues.employerName}
+          jobTitle={experienceValues.jobTitle}
+          city={experienceValues.city}
+          state={experienceValues.state}
+          startDate={experienceValues.startDate}
+          endDate={experienceValues.endDate}
+        />
         <Education />
       </div>
     </main>
