@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function PersonalForm(props) {
-  console.log(props);
   return (
     <section>
       <h2>Personal Information</h2>

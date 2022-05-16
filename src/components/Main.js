@@ -6,7 +6,6 @@ import Personal from "./Personal/Personal";
 import Experience from "./Experience/Experience";
 import Education from "./Education/Education";
 import { personalItems } from "./Utils/resume";
-console.log(personalItems);
 
 export default function Main() {
   const [personalValues, setPersonalValues] = useState(personalItems);
@@ -21,29 +20,26 @@ export default function Main() {
     });
   };
 
-  const personalElements = personalItems.map((item) => {
-    return (
-      <PersonalForm
-        firstName={item.firstName}
-        lastName={item.lastName}
-        email={item.email}
-        phone={item.phone}
-        city={item.city}
-        state={item.state}
-        handleChange={handleChange}
-      />
-    );
-  });
-
   return (
     <main>
       <div className="form-container">
-        {personalElements}
+        <PersonalForm
+          firstName={personalValues.firstName}
+          lastName={personalValues.lastName}
+          email={personalValues.email}
+          phone={personalValues.phone}
+          city={personalValues.city}
+          state={personalValues.state}
+          handleChange={handleChange}
+        />
         <ExperienceForm />
         <EducationForm />
       </div>
       <div className="resume-container">
-        <Personal />
+        <Personal
+          firstName={personalValues.firstName}
+          lastName={personalValues.lastName}
+        />
         <Experience />
         <Education />
       </div>

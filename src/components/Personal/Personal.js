@@ -1,10 +1,9 @@
 import React from "react";
-import resume from "../Utils/resume";
 
-export default function Personal() {
+export default function Personal(props) {
   return (
     <section className="resume-header">
-      <h1 className="header-name">Sebastian</h1>
+      <h1 className="header-name">{props.firstName}</h1>
       <div className="header-contact-info">
         <p className="header-email">tolomeosebastian@gmail.com</p>
         <p className="divider">❖</p>
