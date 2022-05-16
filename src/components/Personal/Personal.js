@@ -1,13 +1,9 @@
 import React from "react";
 
-export default function Personal({
-  firstName,
-  lastName,
-  email,
-  phone,
-  city,
-  state,
-}) {
+export default function Personal(props) {
+  console.log(props);
+  const { firstName, lastName, email, phone, city, state } =
+    props.personalValues;
   return (
     <section className="resume-header">
       <h1 className="header-name">

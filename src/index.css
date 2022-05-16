@@ -56,15 +56,15 @@ form {
   gap: 1rem;
 }
 .resume-container {
-  width: 210mm;
-  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
-  background-color: rgb(238, 238, 238);
-  border-radius: 5px;
   font-family: "EB Garamond", serif;
+  background-color: rgb(238, 238, 238);
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   padding: 1rem;
+  width: 210mm;
 }
 .header-name {
   font-size: 26px;

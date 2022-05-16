@@ -1,13 +1,11 @@
-export const personalItems = [
-  {
-    firstName: "John",
-    lastName: "Smith",
-    email: "john@smith.com",
-    phone: "123-456-839",
-    city: "Boca Raton",
-    state: "FL",
-  },
-];
+export const personalItems = {
+  firstName: "John",
+  lastName: "Smith",
+  email: "john@smith.com",
+  phone: "123-456-839",
+  city: "Boca Raton",
+  state: "FL",
+};
 export const experienceItems = {
   employerName: "Apple",
   jobTitle: "Software Engineer",
