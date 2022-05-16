@@ -1,25 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default function PersonalForm() {
-  const [firstName, setFirstName] = useState("");
-
+export default function PersonalForm(props) {
+  console.log(props);
   return (
     <section>
       <h2>Personal Information</h2>
       <form>
         <input
           type="text"
-          name="firstname"
+          name="firstName"
           placeholder="First Name"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
+          value={props.firstName}
+          onChange={props.handleChange}
         />
-        <input type="text" name="lastname" placeholder="Last Name" />
-        <input type="email" name="email" placeholder="Email" />
-        <input type="text" name="phoneNumber" placeholder="Phone Number" />
+        <input type="text" name="lastName" placeholder="Last Name" />
+        <input type="text" name="email" placeholder="Email" />
+        <input type="text" name="phone" placeholder="Phone Number" />
         <input type="text" name="city" placeholder="City" />
         <input type="text" name="state" placeholder="State" />
-        <p>{firstName}</p>
       </form>
     </section>
   );
