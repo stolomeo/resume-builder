@@ -2,7 +2,7 @@ export const personalItems = {
   firstName: "John",
   lastName: "Smith",
   email: "john@smith.com",
-  phone: "123-456-839",
+  phone: "123-456-7890",
   city: "Boca Raton",
   state: "FL",
 };
