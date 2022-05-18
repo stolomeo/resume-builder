@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Experience(props) {
-  const { employerName, jobTitle, city, state, startDate, endDate } =
+  const { employerName, jobTitle, workCity, workState, startDate, endDate } =
     props.experienceValues;
   return (
     <section className="resume-section">
@@ -16,7 +16,7 @@ export default function Experience(props) {
       <div className="section-bottom">
         <p className="section-bottom-title">{jobTitle}</p>
         <p ckassName="section-bottom-location">
-          {city}, {state}
+          {workCity}, {workState}
         </p>
       </div>
     </section>

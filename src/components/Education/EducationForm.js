@@ -13,13 +13,13 @@ export default function EducationForm({ handleChange }) {
         />
         <input
           type="text"
-          name="city"
+          name="schoolCity"
           placeholder="City"
           onChange={handleChange}
         />
         <input
           type="text"
-          name="state"
+          name="schoolState"
           placeholder="State"
           onChange={handleChange}
         />

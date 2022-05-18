@@ -3,22 +3,22 @@ export const personalItems = {
   lastName: "Smith",
   email: "john@smith.com",
   phone: "123-456-7890",
-  city: "Boca Raton",
-  state: "FL",
+  homeCity: "Boca Raton",
+  homeState: "FL",
 };
 export const experienceItems = {
   employerName: "Apple",
   jobTitle: "Software Engineer",
-  city: "Miami",
-  state: "FL",
+  schoolCity: "Miami",
+  schoolState: "FL",
   startDate: "March 2020",
   endDate: "April 2020",
 };
 export const educationItems = {
   university: "FAU",
-  city: "Boca Raton",
-  state: "FL",
   degree: "Bachelors of Science ",
+  workCity: "Boca Raton",
   major: "Computer Science",
+  workState: "FL",
   graduationDate: "May 2020",
 };

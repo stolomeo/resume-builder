@@ -19,13 +19,13 @@ export default function ExperienceForm({ handleChange }) {
         />
         <input
           type="text"
-          name="city"
+          name="workCity"
           placeholder="City"
           onChange={handleChange}
         />
         <input
           type="text"
-          name="state"
+          name="workState"
           placeholder="State"
           onChange={handleChange}
         />

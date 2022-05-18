@@ -31,13 +31,13 @@ export default function PersonalForm({ handleChange }) {
         />
         <input
           type="text"
-          name="city"
+          name="homeCity"
           placeholder="City"
           onChange={handleChange}
         />
         <input
           type="text"
-          name="state"
+          name="homeState"
           placeholder="State"
           onChange={handleChange}
         />

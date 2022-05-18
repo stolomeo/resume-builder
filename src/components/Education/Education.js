@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Education(props) {
-  const { university, city, state, degree, major, graduationDate } =
+  const { university, schoolCity, schoolState, degree, major, graduationDate } =
     props.educationValues;
   return (
     <section className="resume-section">
@@ -16,7 +16,7 @@ export default function Education(props) {
           {degree}, {major}
         </p>
         <p ckassName="section-bottom-location">
-          {city}, {state}
+          {schoolCity}, {schoolState}
         </p>
       </div>
     </section>
