@@ -3,7 +3,7 @@ import React from "react";
 export default function PersonalForm({ handleChange }) {
   return (
     <section>
-      <h2>Personal Information</h2>
+      <h2 className="form-title">Personal Information</h2>
       <form>
         <input
           type="text"

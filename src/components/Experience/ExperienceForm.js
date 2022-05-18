@@ -3,7 +3,7 @@ import React from "react";
 export default function ExperienceForm({ handleChange }) {
   return (
     <section>
-      <h2>Experience</h2>
+      <h2 className="form-title">Experience</h2>
       <form>
         <input
           type="text"
