@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Personal(props) {
-  console.log(props);
   const { firstName, lastName, email, phone, city, state } =
     props.personalValues;
   return (
