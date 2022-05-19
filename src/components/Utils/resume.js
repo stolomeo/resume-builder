@@ -1,3 +1,5 @@
+import { nanoid } from "nanoid";
+
 const resume = [
   {
     personalItems: {
@@ -11,6 +13,7 @@ const resume = [
   },
   {
     experienceItems: {
+      id: nanoid(),
       employerName: "Apple",
       jobTitle: "Software Engineer",
       schoolCity: "Miami",
@@ -21,6 +24,7 @@ const resume = [
   },
   {
     educationItems: {
+      id: nanoid(),
       university: "FAU",
       degree: "Bachelors of Science ",
       workCity: "Boca Raton",
