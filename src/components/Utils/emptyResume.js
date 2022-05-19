@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 
-const emptryResume = [
+const emptyResume = [
   {
     personalItems: {
       university: "",
@@ -34,4 +34,4 @@ const emptryResume = [
     },
   },
 ];
-export default emptryResume;
+export default emptyResume;
