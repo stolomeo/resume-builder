@@ -1,3 +1,5 @@
+import { nanoid } from "nanoid";
+
 export const personalItems = {
   firstName: "John",
   lastName: "Smith",
@@ -7,6 +9,7 @@ export const personalItems = {
   homeState: "FL",
 };
 export const experienceItems = {
+  id: nanoid(),
   employerName: "Apple",
   jobTitle: "Software Engineer",
   schoolCity: "Miami",
@@ -15,6 +18,7 @@ export const experienceItems = {
   endDate: "April 2020",
 };
 export const educationItems = {
+  id: nanoid(),
   university: "FAU",
   degree: "Bachelors of Science ",
   workCity: "Boca Raton",

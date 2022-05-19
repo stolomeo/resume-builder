@@ -20,8 +20,6 @@ export default function Main() {
     });
   };
 
-  const addHandleChange = (e) => {};
-
   return (
     <main>
       <div className="form-container">
