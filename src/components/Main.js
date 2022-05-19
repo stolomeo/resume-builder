@@ -5,28 +5,15 @@ import EducationForm from "./Education/EducationForm";
 import Personal from "./Personal/Personal";
 import Experience from "./Experience/Experience";
 import Education from "./Education/Education";
-import { personalItems, experienceItems, educationItems } from "./Utils/resume";
+import resume from "./Utils/resume";
+import emptyResume from "./Utils/emptyResume";
 
 export default function Main() {
-  const [personalValues, setPersonalValues] = useState(personalItems);
-  const [experienceValues, setExperienceValues] = useState(experienceItems);
-  const [educationValues, setEducationValues] = useState(educationItems);
+  const [resumeValues, setResumeValues] = useState(resume);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setPersonalValues((oldValues) => {
-      return {
-        ...oldValues,
-        [name]: value,
-      };
-    });
-    setExperienceValues((oldValues) => {
-      return {
-        ...oldValues,
-        [name]: value,
-      };
-    });
-    setEducationValues((oldValues) => {
+    setResumeValues((oldValues) => {
       return {
         ...oldValues,
         [name]: value,
@@ -39,12 +26,13 @@ export default function Main() {
       <div className="form-container">
         <PersonalForm handleChange={handleChange} />
         <ExperienceForm handleChange={handleChange} />
+        <button>Add</button>
         <EducationForm handleChange={handleChange} />
       </div>
       <div className="resume-container">
-        <Personal personalValues={personalValues} />
-        <Experience experienceValues={experienceValues} />
-        <Education educationValues={educationValues} />
+        <Personal personalValues={resumeValues} />
+        <Experience experienceValues={resumeValues} />
+        <Education educationValues={resumeValues} />
       </div>
     </main>
   );
