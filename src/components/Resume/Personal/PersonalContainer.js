@@ -1,8 +1,7 @@
 import React from "react";
 
-export default function Personal(props) {
-  const { firstName, lastName, email, phone, homeCity, homeState } =
-    props.personalValues;
+export default function PersonalContainer({ items }) {
+  const { firstName, lastName, email, phone, homeCity, homeState } = items[0];
   return (
     <section className="resume-header">
       <h1 className="header-name">

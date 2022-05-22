@@ -1,12 +1,10 @@
 import React from "react";
 
-export default function Education(props) {
+export default function EducationItem({ item }) {
   const { university, schoolCity, schoolState, degree, major, graduationDate } =
-    props.educationValues;
+    item;
   return (
-    <section className="resume-section">
-      <h2 className="section-title">EDUCATION</h2>
-      <hr />
+    <>
       <div className="section-top">
         <p className="section-top-title">{university}</p>
         <p className="section-top-date">{graduationDate}</p>
@@ -19,6 +17,6 @@ export default function Education(props) {
           {schoolCity}, {schoolState}
         </p>
       </div>
-    </section>
+    </>
   );
 }

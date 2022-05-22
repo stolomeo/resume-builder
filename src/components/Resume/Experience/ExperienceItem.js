@@ -1,12 +1,10 @@
 import React from "react";
 
-export default function Experience(props) {
+export default function ExperienceItem({ item }) {
   const { employerName, jobTitle, workCity, workState, startDate, endDate } =
-    props.experienceValues;
+    item;
   return (
-    <section className="resume-section">
-      <h2 className="section-title">WORK EXPERIENCE</h2>
-      <hr />
+    <>
       <div className="section-top">
         <p className="section-top-title">{employerName}</p>
         <p className="section-top-date">
@@ -19,6 +17,6 @@ export default function Experience(props) {
           {workCity}, {workState}
         </p>
       </div>
-    </section>
+    </>
   );
 }
