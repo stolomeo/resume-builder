@@ -9,6 +9,7 @@ export default function Form({
   handleChangeExperience,
   handleChangeEducation,
   handleAddExperience,
+  handleAddEducation,
 }) {
   const { personalItems, experienceItems, educationItems } = resume;
   return (
@@ -25,6 +26,7 @@ export default function Form({
       <Education
         educationItems={educationItems}
         handleChangeEducation={handleChangeEducation}
+        handleAddEducation={handleAddEducation}
       />
     </>
   );

@@ -1,7 +1,11 @@
 import React from "react";
 import EducationForm from "./EducationForm";
 
-export default function Education({ educationItems, handleChangeEducation }) {
+export default function Education({
+  educationItems,
+  handleChangeEducation,
+  handleAddEducation,
+}) {
   const educationElements = educationItems.map((educationItem) => {
     return (
       <EducationForm
@@ -16,6 +20,7 @@ export default function Education({ educationItems, handleChangeEducation }) {
     <section>
       <h2 className="form-title">Education</h2>
       {educationElements}
+      <button onClick={handleAddEducation}>Add</button>
     </section>
   );
 }
