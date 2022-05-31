@@ -9,3 +9,9 @@ export type ExperienceItem = {
 export type EducationItem = {
   [name: string]: string;
 };
+
+export type Resume = {
+  personalItems: object;
+  experienceItems: object[];
+  educationItems: object[];
+};
