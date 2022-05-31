@@ -3,6 +3,7 @@ import ExperienceForm from "./ExperienceForm";
 export default function Experience({
   experienceItems,
   handleChangeExperience,
+  handleAddExperience,
 }) {
   const experienceElements = experienceItems.map((experienceItem) => {
     return (
@@ -18,7 +19,7 @@ export default function Experience({
     <section>
       <h2 className="form-title">Experience</h2>
       {experienceElements}
-      <button>Add</button>
+      <button onClick={handleAddExperience}>Add</button>
     </section>
   );
 }

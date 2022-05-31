@@ -3,16 +3,17 @@ import emptyResume from "./utils/emptyResume";
 
 import Preview from "./Preview";
 import Form from "./Form";
+import { nanoid } from "nanoid";
 
 export default function Main() {
-  const [resume, setresume] = useState(emptyResume);
+  const [resume, setResume] = useState(emptyResume);
 
   const handleChangePersonal = (e) => {
     const { name, value } = e.target;
-    setresume((oldValues) => ({
-      ...oldValues,
+    setResume((oldResume) => ({
+      ...oldResume,
       personalItems: {
-        ...oldValues.personalItems,
+        ...oldResume.personalItems,
         [name]: value,
       },
     }));
@@ -20,31 +21,64 @@ export default function Main() {
 
   const handleChangeExperience = (e, id) => {
     const { name, value } = e.target;
-    setresume((oldValues) => {
-      const newExperience = oldValues.experienceItems.map((experienceItem) => {
+    setResume((oldResume) => {
+      const newExperience = oldResume.experienceItems.map((experienceItem) => {
         if (experienceItem.id === id) {
           return { ...experienceItem, [name]: value };
         }
         return experienceItem;
       });
-      return { ...oldValues, experienceItems: [...newExperience] };
+      return { ...oldResume, experienceItems: [...newExperience] };
     });
   };
 
   const handleChangeEducation = (e, id) => {
     const { name, value } = e.target;
-    setresume((oldValues) => {
-      const newEducation = oldValues.educationItems.map((educationItem) => {
+    setResume((oldResume) => {
+      const newEducation = oldResume.educationItems.map((educationItem) => {
         if (educationItem.id === id) {
           return { ...educationItem, [name]: value };
         }
         return educationItem;
       });
-      return { ...oldValues, educationItems: [...newEducation] };
+      return { ...oldResume, educationItems: [...newEducation] };
     });
   };
 
-  const handleAddExperience = () => {};
+  const handleAddExperience = () => {
+    setResume((oldResume) => ({
+      ...oldResume,
+      experienceItems: [
+        ...oldResume.experienceItems,
+        {
+          id: nanoid(),
+          employerName: "",
+          jobTitle: "",
+          workCity: "",
+          workState: "",
+          startDate: "",
+          endDate: "",
+        },
+      ],
+    }));
+  };
+  const handleAddEducation = () => {
+    setResume((oldResume) => ({
+      ...oldResume,
+      educationItems: [
+        ...oldResume.educationItems,
+        {
+          id: nanoid(),
+          employerName: "",
+          jobTitle: "",
+          workCity: "",
+          workState: "",
+          startDate: "",
+          endDate: "",
+        },
+      ],
+    }));
+  };
 
   return (
     <main>
@@ -54,6 +88,8 @@ export default function Main() {
           handleChangePersonal={handleChangePersonal}
           handleChangeExperience={handleChangeExperience}
           handleChangeEducation={handleChangeEducation}
+          handleAddExperience={handleAddExperience}
+          handleAddEducation={handleAddEducation}
         />
       </div>
       <div className="resume-container">
