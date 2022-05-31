@@ -30,7 +30,13 @@ export default function EducationForm({
         value={schoolState}
         onChange={(e) => handleChangeEducation(e, id)}
       />
-      <input type="text" name="degree" placeholder="Degree" value={degree} />
+      <input
+        type="text"
+        name="degree"
+        placeholder="Degree"
+        value={degree}
+        onChange={(e) => handleChangeEducation(e, id)}
+      />
       <input
         type="text"
         name="major"

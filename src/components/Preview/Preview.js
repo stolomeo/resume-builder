@@ -10,7 +10,7 @@ export default function Preview({ resumeValues }) {
     <>
       <Personal personalItems={personalItems} />
       <Experience experienceItems={experienceItems} />
-      <Education />
+      <Education educationItems={educationItems} />
     </>
   );
 }

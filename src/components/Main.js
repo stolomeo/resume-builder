@@ -30,6 +30,7 @@ export default function Main() {
       return { ...oldValues, experienceItems: [...newExperience] };
     });
   };
+
   const handleChangeEducation = (e, id) => {
     const { name, value } = e.target;
     setResumeValues((oldValues) => {
