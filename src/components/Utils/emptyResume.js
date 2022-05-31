@@ -1,29 +1,27 @@
 import { nanoid } from "nanoid";
 
-const emptyResume = [
-  {
-    personalItems: {
-      university: "",
-      degree: "",
-      workCity: "",
-      major: "",
-      workState: "",
-      graduationDate: "",
-    },
+const emptyResume = {
+  personalItems: {
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    homeCity: "",
+    homeState: "",
   },
-  {
-    experienceItems: {
+  experienceItems: [
+    {
       id: nanoid(),
       employerName: "",
       jobTitle: "",
-      schoolCity: "",
-      schoolState: "",
+      workCity: "",
+      workState: "",
       startDate: "",
       endDate: "",
     },
-  },
-  {
-    educationItems: {
+  ],
+  educationItems: [
+    {
       id: nanoid(),
       university: "",
       degree: "",
@@ -32,6 +30,6 @@ const emptyResume = [
       workState: "",
       graduationDate: "",
     },
-  },
-];
+  ],
+};
 export default emptyResume;
