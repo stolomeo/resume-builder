@@ -1,14 +1,13 @@
-import React from "react";
 import EducationItems from "./EducationItems";
 
-export default function Education({ educationItems }) {
+type Props = {
+  educationItems: any[];
+};
+
+export default function Education({ educationItems }: Props) {
   const educationElements = educationItems.map((educationItem) => {
     return (
-      <EducationItems
-        key={educationItem.id}
-        id={educationItem.id}
-        educationItem={educationItem}
-      />
+      <EducationItems key={educationItem.id} educationItem={educationItem} />
     );
   });
 

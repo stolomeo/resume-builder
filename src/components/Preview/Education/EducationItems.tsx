@@ -1,6 +1,17 @@
-import React from "react";
+type EducationItem = {
+  university: string;
+  schoolCity: string;
+  schoolState: string;
+  degree: string;
+  major: string;
+  graduationDate: string;
+};
 
-export default function EducationItems({ educationItem }) {
+type Props = {
+  educationItem: EducationItem;
+};
+
+export default function EducationItems({ educationItem }: Props) {
   const { university, schoolCity, schoolState, degree, major, graduationDate } =
     educationItem;
   return (

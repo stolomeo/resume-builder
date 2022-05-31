@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { ChangeEvent } from "react";
+import { nanoid } from "nanoid";
 import emptyResume from "./utils/emptyResume";
-
 import Preview from "./Preview";
 import Form from "./Form";
-import { nanoid } from "nanoid";
 
 export default function Main() {
   const [resume, setResume] = useState(emptyResume);
 
-  const handleChangePersonal = (e) => {
-    const { name, value } = e.target;
+  const handleChangePersonal = (e: ChangeEvent) => {
+    const { name, value } = e.target as HTMLTextAreaElement;
     setResume((oldResume) => ({
       ...oldResume,
       personalItems: {
@@ -19,8 +19,8 @@ export default function Main() {
     }));
   };
 
-  const handleChangeExperience = (e, id) => {
-    const { name, value } = e.target;
+  const handleChangeExperience = (e: ChangeEvent, id: string) => {
+    const { name, value } = e.target as HTMLTextAreaElement;
     setResume((oldResume) => {
       const newExperience = oldResume.experienceItems.map((experienceItem) => {
         if (experienceItem.id === id) {
@@ -32,8 +32,8 @@ export default function Main() {
     });
   };
 
-  const handleChangeEducation = (e, id) => {
-    const { name, value } = e.target;
+  const handleChangeEducation = (e: ChangeEvent, id: string) => {
+    const { name, value } = e.target as HTMLTextAreaElement;
     setResume((oldResume) => {
       const newEducation = oldResume.educationItems.map((educationItem) => {
         if (educationItem.id === id) {
@@ -63,7 +63,7 @@ export default function Main() {
     }));
   };
   const handleAddEducation = () => {
-    setResume((oldResume) => ({
+    setResume((oldResume: any) => ({
       ...oldResume,
       educationItems: [
         ...oldResume.educationItems,

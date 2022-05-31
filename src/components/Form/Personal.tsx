@@ -1,6 +1,23 @@
-import React from "react";
+import { ChangeEvent } from "react";
 
-export default function Personal({ personalItems, handleChangePersonal }) {
+type PersonalItems = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  homeCity: string;
+  homeState: string;
+};
+
+type Props = {
+  personalItems: PersonalItems;
+  handleChangePersonal: (e: ChangeEvent) => void;
+};
+
+export default function Personal({
+  personalItems,
+  handleChangePersonal,
+}: Props) {
   const { firstName, lastName, email, phone, homeCity, homeState } =
     personalItems;
   return (

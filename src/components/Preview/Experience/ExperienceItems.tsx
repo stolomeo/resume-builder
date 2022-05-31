@@ -1,6 +1,17 @@
-import React from "react";
+export type ExperienceItem = {
+  employerName: string;
+  jobTitle: string;
+  workCity: string;
+  workState: string;
+  startDate: string;
+  endDate: string;
+};
 
-export default function ExperienceItems({ experienceItem }) {
+type Props = {
+  experienceItem: ExperienceItem;
+};
+
+export default function Experiences({ experienceItem }: Props) {
   const { employerName, jobTitle, workCity, workState, startDate, endDate } =
     experienceItem;
   return (

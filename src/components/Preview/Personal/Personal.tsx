@@ -1,6 +1,16 @@
-import React from "react";
+type PersonalItems = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  homeCity: string;
+  homeState: string;
+};
 
-export default function Personal({ personalItems }) {
+type Props = {
+  personalItems: PersonalItems;
+};
+export default function Personal({ personalItems }: Props) {
   const { firstName, lastName, email, phone, homeCity, homeState } =
     personalItems;
   return (

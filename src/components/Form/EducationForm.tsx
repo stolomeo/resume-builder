@@ -1,10 +1,25 @@
-import React from "react";
+import { ChangeEvent } from "react";
+
+type EducationItem = {
+  university: string;
+  schoolCity: string;
+  schoolState: string;
+  degree: string;
+  major: string;
+  graduationDate: string;
+};
+
+type Props = {
+  id: string;
+  educationItem: EducationItem;
+  handleChangeEducation: (e: ChangeEvent, id: string) => void;
+};
 
 export default function EducationForm({
   id,
   educationItem,
   handleChangeEducation,
-}) {
+}: Props) {
   const { university, schoolCity, schoolState, degree, major, graduationDate } =
     educationItem;
   return (

@@ -1,10 +1,24 @@
-import React from "react";
+import { ChangeEvent } from "react";
 
+type ExperienceItem = {
+  employerName: string;
+  jobTitle: string;
+  workCity: string;
+  workState: string;
+  startDate: string;
+  endDate: string;
+};
+
+type Props = {
+  id: string;
+  experienceItem: ExperienceItem;
+  handleChangeExperience: (e: ChangeEvent, id: string) => void;
+};
 export default function ExperienceForm({
   id,
   experienceItem,
   handleChangeExperience,
-}) {
+}: Props) {
   const { employerName, jobTitle, workCity, workState, startDate, endDate } =
     experienceItem;
   return (

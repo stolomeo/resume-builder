@@ -1,7 +1,16 @@
-import React from "react";
+import { ChangeEvent } from "react";
 import Education from "./Education";
 import Experience from "./Experience";
 import Personal from "./Personal";
+
+type Props = {
+  resume: any;
+  handleChangePersonal: (e: ChangeEvent) => void;
+  handleChangeExperience: (e: ChangeEvent, id: string) => void;
+  handleChangeEducation: (e: ChangeEvent, id: string) => void;
+  handleAddExperience: () => void;
+  handleAddEducation: () => void;
+};
 
 export default function Form({
   resume,
@@ -10,7 +19,7 @@ export default function Form({
   handleChangeEducation,
   handleAddExperience,
   handleAddEducation,
-}) {
+}: Props) {
   const { personalItems, experienceItems, educationItems } = resume;
   return (
     <>
