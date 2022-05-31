@@ -1,13 +1,5 @@
 import { ChangeEvent } from "react";
-
-type EducationItem = {
-  university: string;
-  schoolCity: string;
-  schoolState: string;
-  degree: string;
-  major: string;
-  graduationDate: string;
-};
+import { EducationItem } from "../../../types/";
 
 type Props = {
   id: string;

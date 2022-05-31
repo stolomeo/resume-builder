@@ -1,13 +1,5 @@
 import { ChangeEvent } from "react";
-
-type PersonalItems = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  homeCity: string;
-  homeState: string;
-};
+import { PersonalItems } from "../../../types/";
 
 type Props = {
   personalItems: PersonalItems;

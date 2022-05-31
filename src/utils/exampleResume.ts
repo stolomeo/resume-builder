@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 
-const resume = {
+const exampleResume = {
   personalItems: {
     firstName: "John",
     lastName: "Carlos",
@@ -41,4 +41,5 @@ const resume = {
     },
   ],
 };
-export default resume;
+
+export default exampleResume;

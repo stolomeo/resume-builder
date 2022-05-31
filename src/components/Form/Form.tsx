@@ -1,7 +1,7 @@
 import { ChangeEvent } from "react";
-import Education from "./Education";
-import Experience from "./Experience";
-import Personal from "./Personal";
+import Education from "./Education/Education";
+import Experience from "./Experience/Experience";
+import Personal from "./Personal/Personal";
 
 type Props = {
   resume: any;

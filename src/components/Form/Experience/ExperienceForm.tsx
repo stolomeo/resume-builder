@@ -1,13 +1,5 @@
 import { ChangeEvent } from "react";
-
-type ExperienceItem = {
-  employerName: string;
-  jobTitle: string;
-  workCity: string;
-  workState: string;
-  startDate: string;
-  endDate: string;
-};
+import { ExperienceItem } from "../../../types/";
 
 type Props = {
   id: string;

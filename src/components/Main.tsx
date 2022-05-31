@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ChangeEvent } from "react";
 import { nanoid } from "nanoid";
-import emptyResume from "./utils/emptyResume";
+import { emptyResume } from "../utils/";
 import Preview from "./Preview";
 import Form from "./Form";
 
