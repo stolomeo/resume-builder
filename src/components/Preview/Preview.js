@@ -3,10 +3,12 @@ import Education from "./Education/Education";
 import Experience from "./Experience/Experience";
 import Personal from "./Personal/Personal";
 
-export default function Preview() {
+export default function Preview({ resumeValues }) {
+  const { personalItems, experienceItems, educationItems } = resumeValues;
+
   return (
     <>
-      <Personal />
+      <Personal personalItems={personalItems} />
       <Experience />
       <Education />
     </>

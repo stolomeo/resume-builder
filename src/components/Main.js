@@ -7,22 +7,24 @@ import Form from "./Form";
 export default function Main() {
   const [resumeValues, setResumeValues] = useState(emptyResume);
 
-  console.log(resumeValues);
-  // const handleChangePersonal = (e) => {
-  //   const { name, value } = e.target;
-  //   setResumeValues((oldValues) => ({
-  //     ...oldValues,
-  //     personalItems: {
-  //       ...oldValues.personalItems,
-  //       [name]: value,
-  //     },
-  //   }));
-  // };
+  const handleChangePersonal = (e) => {
+    const { name, value } = e.target;
+    setResumeValues((oldValues) => ({
+      ...oldValues,
+      personalItems: {
+        ...oldValues.personalItems,
+        [name]: value,
+      },
+    }));
+  };
 
   return (
     <main>
       <div className="form-container">
-        <Form resumeValues={resumeValues} />
+        <Form
+          resumeValues={resumeValues}
+          handleChangePersonal={handleChangePersonal}
+        />
       </div>
       <div className="resume-container">
         <Preview resumeValues={resumeValues} />
