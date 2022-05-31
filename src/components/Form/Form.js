@@ -4,12 +4,12 @@ import Experience from "./Experience";
 import Personal from "./Personal";
 
 export default function Form({
-  resumeValues,
+  resume,
   handleChangePersonal,
   handleChangeExperience,
   handleChangeEducation,
 }) {
-  const { personalItems, experienceItems, educationItems } = resumeValues;
+  const { personalItems, experienceItems, educationItems } = resume;
   return (
     <>
       <Personal

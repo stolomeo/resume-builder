@@ -3,8 +3,8 @@ import Education from "./Education/Education";
 import Experience from "./Experience/Experience";
 import Personal from "./Personal/Personal";
 
-export default function Preview({ resumeValues }) {
-  const { personalItems, experienceItems, educationItems } = resumeValues;
+export default function Preview({ resume }) {
+  const { personalItems, experienceItems, educationItems } = resume;
 
   return (
     <>

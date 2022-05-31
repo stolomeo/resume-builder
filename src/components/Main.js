@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import emptyResume from "./Utils/emptyResume";
+import emptyResume from "./utils/emptyResume";
 
 import Preview from "./Preview";
 import Form from "./Form";
 
 export default function Main() {
-  const [resumeValues, setResumeValues] = useState(emptyResume);
+  const [resume, setresume] = useState(emptyResume);
 
   const handleChangePersonal = (e) => {
     const { name, value } = e.target;
-    setResumeValues((oldValues) => ({
+    setresume((oldValues) => ({
       ...oldValues,
       personalItems: {
         ...oldValues.personalItems,
@@ -20,7 +20,7 @@ export default function Main() {
 
   const handleChangeExperience = (e, id) => {
     const { name, value } = e.target;
-    setResumeValues((oldValues) => {
+    setresume((oldValues) => {
       const newExperience = oldValues.experienceItems.map((experienceItem) => {
         if (experienceItem.id === id) {
           return { ...experienceItem, [name]: value };
@@ -33,7 +33,7 @@ export default function Main() {
 
   const handleChangeEducation = (e, id) => {
     const { name, value } = e.target;
-    setResumeValues((oldValues) => {
+    setresume((oldValues) => {
       const newEducation = oldValues.educationItems.map((educationItem) => {
         if (educationItem.id === id) {
           return { ...educationItem, [name]: value };
@@ -44,20 +44,20 @@ export default function Main() {
     });
   };
 
-  console.log(resumeValues);
+  const handleAddExperience = () => {};
 
   return (
     <main>
       <div className="form-container">
         <Form
-          resumeValues={resumeValues}
+          resume={resume}
           handleChangePersonal={handleChangePersonal}
           handleChangeExperience={handleChangeExperience}
           handleChangeEducation={handleChangeEducation}
         />
       </div>
       <div className="resume-container">
-        <Preview resumeValues={resumeValues} />
+        <Preview resume={resume} />
       </div>
     </main>
   );

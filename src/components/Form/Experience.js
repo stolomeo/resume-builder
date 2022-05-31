@@ -18,6 +18,7 @@ export default function Experience({
     <section>
       <h2 className="form-title">Experience</h2>
       {experienceElements}
+      <button>Add</button>
     </section>
   );
 }
