@@ -1,6 +1,6 @@
+import { FormSectionHeader, FormWrapper } from "../styles";
 import { ChangeEvent } from "react";
 import { PersonalItems } from "../../../types/";
-import { FormSectionHeader } from "../Education/Education";
 
 type Props = {
   personalItems: PersonalItems;
@@ -16,7 +16,7 @@ export default function Personal({
   return (
     <section>
       <FormSectionHeader>Personal Information</FormSectionHeader>
-      <form>
+      <FormWrapper>
         <input
           type="text"
           name="firstName"
@@ -59,7 +59,7 @@ export default function Personal({
           value={homeState}
           onChange={handleChangePersonal}
         />
-      </form>
+      </FormWrapper>
     </section>
   );
 }

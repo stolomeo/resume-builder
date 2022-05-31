@@ -1,4 +1,4 @@
-import { SectionHeader } from "../Experience/Experience";
+import { SectionHeader } from "../styles";
 import EducationItems from "./EducationItems";
 
 type Props = {

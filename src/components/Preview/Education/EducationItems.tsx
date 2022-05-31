@@ -1,5 +1,5 @@
+import { BottomItems, TopItems } from "../styles";
 import { EducationItem } from "../../../types/";
-import { BottomItems, TopItems } from "../Experience/ExperienceItems";
 
 type Props = {
   educationItem: EducationItem;

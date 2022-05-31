@@ -1,5 +1,5 @@
+import { FormWrapper } from "../styles";
 import { ChangeEvent } from "react";
-import styled from "styled-components";
 import { EducationItem } from "../../../types/";
 
 type Props = {
@@ -16,7 +16,7 @@ export default function EducationForm({
   const { university, schoolCity, schoolState, degree, major, graduationDate } =
     educationItem;
   return (
-    <Form>
+    <FormWrapper>
       <input
         type="text"
         name="university"
@@ -59,12 +59,6 @@ export default function EducationForm({
         value={graduationDate}
         onChange={(e) => handleChangeEducation(e, id)}
       />
-    </Form>
+    </FormWrapper>
   );
 }
-
-export const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-`;

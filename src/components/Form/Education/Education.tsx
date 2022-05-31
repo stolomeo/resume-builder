@@ -1,5 +1,5 @@
+import { FormSectionHeader } from "../styles";
 import { ChangeEvent } from "react";
-import styled from "styled-components";
 import EducationForm from "./EducationForm";
 
 type Props = {
@@ -31,7 +31,3 @@ export default function Education({
     </section>
   );
 }
-
-export const FormSectionHeader = styled.h2`
-  margin-bottom: 0.5rem;
-`;

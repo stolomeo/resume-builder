@@ -1,5 +1,5 @@
+import { FormSectionHeader } from "../styles";
 import { ChangeEvent } from "react";
-import { FormSectionHeader } from "../Education/Education";
 import ExperienceForm from "./ExperienceForm";
 
 type Props = {

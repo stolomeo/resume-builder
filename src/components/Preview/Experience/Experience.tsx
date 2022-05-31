@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { SectionHeader } from "../styles";
 import ExperienceItems from "./ExperienceItems";
 
 type Props = {
@@ -23,8 +23,3 @@ export default function Experience({ experienceItems }: Props) {
     </section>
   );
 }
-
-export const SectionHeader = styled.h2`
-  font-size: 16px;
-  font-weight: bold;
-`;

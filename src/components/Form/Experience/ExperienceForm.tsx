@@ -1,5 +1,6 @@
-import { ChangeEvent } from "react";
+import { FormWrapper } from "../styles";
 import { ExperienceItem } from "../../../types/";
+import { ChangeEvent } from "react";
 
 type Props = {
   id: string;
@@ -14,7 +15,7 @@ export default function ExperienceForm({
   const { employerName, jobTitle, workCity, workState, startDate, endDate } =
     experienceItem;
   return (
-    <form>
+    <FormWrapper>
       <input
         type="text"
         name="employerName"
@@ -58,6 +59,6 @@ export default function ExperienceForm({
         value={endDate}
         onChange={(e) => handleChangeExperience(e, id)}
       />
-    </form>
+    </FormWrapper>
   );
 }
