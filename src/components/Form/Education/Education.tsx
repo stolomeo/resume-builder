@@ -1,4 +1,5 @@
 import { ChangeEvent } from "react";
+import styled from "styled-components";
 import EducationForm from "./EducationForm";
 
 type Props = {
@@ -24,9 +25,13 @@ export default function Education({
   });
   return (
     <section>
-      <h2 className="form-title">Education</h2>
+      <FormSectionHeader>Education</FormSectionHeader>
       {educationElements}
       <button onClick={handleAddEducation}>Add</button>
     </section>
   );
 }
+
+export const FormSectionHeader = styled.h2`
+  margin-bottom: 0.5rem;
+`;

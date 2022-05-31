@@ -1,5 +1,6 @@
 import { ChangeEvent } from "react";
 import { PersonalItems } from "../../../types/";
+import { FormSectionHeader } from "../Education/Education";
 
 type Props = {
   personalItems: PersonalItems;
@@ -14,7 +15,7 @@ export default function Personal({
     personalItems;
   return (
     <section>
-      <h2 className="form-title">Personal Information</h2>
+      <FormSectionHeader>Personal Information</FormSectionHeader>
       <form>
         <input
           type="text"

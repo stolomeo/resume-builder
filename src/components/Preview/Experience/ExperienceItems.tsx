@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { ExperienceItem } from "../../../types/";
 
 type Props = {
@@ -9,18 +10,30 @@ export default function Experiences({ experienceItem }: Props) {
     experienceItem;
   return (
     <>
-      <div className="section-top">
-        <p className="section-top-title">{employerName}</p>
-        <p className="section-top-date">
+      <TopItems>
+        <p>{employerName}</p>
+        <p>
           {startDate} - {endDate}
         </p>
-      </div>
-      <div className="section-bottom">
-        <p className="section-bottom-title">{jobTitle}</p>
-        <p className="section-bottom-location">
+      </TopItems>
+      <BottomItems>
+        <p>{jobTitle}</p>
+        <p>
           {workCity}, {workState}
         </p>
-      </div>
+      </BottomItems>
     </>
   );
 }
+
+export const TopItems = styled.div`
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+`;
+
+export const BottomItems = styled.div`
+  display: flex;
+  justify-content: space-between;
+  font-style: italic;
+`;

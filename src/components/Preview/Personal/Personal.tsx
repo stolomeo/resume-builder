@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { PersonalItems } from "../../../types/";
 
 type Props = {
@@ -8,19 +9,30 @@ export default function Personal({ personalItems }: Props) {
     personalItems;
   return (
     <section className="resume-header">
-      <h1 className="header-name">
+      <FullName>
         {firstName} {lastName}
-      </h1>
-      <div className="header-contact-info">
-        <p className="header-email">{email}</p>
-        <p className="divider">❖</p>
-        <p className="header-phone-number">{phone}</p>
-        <p className="divider">❖</p>
-        <p className="header-city-state">
+      </FullName>
+      <ContactInfoWrapper>
+        <p>{email}</p>
+        <p>❖</p>
+        <p>{phone}</p>
+        <p>❖</p>
+        <p>
           {homeCity}, {homeState}
         </p>
-      </div>
+      </ContactInfoWrapper>
       <hr />
     </section>
   );
 }
+
+const FullName = styled.h1`
+  font-size: 26px;
+  font-weight: bold;
+`;
+
+const ContactInfoWrapper = styled.div`
+  display: flex;
+  gap: 1rem;
+  font-size: 22px;
+`;

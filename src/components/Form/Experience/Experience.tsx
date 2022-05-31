@@ -1,4 +1,5 @@
 import { ChangeEvent } from "react";
+import { FormSectionHeader } from "../Education/Education";
 import ExperienceForm from "./ExperienceForm";
 
 type Props = {
@@ -24,7 +25,7 @@ export default function Experience({
   });
   return (
     <section>
-      <h2 className="form-title">Experience</h2>
+      <FormSectionHeader>Experience</FormSectionHeader>
       {experienceElements}
       <button onClick={handleAddExperience}>Add</button>
     </section>

@@ -1,4 +1,5 @@
 import { EducationItem } from "../../../types/";
+import { BottomItems, TopItems } from "../Experience/ExperienceItems";
 
 type Props = {
   educationItem: EducationItem;
@@ -9,18 +10,18 @@ export default function EducationItems({ educationItem }: Props) {
     educationItem;
   return (
     <>
-      <div className="section-top">
-        <p className="section-top-title">{university}</p>
-        <p className="section-top-date">{graduationDate}</p>
-      </div>
-      <div className="section-bottom">
-        <p className="section-bottom-title">
+      <TopItems>
+        <p>{university}</p>
+        <p>{graduationDate}</p>
+      </TopItems>
+      <BottomItems>
+        <p>
           {degree}, {major}
         </p>
-        <p className="section-bottom-location">
+        <p>
           {schoolCity}, {schoolState}
         </p>
-      </div>
+      </BottomItems>
     </>
   );
 }

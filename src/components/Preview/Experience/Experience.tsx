@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import ExperienceItems from "./ExperienceItems";
 
 type Props = {
@@ -16,9 +17,14 @@ export default function Experience({ experienceItems }: Props) {
 
   return (
     <section className="resume-section">
-      <h2 className="section-title">WORK EXPERIENCE</h2>
+      <SectionHeader>WORK EXPERIENCE</SectionHeader>
       <hr />
       {experienceElements}
     </section>
   );
 }
+
+export const SectionHeader = styled.h2`
+  font-size: 16px;
+  font-weight: bold;
+`;

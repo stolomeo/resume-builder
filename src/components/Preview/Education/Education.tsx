@@ -1,3 +1,4 @@
+import { SectionHeader } from "../Experience/Experience";
 import EducationItems from "./EducationItems";
 
 type Props = {
@@ -13,7 +14,7 @@ export default function Education({ educationItems }: Props) {
 
   return (
     <section className="resume-section">
-      <h2 className="section-title">EDUCATION</h2>
+      <SectionHeader>EDUCATION</SectionHeader>
       <hr />
       {educationElements}
     </section>
