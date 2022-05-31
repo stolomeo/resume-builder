@@ -1,19 +1,29 @@
 import React from "react";
-import EducationForm from "./EducationForm";
-import ExperienceForm from "./ExperienceForm";
-import PersonalForm from "./PersonalForm";
+import Education from "./Education";
+import Experience from "./Experience";
+import Personal from "./Personal";
 
-export default function Form({ resumeValues, handleChangePersonal }) {
+export default function Form({
+  resumeValues,
+  handleChangePersonal,
+  handleChangeExperience,
+  handleChangeEducation,
+}) {
   const { personalItems, experienceItems, educationItems } = resumeValues;
-  console.log(experienceItems);
   return (
     <>
-      <PersonalForm
+      <Personal
         personalItems={personalItems}
         handleChangePersonal={handleChangePersonal}
       />
-      <ExperienceForm experienceItems={experienceItems} />
-      <EducationForm />
+      <Experience
+        experienceItems={experienceItems}
+        handleChangeExperience={handleChangeExperience}
+      />
+      <Education
+        educationItems={educationItems}
+        handleChangeEducation={handleChangeEducation}
+      />
     </>
   );
 }

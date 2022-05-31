@@ -1,21 +1,22 @@
 import React from "react";
-import ExperienceItems from "./ExperienceItems";
-
-export default function Experience({ experienceItems }) {
+import ExperienceForm from "./ExperienceForm";
+export default function Experience({
+  experienceItems,
+  handleChangeExperience,
+}) {
   const experienceElements = experienceItems.map((experienceItem) => {
     return (
-      <ExperienceItems
+      <ExperienceForm
         key={experienceItem.id}
         id={experienceItem.id}
         experienceItem={experienceItem}
+        handleChangeExperience={handleChangeExperience}
       />
     );
   });
-
   return (
-    <section className="resume-section">
-      <h2 className="section-title">WORK EXPERIENCE</h2>
-      <hr />
+    <section>
+      <h2 className="form-title">Experience</h2>
       {experienceElements}
     </section>
   );

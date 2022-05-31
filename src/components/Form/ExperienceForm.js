@@ -1,50 +1,57 @@
 import React from "react";
 
-export default function ExperienceForm({ experienceItems }) {
+export default function ExperienceForm({
+  id,
+  experienceItem,
+  handleChangeExperience,
+}) {
   const { employerName, jobTitle, workCity, workState, startDate, endDate } =
-    experienceItems;
-  console.log(employerName);
+    experienceItem;
   return (
-    <section>
-      <h2 className="form-title">Experience</h2>
-      <form>
-        <input
-          type="text"
-          name="employerName"
-          placeholder="Employer name"
-          value={employerName}
-        />
-        <input
-          type="text"
-          name="jobTitle"
-          placeholder="Job title"
-          value={jobTitle}
-        />
-        <input
-          type="text"
-          name="workCity"
-          placeholder="City"
-          value={workCity}
-        />
-        <input
-          type="text"
-          name="workState"
-          placeholder="State"
-          value={workState}
-        />
-        <input
-          type="text"
-          name="startDate"
-          placeholder="Start date"
-          value={startDate}
-        />
-        <input
-          type="text"
-          name="endDate"
-          placeholder="End date"
-          value={endDate}
-        />
-      </form>
-    </section>
+    <form>
+      <input
+        type="text"
+        name="employerName"
+        placeholder="Employer name"
+        value={employerName}
+        onChange={(e) => handleChangeExperience(e, id)}
+      />
+      <input
+        type="text"
+        name="jobTitle"
+        placeholder="Job title"
+        value={jobTitle}
+        onChange={(e) => handleChangeExperience(e, id)}
+      />
+
+      <input
+        type="text"
+        name="workCity"
+        placeholder="City"
+        value={workCity}
+        onChange={(e) => handleChangeExperience(e, id)}
+      />
+      <input
+        type="text"
+        name="workState"
+        placeholder="State"
+        value={workState}
+        onChange={(e) => handleChangeExperience(e, id)}
+      />
+      <input
+        type="text"
+        name="startDate"
+        placeholder="Start date"
+        value={startDate}
+        onChange={(e) => handleChangeExperience(e, id)}
+      />
+      <input
+        type="text"
+        name="endDate"
+        placeholder="End date"
+        value={endDate}
+        onChange={(e) => handleChangeExperience(e, id)}
+      />
+    </form>
   );
 }

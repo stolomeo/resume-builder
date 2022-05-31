@@ -1,6 +1,8 @@
 import React from "react";
 
-export default function PersonalForm({ personalItems, handleChangePersonal }) {
+export default function Personal({ personalItems, handleChangePersonal }) {
+  const { firstName, lastName, email, phone, homeCity, homeState } =
+    personalItems;
   return (
     <section>
       <h2 className="form-title">Personal Information</h2>
@@ -9,42 +11,42 @@ export default function PersonalForm({ personalItems, handleChangePersonal }) {
           type="text"
           name="firstName"
           placeholder="First Name"
-          value={personalItems.firstName}
+          value={firstName}
           onChange={handleChangePersonal}
         />
         <input
           type="text"
           name="lastName"
           placeholder="Last Name"
-          value={personalItems.lastName}
+          value={lastName}
           onChange={handleChangePersonal}
         />
         <input
           type="text"
           name="email"
           placeholder="Email"
-          value={personalItems.email}
+          value={email}
           onChange={handleChangePersonal}
         />
         <input
           type="text"
           name="phone"
           placeholder="Phone Number"
-          value={personalItems.phoneNumber}
+          value={phone}
           onChange={handleChangePersonal}
         />
         <input
           type="text"
           name="homeCity"
           placeholder="City"
-          value={personalItems.city}
+          value={homeCity}
           onChange={handleChangePersonal}
         />
         <input
           type="text"
           name="homeState"
           placeholder="State"
-          value={personalItems.state}
+          value={homeState}
           onChange={handleChangePersonal}
         />
       </form>

@@ -9,7 +9,7 @@ export default function Preview({ resumeValues }) {
   return (
     <>
       <Personal personalItems={personalItems} />
-      <Experience />
+      <Experience experienceItems={experienceItems} />
       <Education />
     </>
   );
