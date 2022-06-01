@@ -82,6 +82,25 @@ export default function Main() {
     }));
   };
 
+  const handleDeleteExperience = (id: string) => {
+    setResume((oldResume) => {
+      const newExperience = oldResume.experienceItems.filter(
+        (experienceItem) => {
+          return experienceItem.id !== id;
+        }
+      );
+      return { ...oldResume, experienceItems: [...newExperience] };
+    });
+  };
+  const handleDeleteEducation = (id: string) => {
+    setResume((oldResume) => {
+      const newEducation = oldResume.educationItems.filter((educationItem) => {
+        return educationItem.id !== id;
+      });
+      return { ...oldResume, educationItems: [...newEducation] };
+    });
+  };
+
   return (
     <MainWrapper>
       <FormWrapper>
@@ -92,6 +111,8 @@ export default function Main() {
           handleChangeEducation={handleChangeEducation}
           handleAddExperience={handleAddExperience}
           handleAddEducation={handleAddEducation}
+          handleDeleteExperience={handleDeleteExperience}
+          handleDeleteEducation={handleDeleteEducation}
         />
       </FormWrapper>
       <PreviewWrapper>
@@ -103,9 +124,17 @@ export default function Main() {
 
 const MainWrapper = styled.main`
   display: flex;
+  align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  max-width: 1800px;
+  padding: 4rem 8rem;
+
+  gap: 4rem;
+  @media (max-width: 1600px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const FormWrapper = styled.div`

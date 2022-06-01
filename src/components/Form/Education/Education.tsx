@@ -6,12 +6,14 @@ type Props = {
   educationItems: any[];
   handleChangeEducation: (e: ChangeEvent, id: string) => void;
   handleAddEducation: () => void;
+  handleDeleteEducation: (id: string) => void;
 };
 
 export default function Education({
   educationItems,
   handleChangeEducation,
   handleAddEducation,
+  handleDeleteEducation,
 }: Props) {
   const educationElements = educationItems.map((educationItem) => {
     return (
@@ -20,6 +22,7 @@ export default function Education({
         id={educationItem.id}
         educationItem={educationItem}
         handleChangeEducation={handleChangeEducation}
+        handleDeleteEducation={handleDeleteEducation}
       />
     );
   });

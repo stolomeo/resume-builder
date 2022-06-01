@@ -6,12 +6,14 @@ type Props = {
   experienceItems: any[];
   handleChangeExperience: (e: ChangeEvent, id: string) => void;
   handleAddExperience: () => void;
+  handleDeleteExperience: (id: string) => void;
 };
 
 export default function Experience({
   experienceItems,
   handleChangeExperience,
   handleAddExperience,
+  handleDeleteExperience,
 }: Props) {
   const experienceElements = experienceItems.map((experienceItem) => {
     return (
@@ -20,6 +22,7 @@ export default function Experience({
         id={experienceItem.id}
         experienceItem={experienceItem}
         handleChangeExperience={handleChangeExperience}
+        handleDeleteExperience={handleDeleteExperience}
       />
     );
   });

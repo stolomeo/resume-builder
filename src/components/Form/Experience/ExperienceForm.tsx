@@ -6,11 +6,13 @@ type Props = {
   id: string;
   experienceItem: ExperienceItem;
   handleChangeExperience: (e: ChangeEvent, id: string) => void;
+  handleDeleteExperience: (id: string) => void;
 };
 export default function ExperienceForm({
   id,
   experienceItem,
   handleChangeExperience,
+  handleDeleteExperience,
 }: Props) {
   const { employerName, jobTitle, workCity, workState, startDate, endDate } =
     experienceItem;
@@ -59,6 +61,7 @@ export default function ExperienceForm({
         value={endDate}
         onChange={(e) => handleChangeExperience(e, id)}
       />
+      <button onClick={() => handleDeleteExperience(id)}>Delete</button>
     </FormWrapper>
   );
 }

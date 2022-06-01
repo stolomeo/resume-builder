@@ -6,12 +6,14 @@ type Props = {
   id: string;
   educationItem: EducationItem;
   handleChangeEducation: (e: ChangeEvent, id: string) => void;
+  handleDeleteEducation: (id: string) => void;
 };
 
 export default function EducationForm({
   id,
   educationItem,
   handleChangeEducation,
+  handleDeleteEducation,
 }: Props) {
   const { university, schoolCity, schoolState, degree, major, graduationDate } =
     educationItem;
@@ -59,6 +61,7 @@ export default function EducationForm({
         value={graduationDate}
         onChange={(e) => handleChangeEducation(e, id)}
       />
+      <button onClick={() => handleDeleteEducation(id)}>Delete</button>
     </FormWrapper>
   );
 }
