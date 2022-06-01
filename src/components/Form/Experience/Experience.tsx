@@ -1,4 +1,4 @@
-import { FormSectionHeader } from "../styles";
+import { Button, FormSectionHeader, SectionWrapper } from "../styles";
 import { ChangeEvent } from "react";
 import ExperienceForm from "./ExperienceForm";
 
@@ -27,10 +27,12 @@ export default function Experience({
     );
   });
   return (
-    <section>
+    <>
       <FormSectionHeader>Experience</FormSectionHeader>
-      {experienceElements}
-      <button onClick={handleAddExperience}>Add</button>
-    </section>
+      <SectionWrapper>
+        {experienceElements}
+        <Button onClick={handleAddExperience}>Add</Button>
+      </SectionWrapper>
+    </>
   );
 }

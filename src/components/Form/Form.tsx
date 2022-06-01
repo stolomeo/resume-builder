@@ -1,4 +1,5 @@
 import { ChangeEvent } from "react";
+import styled from "styled-components";
 import Education from "./Education/";
 import Experience from "./Experience/";
 import Personal from "./Personal/";
@@ -26,7 +27,7 @@ export default function Form({
 }: Props) {
   const { personalItems, experienceItems, educationItems } = resume;
   return (
-    <>
+    <FormWrapper>
       <Personal
         personalItems={personalItems}
         handleChangePersonal={handleChangePersonal}
@@ -43,6 +44,17 @@ export default function Form({
         handleAddEducation={handleAddEducation}
         handleDeleteEducation={handleDeleteEducation}
       />
-    </>
+    </FormWrapper>
   );
 }
+
+const FormWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 210mm;
+  padding: 2rem;
+  border-radius: 5px;
+  background-color: rgb(238, 238, 238);
+  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  gap: 1rem;
+`;

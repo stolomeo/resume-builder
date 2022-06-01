@@ -1,4 +1,4 @@
-import { FormSectionHeader } from "../styles";
+import { Button, FormSectionHeader, SectionWrapper } from "../styles";
 import { ChangeEvent } from "react";
 import EducationForm from "./EducationForm";
 
@@ -27,10 +27,12 @@ export default function Education({
     );
   });
   return (
-    <section>
+    <>
       <FormSectionHeader>Education</FormSectionHeader>
-      {educationElements}
-      <button onClick={handleAddEducation}>Add</button>
-    </section>
+      <SectionWrapper>
+        {educationElements}
+        <Button onClick={handleAddEducation}>Add</Button>
+      </SectionWrapper>
+    </>
   );
 }

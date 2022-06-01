@@ -1,4 +1,4 @@
-import { FormWrapper } from "../styles";
+import { Button, FormWrapper, Input } from "../styles";
 import { ChangeEvent } from "react";
 import { EducationItem } from "../../../types/";
 
@@ -19,49 +19,49 @@ export default function EducationForm({
     educationItem;
   return (
     <FormWrapper>
-      <input
+      <Input
         type="text"
         name="university"
         placeholder="University"
         value={university}
         onChange={(e) => handleChangeEducation(e, id)}
       />
-      <input
+      <Input
         type="text"
         name="schoolCity"
         placeholder="City"
         value={schoolCity}
         onChange={(e) => handleChangeEducation(e, id)}
       />
-      <input
+      <Input
         type="text"
         name="schoolState"
         placeholder="State"
         value={schoolState}
         onChange={(e) => handleChangeEducation(e, id)}
       />
-      <input
+      <Input
         type="text"
         name="degree"
         placeholder="Degree"
         value={degree}
         onChange={(e) => handleChangeEducation(e, id)}
       />
-      <input
+      <Input
         type="text"
         name="major"
         placeholder="Major / area of study"
         value={major}
         onChange={(e) => handleChangeEducation(e, id)}
       />
-      <input
+      <Input
         type="text"
         name="graduationDate"
         placeholder="Graduation Date"
         value={graduationDate}
         onChange={(e) => handleChangeEducation(e, id)}
       />
-      <button onClick={() => handleDeleteEducation(id)}>Delete</button>
+      <Button onClick={() => handleDeleteEducation(id)}>Delete</Button>
     </FormWrapper>
   );
 }

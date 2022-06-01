@@ -1,4 +1,4 @@
-import { FormWrapper } from "../styles";
+import { Button, FormWrapper, Input } from "../styles";
 import { ExperienceItem } from "../../../types/";
 import { ChangeEvent } from "react";
 
@@ -18,50 +18,49 @@ export default function ExperienceForm({
     experienceItem;
   return (
     <FormWrapper>
-      <input
+      <Input
         type="text"
         name="employerName"
         placeholder="Employer name"
         value={employerName}
         onChange={(e) => handleChangeExperience(e, id)}
       />
-      <input
+      <Input
         type="text"
         name="jobTitle"
         placeholder="Job title"
         value={jobTitle}
         onChange={(e) => handleChangeExperience(e, id)}
       />
-
-      <input
+      <Input
         type="text"
         name="workCity"
         placeholder="City"
         value={workCity}
         onChange={(e) => handleChangeExperience(e, id)}
       />
-      <input
+      <Input
         type="text"
         name="workState"
         placeholder="State"
         value={workState}
         onChange={(e) => handleChangeExperience(e, id)}
       />
-      <input
+      <Input
         type="text"
         name="startDate"
         placeholder="Start date"
         value={startDate}
         onChange={(e) => handleChangeExperience(e, id)}
       />
-      <input
+      <Input
         type="text"
         name="endDate"
         placeholder="End date"
         value={endDate}
         onChange={(e) => handleChangeExperience(e, id)}
       />
-      <button onClick={() => handleDeleteExperience(id)}>Delete</button>
+      <Button onClick={() => handleDeleteExperience(id)}>Delete</Button>
     </FormWrapper>
   );
 }

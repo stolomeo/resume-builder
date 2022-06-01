@@ -1,4 +1,4 @@
-import { FormSectionHeader, FormWrapper } from "../styles";
+import { FormSectionHeader, Input, SectionWrapper } from "../styles";
 import { ChangeEvent } from "react";
 import { PersonalItems } from "../../../types/";
 
@@ -14,52 +14,52 @@ export default function Personal({
   const { firstName, lastName, email, phone, homeCity, homeState } =
     personalItems;
   return (
-    <section>
+    <>
       <FormSectionHeader>Personal Information</FormSectionHeader>
-      <FormWrapper>
-        <input
+      <SectionWrapper>
+        <Input
           type="text"
           name="firstName"
           placeholder="First Name"
           value={firstName}
           onChange={handleChangePersonal}
         />
-        <input
+        <Input
           type="text"
           name="lastName"
           placeholder="Last Name"
           value={lastName}
           onChange={handleChangePersonal}
         />
-        <input
+        <Input
           type="text"
           name="email"
           placeholder="Email"
           value={email}
           onChange={handleChangePersonal}
         />
-        <input
+        <Input
           type="text"
           name="phone"
           placeholder="Phone Number"
           value={phone}
           onChange={handleChangePersonal}
         />
-        <input
+        <Input
           type="text"
           name="homeCity"
           placeholder="City"
           value={homeCity}
           onChange={handleChangePersonal}
         />
-        <input
+        <Input
           type="text"
           name="homeState"
           placeholder="State"
           value={homeState}
           onChange={handleChangePersonal}
         />
-      </FormWrapper>
-    </section>
+      </SectionWrapper>
+    </>
   );
 }

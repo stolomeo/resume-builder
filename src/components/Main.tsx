@@ -103,21 +103,17 @@ export default function Main() {
 
   return (
     <MainWrapper>
-      <FormWrapper>
-        <Form
-          resume={resume}
-          handleChangePersonal={handleChangePersonal}
-          handleChangeExperience={handleChangeExperience}
-          handleChangeEducation={handleChangeEducation}
-          handleAddExperience={handleAddExperience}
-          handleAddEducation={handleAddEducation}
-          handleDeleteExperience={handleDeleteExperience}
-          handleDeleteEducation={handleDeleteEducation}
-        />
-      </FormWrapper>
-      <PreviewWrapper>
-        <Preview resume={resume} />
-      </PreviewWrapper>
+      <Form
+        resume={resume}
+        handleChangePersonal={handleChangePersonal}
+        handleChangeExperience={handleChangeExperience}
+        handleChangeEducation={handleChangeEducation}
+        handleAddExperience={handleAddExperience}
+        handleAddEducation={handleAddEducation}
+        handleDeleteExperience={handleDeleteExperience}
+        handleDeleteEducation={handleDeleteEducation}
+      />
+      <Preview resume={resume} />
     </MainWrapper>
   );
 }
@@ -125,37 +121,15 @@ export default function Main() {
 const MainWrapper = styled.main`
   display: flex;
   align-items: flex-start;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
   max-width: 1800px;
   padding: 4rem 8rem;
+  margin: 0 auto;
+  margin-bottom: 4rem;
 
   gap: 4rem;
   @media (max-width: 1600px) {
     flex-direction: column;
     align-items: center;
   }
-`;
-
-const FormWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 210mm;
-  padding: 2rem;
-  border-radius: 5px;
-  background-color: rgb(238, 238, 238);
-  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
-  gap: 1rem;
-`;
-
-const PreviewWrapper = styled.div`
-  font-family: "EB Garamond", serif;
-  background-color: rgb(238, 238, 238);
-  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 1rem;
-  width: 210mm;
 `;
