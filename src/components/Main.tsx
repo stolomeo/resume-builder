@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ChangeEvent } from "react";
 import { nanoid } from "nanoid";
-import { emptyResume } from "../utils/";
+import { emptyResume, exampleResume } from "../utils/";
 import Preview from "./Preview";
 import Form from "./Form";
 import styled from "styled-components";
@@ -63,7 +63,7 @@ export default function Main() {
       ],
     }));
   };
-  console.log(resume);
+
   const handleAddEducation = () => {
     setResume((oldResume: any) => ({
       ...oldResume,
@@ -101,6 +101,10 @@ export default function Main() {
     });
   };
 
+  const handleLoadExample = () => {
+    setResume(emptyResume);
+  };
+
   return (
     <MainWrapper>
       <Form
@@ -112,6 +116,7 @@ export default function Main() {
         handleAddEducation={handleAddEducation}
         handleDeleteExperience={handleDeleteExperience}
         handleDeleteEducation={handleDeleteEducation}
+        handleLoadExample={handleLoadExample}
       />
       <Preview resume={resume} />
     </MainWrapper>

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Education from "./Education/";
 import Experience from "./Experience/";
 import Personal from "./Personal/";
+import { Button } from "./styles";
 
 type Props = {
   resume: any;
@@ -13,6 +14,7 @@ type Props = {
   handleAddEducation: () => void;
   handleDeleteExperience: (id: string) => void;
   handleDeleteEducation: (id: string) => void;
+  handleLoadExample: () => void;
 };
 
 export default function Form({
@@ -24,6 +26,7 @@ export default function Form({
   handleAddEducation,
   handleDeleteExperience,
   handleDeleteEducation,
+  handleLoadExample,
 }: Props) {
   const { personalItems, experienceItems, educationItems } = resume;
   return (
@@ -44,6 +47,7 @@ export default function Form({
         handleAddEducation={handleAddEducation}
         handleDeleteEducation={handleDeleteEducation}
       />
+      <Button onClick={handleLoadExample}>Load Example</Button>
     </FormWrapper>
   );
 }
