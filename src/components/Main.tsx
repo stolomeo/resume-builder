@@ -63,6 +63,7 @@ export default function Main() {
       ],
     }));
   };
+  console.log(resume);
   const handleAddEducation = () => {
     setResume((oldResume: any) => ({
       ...oldResume,
