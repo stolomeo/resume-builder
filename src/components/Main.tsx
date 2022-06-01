@@ -102,7 +102,7 @@ export default function Main() {
   };
 
   const handleLoadExample = () => {
-    setResume(emptyResume);
+    setResume(exampleResume as any);
   };
 
   return (
