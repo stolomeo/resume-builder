@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import EducationItems from "./EducationItems";
 import { ResumeEducationItems } from "../../../types";
 import { PreviewSection, SectionHeader, SectionItems } from "../styles";
