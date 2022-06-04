@@ -24,15 +24,17 @@ export default function Education() {
       ],
     });
   };
+
   const educationElements = resume.educationItems.map((educationItem) => {
     return (
       <EducationForm key={educationItem.id} educationItem={educationItem} />
     );
   });
+
   return (
     <>
       <FormSectionHeader>Education</FormSectionHeader>
-      <SectionWrapper>
+      <SectionWrapper flexD="column">
         {educationElements}
         <Button onClick={handleAddEducation}>Add</Button>
       </SectionWrapper>

@@ -2,7 +2,7 @@ export type ResumeType = {
   personalItems: PersonalItemsType;
   experienceItems: ExperienceItemsType[];
   educationItems: EducationItemsType[];
-  skillItems: SkillItemsType[];
+  skillItems: ResumeSkillItems[];
 };
 export type PersonalItemsType = {
   [name: string]: string;
@@ -16,6 +16,6 @@ export type EducationItemsType = {
   [name: string]: string;
 };
 
-export type SkillItemsType = {
+export type ResumeSkillItems = {
   [name: string]: string;
 };

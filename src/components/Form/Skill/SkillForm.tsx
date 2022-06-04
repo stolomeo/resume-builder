@@ -1,10 +1,10 @@
 import { Button, FormWrapper, Input } from "../styles";
-import { SkillItemsType } from "../../../types";
+import { ResumeSkillItems } from "../../../types";
 import { ChangeEvent, useContext } from "react";
 import { ResumeContext } from "../../../context/ResumeContext";
 
 type Props = {
-  skillItem: SkillItemsType;
+  skillItem: ResumeSkillItems;
 };
 export default function SkillForm({ skillItem }: Props) {
   const { resume, setResume } = useContext(ResumeContext);
@@ -30,7 +30,7 @@ export default function SkillForm({ skillItem }: Props) {
   const { skill, id } = skillItem;
 
   return (
-    <FormWrapper>
+    <FormWrapper flexD="row">
       <Input
         type="text"
         name="skill"

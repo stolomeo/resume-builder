@@ -1,8 +1,8 @@
-import { SkillItemsType } from "../../../types";
+import { ResumeSkillItems } from "../../../types";
 import { Item } from "../styles";
 
 type Props = {
-  skillItem: SkillItemsType;
+  skillItem: ResumeSkillItems;
 };
 
 export default function SkillItems({ skillItem }: Props) {

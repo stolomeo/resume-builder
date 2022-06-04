@@ -34,7 +34,7 @@ export default function Experience() {
   return (
     <>
       <FormSectionHeader>Experience</FormSectionHeader>
-      <SectionWrapper>
+      <SectionWrapper flexD="column">
         {experienceElements}
         <Button onClick={handleAddExperience}>Add</Button>
       </SectionWrapper>

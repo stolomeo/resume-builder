@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
-export const FormWrapper = styled.form`
+export const FormWrapper = styled.form<{ flexD: string }>`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${(props) => props.flexD};
   gap: 1rem;
 `;
 
 export const FormSectionHeader = styled.h2`
-  margin-bottom: 0.5rem;
+  font-weight: bold;
+  padding: 0.5rem;
 `;
 
 export const Button = styled.button`
@@ -22,10 +23,11 @@ export const Input = styled.input`
   border: 1px solid transparent;
 `;
 
-export const SectionWrapper = styled.section`
+export const SectionWrapper = styled.section<{ flexD: string }>`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${(props) => props.flexD};
+  flex-wrap: wrap;
   gap: 1rem;
   padding: 0.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0.8rem;
 `;

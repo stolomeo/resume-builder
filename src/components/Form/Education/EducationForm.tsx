@@ -39,7 +39,7 @@ export default function EducationForm({ educationItem }: Props) {
   };
 
   return (
-    <FormWrapper>
+    <FormWrapper flexD="column">
       <Input
         type="text"
         name="university"

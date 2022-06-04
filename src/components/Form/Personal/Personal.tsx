@@ -21,7 +21,7 @@ export default function Personal() {
   return (
     <>
       <FormSectionHeader>Personal Information</FormSectionHeader>
-      <SectionWrapper>
+      <SectionWrapper flexD="column">
         <Input
           type="text"
           name="firstName"

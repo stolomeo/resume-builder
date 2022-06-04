@@ -26,8 +26,8 @@ export default function Skill() {
 
   return (
     <>
-      <FormSectionHeader>Skill</FormSectionHeader>
-      <SectionWrapper>
+      <FormSectionHeader>Skills</FormSectionHeader>
+      <SectionWrapper flexD="row">
         {skillElements}
         <Button onClick={handleAddSkill}>Add</Button>
       </SectionWrapper>

@@ -38,7 +38,7 @@ export default function ExperienceForm({ experienceItem }: Props) {
   };
 
   return (
-    <FormWrapper>
+    <FormWrapper flexD="column">
       <Input
         type="text"
         name="employerName"
