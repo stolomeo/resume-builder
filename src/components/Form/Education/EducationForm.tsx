@@ -1,22 +1,43 @@
 import { Button, FormWrapper, Input } from "../styles";
-import { ChangeEvent } from "react";
+import { ChangeEvent, useContext } from "react";
 import { ResumeEducationItems } from "../../../types/";
+import { ResumeContext } from "../../../context/ResumeContext";
 
 type Props = {
-  id: string;
   educationItem: ResumeEducationItems;
-  handleChangeEducation: (e: ChangeEvent, id: string) => void;
-  handleDeleteEducation: (id: string) => void;
 };
 
-export default function EducationForm({
-  id,
-  educationItem,
-  handleChangeEducation,
-  handleDeleteEducation,
-}: Props) {
-  const { university, schoolCity, schoolState, degree, major, graduationDate } =
-    educationItem;
+export default function EducationForm({ educationItem }: Props) {
+  const { resume, setResume } = useContext(ResumeContext);
+
+  const {
+    id,
+    university,
+    schoolCity,
+    schoolState,
+    degree,
+    major,
+    graduationDate,
+  } = educationItem;
+
+  const handleChangeEducation = (e: ChangeEvent, id: string) => {
+    const { name, value } = e.target as HTMLTextAreaElement;
+    const newEducation = resume.educationItems.map((educationItem) => {
+      if (educationItem.id === id) {
+        return { ...educationItem, [name]: value };
+      }
+      return educationItem;
+    });
+    setResume({ ...resume, educationItems: [...newEducation] });
+  };
+
+  const handleDeleteEducation = (id: string) => {
+    const newEducation = resume.educationItems.filter((educationItem) => {
+      return educationItem.id !== id;
+    });
+    setResume({ ...resume, educationItems: [...newEducation] });
+  };
+
   return (
     <FormWrapper>
       <Input

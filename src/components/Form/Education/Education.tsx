@@ -1,30 +1,37 @@
 import EducationForm from "./EducationForm";
 import { Button, FormSectionHeader, SectionWrapper } from "../styles";
-import { ChangeEvent } from "react";
 import { ResumeEducationItems } from "../../../types";
+import { nanoid } from "nanoid";
+import { useContext } from "react";
+import { ResumeContext } from "../../../context/ResumeContext";
 
 type Props = {
   educationItems: ResumeEducationItems[];
-  handleChangeEducation: (e: ChangeEvent, id: string) => void;
-  handleAddEducation: () => void;
-  handleDeleteEducation: (id: string) => void;
 };
 
-export default function Education({
-  educationItems,
-  handleChangeEducation,
-  handleAddEducation,
-  handleDeleteEducation,
-}: Props) {
+export default function Education({ educationItems }: Props) {
+  const { resume, setResume } = useContext(ResumeContext);
+
+  const handleAddEducation = () => {
+    setResume({
+      ...resume,
+      educationItems: [
+        ...resume.educationItems,
+        {
+          id: nanoid(),
+          university: "",
+          degree: "",
+          major: "",
+          schoolCity: "",
+          schoolState: "",
+          graduationDate: "",
+        },
+      ],
+    });
+  };
   const educationElements = educationItems.map((educationItem) => {
     return (
-      <EducationForm
-        key={educationItem.id}
-        id={educationItem.id}
-        educationItem={educationItem}
-        handleChangeEducation={handleChangeEducation}
-        handleDeleteEducation={handleDeleteEducation}
-      />
+      <EducationForm key={educationItem.id} educationItem={educationItem} />
     );
   });
   return (

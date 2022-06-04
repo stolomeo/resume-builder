@@ -3,55 +3,25 @@ import Personal from "./Personal/";
 import Experience from "./Experience/";
 import Education from "./Education/";
 import Skill from "./Skill";
-import { ResumeType } from "../../types";
 import { Button } from "./styles";
-import { ChangeEvent } from "react";
+import { exampleResume } from "../../utils";
+import { useContext } from "react";
+import { ResumeContext } from "../../context/ResumeContext";
 
-type Props = {
-  resume: ResumeType;
-  setResume: (resume: ResumeType) => void;
-  handleChangePersonal: (e: ChangeEvent) => void;
-  handleChangeEducation: (e: ChangeEvent, id: string) => void;
-  handleChangeSkill: (e: ChangeEvent, id: string) => void;
-  handleAddEducation: () => void;
-  handleAddSkill: () => void;
-  handleDeleteEducation: (id: string) => void;
-  handleDeleteSkill: (id: string) => void;
-  handleLoadExample: () => void;
-};
+export default function Form() {
+  const { resume, setResume } = useContext(ResumeContext);
 
-export default function Form({
-  resume,
-  setResume,
-  handleChangePersonal,
-  handleChangeEducation,
-  handleChangeSkill,
-  handleAddEducation,
-  handleAddSkill,
-  handleDeleteEducation,
-  handleDeleteSkill,
-  handleLoadExample,
-}: Props) {
   const { personalItems, educationItems, skillItems } = resume;
+
+  const handleLoadExample = () => {
+    setResume(exampleResume);
+  };
   return (
     <FormWrapper>
-      <Personal
-        personalItems={personalItems}
-        handleChangePersonal={handleChangePersonal}
-      />
+      <Personal />
       <Experience />
-      <Education
-        educationItems={educationItems}
-        handleChangeEducation={handleChangeEducation}
-        handleAddEducation={handleAddEducation}
-        handleDeleteEducation={handleDeleteEducation}
-      />
-      <Skill
-        skillItems={skillItems}
-        handleChangeSkill={handleChangeSkill}
-        handleAddSkill={handleAddSkill}
-        handleDeleteSkill={handleDeleteSkill}
-      />
+      <Education educationItems={educationItems} />
+      <Skill skillItems={skillItems} />
       <Button onClick={handleLoadExample}>Load Example</Button>
     </FormWrapper>
   );

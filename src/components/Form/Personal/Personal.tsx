@@ -1,18 +1,23 @@
 import { FormSectionHeader, Input, SectionWrapper } from "../styles";
-import { ChangeEvent } from "react";
-import { ResumePersonalItems } from "../../../types/";
+import { ChangeEvent, useContext } from "react";
+import { ResumeContext } from "../../../context/ResumeContext";
 
-type Props = {
-  personalItems: ResumePersonalItems;
-  handleChangePersonal: (e: ChangeEvent) => void;
-};
+export default function Personal() {
+  const { resume, setResume } = useContext(ResumeContext);
 
-export default function Personal({
-  personalItems,
-  handleChangePersonal,
-}: Props) {
   const { firstName, lastName, email, phone, homeCity, homeState } =
-    personalItems;
+    resume.personalItems;
+
+  const handleChangePersonal = (e: ChangeEvent) => {
+    const { name, value } = e.target as HTMLTextAreaElement;
+    setResume({
+      ...resume,
+      personalItems: {
+        ...resume.personalItems,
+        [name]: value,
+      },
+    });
+  };
   return (
     <>
       <FormSectionHeader>Personal Information</FormSectionHeader>
