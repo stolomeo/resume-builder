@@ -1,9 +1,10 @@
 import { Button, FormSectionHeader, SectionWrapper } from "../styles";
 import { ChangeEvent } from "react";
 import EducationForm from "./EducationForm";
+import { ResumeEducationItems } from "../../../types";
 
 type Props = {
-  educationItems: any[];
+  educationItems: ResumeEducationItems[];
   handleChangeEducation: (e: ChangeEvent, id: string) => void;
   handleAddEducation: () => void;
   handleDeleteEducation: (id: string) => void;

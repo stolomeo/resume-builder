@@ -1,10 +1,10 @@
 import { Button, FormWrapper, Input } from "../styles";
 import { ChangeEvent } from "react";
-import { EducationItem } from "../../../types/";
+import { ResumeEducationItems } from "../../../types/";
 
 type Props = {
   id: string;
-  educationItem: EducationItem;
+  educationItem: ResumeEducationItems;
   handleChangeEducation: (e: ChangeEvent, id: string) => void;
   handleDeleteEducation: (id: string) => void;
 };

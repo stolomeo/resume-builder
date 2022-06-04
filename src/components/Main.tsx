@@ -5,19 +5,20 @@ import { emptyResume, exampleResume } from "../utils/";
 import Preview from "./Preview";
 import Form from "./Form";
 import styled from "styled-components";
+import { Resume } from "../types/";
 
 export default function Main() {
-  const [resume, setResume] = useState(emptyResume);
+  const [resume, setResume] = useState<Resume>(emptyResume);
 
   const handleChangePersonal = (e: ChangeEvent) => {
     const { name, value } = e.target as HTMLTextAreaElement;
-    setResume((oldResume) => ({
-      ...oldResume,
+    setResume({
+      ...resume,
       personalItems: {
-        ...oldResume.personalItems,
+        ...resume.personalItems,
         [name]: value,
       },
-    }));
+    });
   };
 
   const handleChangeExperience = (e: ChangeEvent, id: string) => {
@@ -65,18 +66,18 @@ export default function Main() {
   };
 
   const handleAddEducation = () => {
-    setResume((oldResume: any) => ({
+    setResume((oldResume) => ({
       ...oldResume,
       educationItems: [
         ...oldResume.educationItems,
         {
           id: nanoid(),
-          employerName: "",
-          jobTitle: "",
-          workCity: "",
-          workState: "",
-          startDate: "",
-          endDate: "",
+          university: "",
+          degree: "",
+          major: "",
+          schoolCity: "",
+          schoolState: "",
+          graduationDate: "",
         },
       ],
     }));
@@ -102,7 +103,7 @@ export default function Main() {
   };
 
   const handleLoadExample = () => {
-    setResume(exampleResume as any);
+    setResume(exampleResume);
   };
 
   return (

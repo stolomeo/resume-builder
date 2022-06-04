@@ -1,8 +1,9 @@
+import { ResumeEducationItems } from "../../../types";
 import { SectionHeader } from "../styles";
 import EducationItems from "./EducationItems";
 
 type Props = {
-  educationItems: any[];
+  educationItems: ResumeEducationItems[];
 };
 
 export default function Education({ educationItems }: Props) {

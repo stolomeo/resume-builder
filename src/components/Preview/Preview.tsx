@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { Resume } from "../../types";
 import Education from "./Education/Education";
 import Experience from "./Experience/Experience";
 import Personal from "./Personal/Personal";
 
 type Props = {
-  resume: any;
+  resume: Resume;
 };
 
 export default function Preview({ resume }: Props) {

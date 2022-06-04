@@ -1,9 +1,9 @@
 import { FormSectionHeader, Input, SectionWrapper } from "../styles";
 import { ChangeEvent } from "react";
-import { PersonalItems } from "../../../types/";
+import { ResumePersonalItems } from "../../../types/";
 
 type Props = {
-  personalItems: PersonalItems;
+  personalItems: ResumePersonalItems;
   handleChangePersonal: (e: ChangeEvent) => void;
 };
 

@@ -1,8 +1,9 @@
+import { ResumeExperienceItems } from "../../../types";
 import { SectionHeader } from "../styles";
 import ExperienceItems from "./ExperienceItems";
 
 type Props = {
-  experienceItems: any[];
+  experienceItems: ResumeExperienceItems[];
 };
 
 export default function Experience({ experienceItems }: Props) {

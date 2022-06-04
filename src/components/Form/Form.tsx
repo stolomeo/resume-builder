@@ -1,12 +1,13 @@
 import { ChangeEvent } from "react";
 import styled from "styled-components";
+import { Resume } from "../../types";
 import Education from "./Education/";
 import Experience from "./Experience/";
 import Personal from "./Personal/";
 import { Button } from "./styles";
 
 type Props = {
-  resume: any;
+  resume: Resume;
   handleChangePersonal: (e: ChangeEvent) => void;
   handleChangeExperience: (e: ChangeEvent, id: string) => void;
   handleChangeEducation: (e: ChangeEvent, id: string) => void;

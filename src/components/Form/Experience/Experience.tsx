@@ -1,9 +1,10 @@
 import { Button, FormSectionHeader, SectionWrapper } from "../styles";
 import { ChangeEvent } from "react";
 import ExperienceForm from "./ExperienceForm";
+import { ResumeExperienceItems } from "../../../types";
 
 type Props = {
-  experienceItems: any[];
+  experienceItems: ResumeExperienceItems[];
   handleChangeExperience: (e: ChangeEvent, id: string) => void;
   handleAddExperience: () => void;
   handleDeleteExperience: (id: string) => void;

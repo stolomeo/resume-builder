@@ -1,17 +1,17 @@
-export type PersonalItems = {
-  [name: string]: string;
-};
-
-export type ExperienceItem = {
-  [name: string]: string;
-};
-
-export type EducationItem = {
-  [name: string]: string;
-};
-
 export type Resume = {
-  personalItems: object;
-  experienceItems: object[];
-  educationItems: object[];
+  personalItems: ResumePersonalItems;
+  experienceItems: ResumeExperienceItems[];
+  educationItems: ResumeEducationItems[];
+};
+export type ResumePersonalItems = {
+  [name: string]: string;
+};
+
+export type ResumeExperienceItems = {
+  [name: string]: string;
+};
+
+export type ResumeEducationItems = {
+  [name: string]: string;
+  id: string;
 };
