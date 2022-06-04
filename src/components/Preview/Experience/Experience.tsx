@@ -1,13 +1,12 @@
-import { ResumeExperienceItems } from "../../../types";
+import { useContext } from "react";
+import { ResumeContext } from "../../../context/ResumeContext";
 import { PreviewSection, SectionHeader, SectionItems } from "../styles";
 import ExperienceItems from "./ExperienceItems";
 
-type Props = {
-  experienceItems: ResumeExperienceItems[];
-};
+export default function Experience() {
+  const { resume } = useContext(ResumeContext);
 
-export default function Experience({ experienceItems }: Props) {
-  const experienceElements = experienceItems.map((experienceItem) => {
+  const experienceElements = resume.experienceItems.map((experienceItem) => {
     return (
       <ExperienceItems
         key={experienceItem.id}

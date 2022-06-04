@@ -13,7 +13,7 @@ export default function Main() {
     <ResumeContext.Provider value={{ resume, setResume }}>
       <MainWrapper>
         <Form />
-        <Preview resume={resume} />
+        <Preview />
       </MainWrapper>
     </ResumeContext.Provider>
   );

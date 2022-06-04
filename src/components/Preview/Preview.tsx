@@ -3,21 +3,14 @@ import Personal from "./Personal/Personal";
 import Experience from "./Experience/Experience";
 import Education from "./Education/Education";
 import Skill from "./Skill";
-import { ResumeType } from "../../types";
 
-type Props = {
-  resume: ResumeType;
-};
-
-export default function Preview({ resume }: Props) {
-  const { personalItems, experienceItems, educationItems, skillItems } = resume;
-
+export default function Preview() {
   return (
     <PreviewWrapper>
-      <Personal personalItems={personalItems} />
-      <Experience experienceItems={experienceItems} />
-      <Education educationItems={educationItems} />
-      <Skill skillItems={skillItems} />
+      <Personal />
+      <Experience />
+      <Education />
+      <Skill />
     </PreviewWrapper>
   );
 }

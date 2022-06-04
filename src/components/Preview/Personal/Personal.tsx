@@ -1,13 +1,13 @@
+import { useContext } from "react";
 import styled from "styled-components";
-import { ResumePersonalItems } from "../../../types/";
+import { ResumeContext } from "../../../context/ResumeContext";
 import { Item } from "../styles";
 
-type Props = {
-  personalItems: ResumePersonalItems;
-};
-export default function Personal({ personalItems }: Props) {
+export default function Personal() {
+  const { resume } = useContext(ResumeContext);
+
   const { firstName, lastName, email, phone, homeCity, homeState } =
-    personalItems;
+    resume.personalItems;
   return (
     <section>
       <FullName>

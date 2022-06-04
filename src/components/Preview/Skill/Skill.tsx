@@ -1,13 +1,12 @@
 import SkillItems from "./SkillItems";
-import { ResumeSkillItems } from "../../../types";
 import { PreviewSection, SectionHeader, SectionItems } from "../styles";
+import { useContext } from "react";
+import { ResumeContext } from "../../../context/ResumeContext";
 
-type Props = {
-  skillItems: ResumeSkillItems[];
-};
+export default function Skill() {
+  const { resume } = useContext(ResumeContext);
 
-export default function Skill({ skillItems }: Props) {
-  const skillElements = skillItems.map((skillItem) => {
+  const skillElements = resume.skillItems.map((skillItem) => {
     return <SkillItems key={skillItem.id} skillItem={skillItem} />;
   });
 

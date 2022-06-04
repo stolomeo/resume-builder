@@ -1,13 +1,12 @@
 import EducationItems from "./EducationItems";
-import { ResumeEducationItems } from "../../../types";
 import { PreviewSection, SectionHeader, SectionItems } from "../styles";
+import { useContext } from "react";
+import { ResumeContext } from "../../../context/ResumeContext";
 
-type Props = {
-  educationItems: ResumeEducationItems[];
-};
+export default function Education() {
+  const { resume } = useContext(ResumeContext);
 
-export default function Education({ educationItems }: Props) {
-  const educationElements = educationItems.map((educationItem) => {
+  const educationElements = resume.educationItems.map((educationItem) => {
     return (
       <EducationItems key={educationItem.id} educationItem={educationItem} />
     );
