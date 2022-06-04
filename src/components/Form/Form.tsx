@@ -4,7 +4,7 @@ import Experience from "./Experience/";
 import Education from "./Education/";
 import Skill from "./Skill";
 import { Button } from "./styles";
-import { exampleResume } from "../../utils";
+import { emptyResume, exampleResume } from "../../utils";
 import { useContext } from "react";
 import { ResumeContext } from "../../context/ResumeContext";
 
@@ -14,6 +14,11 @@ export default function Form() {
   const handleLoadExample = () => {
     setResume(exampleResume);
   };
+
+  const handleReset = () => {
+    setResume(emptyResume);
+  };
+
   return (
     <FormWrapper>
       <Personal />
@@ -21,6 +26,7 @@ export default function Form() {
       <Education />
       <Skill />
       <Button onClick={handleLoadExample}>Load Example</Button>
+      <Button onClick={handleReset}>Reset</Button>
     </FormWrapper>
   );
 }
