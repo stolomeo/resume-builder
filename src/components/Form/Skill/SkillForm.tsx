@@ -1,10 +1,10 @@
 import { Button, FormWrapper, Input } from "../styles";
-import { ResumeSkillItems } from "../../../types";
+import { SkillItemsType } from "../../../types";
 import { ChangeEvent, useContext } from "react";
 import { ResumeContext } from "../../../context/ResumeContext";
 
 type Props = {
-  skillItem: ResumeSkillItems;
+  skillItem: SkillItemsType;
 };
 export default function SkillForm({ skillItem }: Props) {
   const { resume, setResume } = useContext(ResumeContext);

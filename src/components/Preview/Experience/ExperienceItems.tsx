@@ -1,8 +1,8 @@
 import { Items, ItemList, Item } from "../styles";
-import { ResumeExperienceItems } from "../../../types/";
+import { ExperienceItemsType } from "../../../types/";
 
 type Props = {
-  experienceItem: ResumeExperienceItems;
+  experienceItem: ExperienceItemsType;
 };
 
 export default function Experiences({ experienceItem }: Props) {

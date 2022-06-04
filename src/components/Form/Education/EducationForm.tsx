@@ -1,10 +1,10 @@
 import { Button, FormWrapper, Input } from "../styles";
 import { ChangeEvent, useContext } from "react";
-import { ResumeEducationItems } from "../../../types/";
+import { EducationItemsType } from "../../../types/";
 import { ResumeContext } from "../../../context/ResumeContext";
 
 type Props = {
-  educationItem: ResumeEducationItems;
+  educationItem: EducationItemsType;
 };
 
 export default function EducationForm({ educationItem }: Props) {

@@ -1,8 +1,8 @@
 import { Items, ItemList, Item } from "../styles";
-import { ResumeEducationItems } from "../../../types/";
+import { EducationItemsType } from "../../../types/";
 
 type Props = {
-  educationItem: ResumeEducationItems;
+  educationItem: EducationItemsType;
 };
 
 export default function EducationItems({ educationItem }: Props) {

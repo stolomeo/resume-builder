@@ -1,10 +1,10 @@
 import { Button, FormWrapper, Input } from "../styles";
-import { ResumeExperienceItems } from "../../../types/";
+import { ExperienceItemsType } from "../../../types/";
 import { ChangeEvent, useContext } from "react";
 import { ResumeContext } from "../../../context/ResumeContext";
 
 type Props = {
-  experienceItem: ResumeExperienceItems;
+  experienceItem: ExperienceItemsType;
 };
 export default function ExperienceForm({ experienceItem }: Props) {
   const { resume, setResume } = useContext(ResumeContext);

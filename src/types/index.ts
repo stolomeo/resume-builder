@@ -1,21 +1,21 @@
 export type ResumeType = {
-  personalItems: ResumePersonalItems;
-  experienceItems: ResumeExperienceItems[];
-  educationItems: ResumeEducationItems[];
-  skillItems: ResumeSkillItems[];
+  personalItems: PersonalItemsType;
+  experienceItems: ExperienceItemsType[];
+  educationItems: EducationItemsType[];
+  skillItems: SkillItemsType[];
 };
-export type ResumePersonalItems = {
+export type PersonalItemsType = {
   [name: string]: string;
 };
 
-export type ResumeExperienceItems = {
+export type ExperienceItemsType = {
   [name: string]: string;
 };
 
-export type ResumeEducationItems = {
+export type EducationItemsType = {
   [name: string]: string;
 };
 
-export type ResumeSkillItems = {
+export type SkillItemsType = {
   [name: string]: string;
 };

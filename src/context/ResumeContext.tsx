@@ -2,7 +2,7 @@ import { createContext } from "react";
 import { ResumeType } from "../types";
 import { emptyResume } from "../utils";
 
-export type ResumeContextType = {
+type ResumeContextType = {
   resume: ResumeType;
   setResume: (resume: ResumeType) => void;
 };
