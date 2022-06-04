@@ -6,7 +6,7 @@ import Skill from "./Skill";
 import { Button } from "./styles";
 import { emptyResume, exampleResume } from "../../utils";
 import { useContext } from "react";
-import { ResumeContext } from "../../context/ResumeContext";
+import ResumeContext from "../../context/ResumeContext";
 
 export default function Form() {
   const { setResume } = useContext(ResumeContext);

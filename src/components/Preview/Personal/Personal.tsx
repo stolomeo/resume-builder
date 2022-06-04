@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import styled from "styled-components";
-import { ResumeContext } from "../../../context/ResumeContext";
 import { Item } from "../styles";
+import ResumeContext from "../../../context/ResumeContext";
+import styled from "styled-components";
 
 export default function Personal() {
   const { resume } = useContext(ResumeContext);

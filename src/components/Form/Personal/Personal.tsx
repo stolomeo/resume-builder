@@ -1,6 +1,6 @@
 import { FormSectionHeader, Input, SectionWrapper } from "../styles";
 import { ChangeEvent, useContext } from "react";
-import { ResumeContext } from "../../../context/ResumeContext";
+import ResumeContext from "../../../context/ResumeContext";
 
 export default function Personal() {
   const { resume, setResume } = useContext(ResumeContext);

@@ -1,7 +1,7 @@
 import { Button, FormWrapper, Input } from "../styles";
 import { ChangeEvent, useContext } from "react";
 import { EducationItemsType } from "../../../types/";
-import { ResumeContext } from "../../../context/ResumeContext";
+import ResumeContext from "../../../context/ResumeContext";
 
 type Props = {
   educationItem: EducationItemsType;

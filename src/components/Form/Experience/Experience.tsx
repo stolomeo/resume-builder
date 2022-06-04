@@ -1,7 +1,7 @@
 import ExperienceForm from "./ExperienceForm";
 import { Button, FormSectionHeader, SectionWrapper } from "../styles";
 import { useContext } from "react";
-import { ResumeContext } from "../../../context/ResumeContext";
+import ResumeContext from "../../../context/ResumeContext";
 import { nanoid } from "nanoid";
 
 export default function Experience() {

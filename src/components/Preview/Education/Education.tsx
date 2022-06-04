@@ -1,7 +1,7 @@
-import EducationItems from "./EducationItems";
-import { PreviewSection, SectionHeader, SectionItems } from "../styles";
 import { useContext } from "react";
-import { ResumeContext } from "../../../context/ResumeContext";
+import { PreviewSection, SectionHeader, SectionItems } from "../styles";
+import ResumeContext from "../../../context/ResumeContext";
+import EducationItems from "./EducationItems";
 
 export default function Education() {
   const { resume } = useContext(ResumeContext);

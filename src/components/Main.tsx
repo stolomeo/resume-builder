@@ -4,7 +4,7 @@ import Preview from "./Preview";
 import { useState } from "react";
 import { emptyResume } from "../utils/";
 import { ResumeType } from "../types/";
-import { ResumeContext } from "../context/ResumeContext";
+import ResumeContext from "../context/";
 
 export default function Main() {
   const [resume, setResume] = useState<ResumeType>(emptyResume);

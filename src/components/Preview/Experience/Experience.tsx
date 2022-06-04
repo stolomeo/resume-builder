@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { ResumeContext } from "../../../context/ResumeContext";
 import { PreviewSection, SectionHeader, SectionItems } from "../styles";
+import ResumeContext from "../../../context/ResumeContext";
 import ExperienceItems from "./ExperienceItems";
 
 export default function Experience() {

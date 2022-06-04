@@ -2,7 +2,7 @@ import EducationForm from "./EducationForm";
 import { Button, FormSectionHeader, SectionWrapper } from "../styles";
 import { nanoid } from "nanoid";
 import { useContext } from "react";
-import { ResumeContext } from "../../../context/ResumeContext";
+import ResumeContext from "../../../context/ResumeContext";
 
 export default function Education() {
   const { resume, setResume } = useContext(ResumeContext);

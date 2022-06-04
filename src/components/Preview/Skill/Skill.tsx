@@ -1,7 +1,7 @@
-import SkillItems from "./SkillItems";
-import { PreviewSection, SectionHeader, SectionItems } from "../styles";
 import { useContext } from "react";
-import { ResumeContext } from "../../../context/ResumeContext";
+import ResumeContext from "../../../context/ResumeContext";
+import { PreviewSection, SectionHeader, SectionItems } from "../styles";
+import SkillItems from "./SkillItems";
 
 export default function Skill() {
   const { resume } = useContext(ResumeContext);
