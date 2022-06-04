@@ -13,5 +13,4 @@ export type ResumeExperienceItems = {
 
 export type ResumeEducationItems = {
   [name: string]: string;
-  id: string;
 };
