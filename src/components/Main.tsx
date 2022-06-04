@@ -2,8 +2,7 @@ import styled from "styled-components";
 import Form from "./Form";
 import Preview from "./Preview";
 import { useState } from "react";
-import { nanoid } from "nanoid";
-import { emptyResume, exampleResume } from "../utils/";
+import { emptyResume } from "../utils/";
 import { ResumeType } from "../types/";
 import { ResumeContext } from "../context/ResumeContext";
 

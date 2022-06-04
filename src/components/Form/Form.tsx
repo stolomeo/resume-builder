@@ -9,9 +9,7 @@ import { useContext } from "react";
 import { ResumeContext } from "../../context/ResumeContext";
 
 export default function Form() {
-  const { resume, setResume } = useContext(ResumeContext);
-
-  const { personalItems, educationItems, skillItems } = resume;
+  const { setResume } = useContext(ResumeContext);
 
   const handleLoadExample = () => {
     setResume(exampleResume);
@@ -20,8 +18,8 @@ export default function Form() {
     <FormWrapper>
       <Personal />
       <Experience />
-      <Education educationItems={educationItems} />
-      <Skill skillItems={skillItems} />
+      <Education />
+      <Skill />
       <Button onClick={handleLoadExample}>Load Example</Button>
     </FormWrapper>
   );

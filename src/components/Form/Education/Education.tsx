@@ -1,15 +1,10 @@
 import EducationForm from "./EducationForm";
 import { Button, FormSectionHeader, SectionWrapper } from "../styles";
-import { ResumeEducationItems } from "../../../types";
 import { nanoid } from "nanoid";
 import { useContext } from "react";
 import { ResumeContext } from "../../../context/ResumeContext";
 
-type Props = {
-  educationItems: ResumeEducationItems[];
-};
-
-export default function Education({ educationItems }: Props) {
+export default function Education() {
   const { resume, setResume } = useContext(ResumeContext);
 
   const handleAddEducation = () => {
@@ -29,7 +24,7 @@ export default function Education({ educationItems }: Props) {
       ],
     });
   };
-  const educationElements = educationItems.map((educationItem) => {
+  const educationElements = resume.educationItems.map((educationItem) => {
     return (
       <EducationForm key={educationItem.id} educationItem={educationItem} />
     );

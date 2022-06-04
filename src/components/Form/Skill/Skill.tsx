@@ -1,15 +1,10 @@
 import SkillForm from "./SkillForm";
 import { Button, FormSectionHeader, SectionWrapper } from "../styles";
-import { ResumeSkillItems } from "../../../types";
 import { useContext } from "react";
 import { ResumeContext } from "../../../context/ResumeContext";
 import { nanoid } from "nanoid";
 
-type Props = {
-  skillItems: ResumeSkillItems[];
-};
-
-export default function Skill({ skillItems }: Props) {
+export default function Skill() {
   const { resume, setResume } = useContext(ResumeContext);
 
   const handleAddSkill = () => {
@@ -25,7 +20,7 @@ export default function Skill({ skillItems }: Props) {
     });
   };
 
-  const skillElements = skillItems.map((skillItem) => {
+  const skillElements = resume.skillItems.map((skillItem) => {
     return <SkillForm key={skillItem.id} skillItem={skillItem} />;
   });
 

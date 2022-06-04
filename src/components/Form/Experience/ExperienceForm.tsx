@@ -1,5 +1,5 @@
 import { Button, FormWrapper, Input } from "../styles";
-import { ResumeType, ResumeExperienceItems } from "../../../types/";
+import { ResumeExperienceItems } from "../../../types/";
 import { ChangeEvent, useContext } from "react";
 import { ResumeContext } from "../../../context/ResumeContext";
 
