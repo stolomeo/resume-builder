@@ -1,4 +1,4 @@
-import { BottomItems, Items, TopItems } from "../styles";
+import { Items, ItemList, Item } from "../styles";
 import { ResumeEducationItems } from "../../../types/";
 
 type Props = {
@@ -10,18 +10,18 @@ export default function EducationItems({ educationItem }: Props) {
     educationItem;
   return (
     <Items>
-      <TopItems>
-        <p>{university}</p>
-        <p>{graduationDate}</p>
-      </TopItems>
-      <BottomItems>
-        <p>
+      <ItemList>
+        <Item fontWeight="bold">{university}</Item>
+        <Item fontWeight="bold">{graduationDate}</Item>
+      </ItemList>
+      <ItemList fontStyle="italic">
+        <Item>
           {degree}, {major}
-        </p>
-        <p>
+        </Item>
+        <Item>
           {schoolCity}, {schoolState}
-        </p>
-      </BottomItems>
+        </Item>
+      </ItemList>
     </Items>
   );
 }

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ResumePersonalItems } from "../../../types/";
+import { Item } from "../styles";
 
 type Props = {
   personalItems: ResumePersonalItems;
@@ -13,13 +14,13 @@ export default function Personal({ personalItems }: Props) {
         {firstName} {lastName}
       </FullName>
       <ContactInfoWrapper>
-        <p>{email}</p>
-        <p>❖</p>
-        <p>{phone}</p>
-        <p>❖</p>
-        <p>
+        <Item>{email}</Item>
+        <Item>❖</Item>
+        <Item>{phone}</Item>
+        <Item>❖</Item>
+        <Item>
           {homeCity}, {homeState}
-        </p>
+        </Item>
       </ContactInfoWrapper>
       <hr />
     </section>

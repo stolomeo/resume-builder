@@ -1,7 +1,6 @@
 import SkillItems from "./SkillItems";
 import { ResumeSkillItems } from "../../../types";
-import { SectionHeader } from "../styles";
-import styled from "styled-components";
+import { PreviewSection, SectionHeader, SectionItems } from "../styles";
 
 type Props = {
   skillItems: ResumeSkillItems[];
@@ -13,17 +12,12 @@ export default function Skill({ skillItems }: Props) {
   });
 
   return (
-    <section>
+    <PreviewSection mt="0.5">
       <SectionHeader>SKILLS</SectionHeader>
       <hr />
-      <SkillsWrapper>
+      <SectionItems flexD="row" gap=".3rem">
         <strong>Skills:</strong> {skillElements}
-      </SkillsWrapper>
-    </section>
+      </SectionItems>
+    </PreviewSection>
   );
 }
-
-const SkillsWrapper = styled.section`
-  display: flex;
-  gap: 0.3rem;
-`;

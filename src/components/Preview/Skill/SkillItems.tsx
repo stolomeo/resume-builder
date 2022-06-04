@@ -1,5 +1,5 @@
-import { Items } from "../styles";
 import { ResumeSkillItems } from "../../../types";
+import { Item } from "../styles";
 
 type Props = {
   skillItem: ResumeSkillItems;
@@ -7,5 +7,5 @@ type Props = {
 
 export default function SkillItems({ skillItem }: Props) {
   const { skill } = skillItem;
-  return <p>{skill};</p>;
+  return <Item>{skill};</Item>;
 }

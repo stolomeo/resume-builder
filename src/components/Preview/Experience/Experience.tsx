@@ -1,5 +1,5 @@
 import { ResumeExperienceItems } from "../../../types";
-import { SectionHeader, SectionItems } from "../styles";
+import { PreviewSection, SectionHeader, SectionItems } from "../styles";
 import ExperienceItems from "./ExperienceItems";
 
 type Props = {
@@ -17,10 +17,12 @@ export default function Experience({ experienceItems }: Props) {
   });
 
   return (
-    <section>
+    <PreviewSection>
       <SectionHeader>WORK EXPERIENCE</SectionHeader>
       <hr />
-      <SectionItems>{experienceElements}</SectionItems>
-    </section>
+      <SectionItems flexD="column" gap="0.8rem">
+        {experienceElements}
+      </SectionItems>
+    </PreviewSection>
   );
 }

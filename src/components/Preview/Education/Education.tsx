@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import EducationItems from "./EducationItems";
 import { ResumeEducationItems } from "../../../types";
-import { SectionHeader, SectionItems } from "../styles";
+import { PreviewSection, SectionHeader, SectionItems } from "../styles";
 
 type Props = {
   educationItems: ResumeEducationItems[];
@@ -15,14 +15,12 @@ export default function Education({ educationItems }: Props) {
   });
 
   return (
-    <EducationSection>
+    <PreviewSection mt="0.5rem">
       <SectionHeader>EDUCATION</SectionHeader>
       <hr />
-      <SectionItems>{educationElements}</SectionItems>
-    </EducationSection>
+      <SectionItems flexD="column" gap=".8rem">
+        {educationElements}
+      </SectionItems>
+    </PreviewSection>
   );
 }
-
-const EducationSection = styled.section`
-  margin-top: 1rem;
-`;

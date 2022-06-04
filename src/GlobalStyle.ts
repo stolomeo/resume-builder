@@ -16,9 +16,9 @@ const GlobalStyle = createGlobalStyle`
         font-weight: normal;
     }
 
-    ol, ul {
-        list-style: none;
-    }
+    ul {
+        list-style-type: none;
+}
 
     img {
         max-width: 100%;

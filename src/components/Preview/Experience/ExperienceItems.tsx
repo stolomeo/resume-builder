@@ -1,4 +1,4 @@
-import { BottomItems, Items, TopItems } from "../styles";
+import { Items, ItemList, Item } from "../styles";
 import { ResumeExperienceItems } from "../../../types/";
 
 type Props = {
@@ -10,18 +10,18 @@ export default function Experiences({ experienceItem }: Props) {
     experienceItem;
   return (
     <Items>
-      <TopItems>
-        <p>{employerName}</p>
-        <p>
+      <ItemList>
+        <Item fontWeight="bold">{employerName}</Item>
+        <Item fontWeight="bold">
           {startDate} - {endDate}
-        </p>
-      </TopItems>
-      <BottomItems>
-        <p>{jobTitle}</p>
-        <p>
+        </Item>
+      </ItemList>
+      <ItemList fontStyle="italic">
+        <Item>{jobTitle}</Item>
+        <Item>
           {workCity}, {workState}
-        </p>
-      </BottomItems>
+        </Item>
+      </ItemList>
     </Items>
   );
 }
