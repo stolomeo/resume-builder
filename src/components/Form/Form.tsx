@@ -3,20 +3,18 @@ import Personal from "./Personal/";
 import Experience from "./Experience/";
 import Education from "./Education/";
 import Skill from "./Skill";
-import { Resume } from "../../types";
+import { ResumeType } from "../../types";
 import { Button } from "./styles";
 import { ChangeEvent } from "react";
 
 type Props = {
-  resume: Resume;
+  resume: ResumeType;
+  setResume: (resume: ResumeType) => void;
   handleChangePersonal: (e: ChangeEvent) => void;
-  handleChangeExperience: (e: ChangeEvent, id: string) => void;
   handleChangeEducation: (e: ChangeEvent, id: string) => void;
   handleChangeSkill: (e: ChangeEvent, id: string) => void;
-  handleAddExperience: () => void;
   handleAddEducation: () => void;
   handleAddSkill: () => void;
-  handleDeleteExperience: (id: string) => void;
   handleDeleteEducation: (id: string) => void;
   handleDeleteSkill: (id: string) => void;
   handleLoadExample: () => void;
@@ -24,31 +22,24 @@ type Props = {
 
 export default function Form({
   resume,
+  setResume,
   handleChangePersonal,
-  handleChangeExperience,
   handleChangeEducation,
   handleChangeSkill,
-  handleAddExperience,
   handleAddEducation,
   handleAddSkill,
-  handleDeleteExperience,
   handleDeleteEducation,
   handleDeleteSkill,
   handleLoadExample,
 }: Props) {
-  const { personalItems, experienceItems, educationItems, skillItems } = resume;
+  const { personalItems, educationItems, skillItems } = resume;
   return (
     <FormWrapper>
       <Personal
         personalItems={personalItems}
         handleChangePersonal={handleChangePersonal}
       />
-      <Experience
-        experienceItems={experienceItems}
-        handleChangeExperience={handleChangeExperience}
-        handleAddExperience={handleAddExperience}
-        handleDeleteExperience={handleDeleteExperience}
-      />
+      <Experience />
       <Education
         educationItems={educationItems}
         handleChangeEducation={handleChangeEducation}

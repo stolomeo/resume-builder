@@ -1,32 +1,36 @@
 import ExperienceForm from "./ExperienceForm";
 import { Button, FormSectionHeader, SectionWrapper } from "../styles";
-import { ChangeEvent } from "react";
-import { ResumeExperienceItems } from "../../../types";
+import { useContext } from "react";
+import { ResumeContext } from "../../../context/ResumeContext";
+import { nanoid } from "nanoid";
 
-type Props = {
-  experienceItems: ResumeExperienceItems[];
-  handleChangeExperience: (e: ChangeEvent, id: string) => void;
-  handleAddExperience: () => void;
-  handleDeleteExperience: (id: string) => void;
-};
+export default function Experience() {
+  const { resume, setResume } = useContext(ResumeContext);
 
-export default function Experience({
-  experienceItems,
-  handleChangeExperience,
-  handleAddExperience,
-  handleDeleteExperience,
-}: Props) {
-  const experienceElements = experienceItems.map((experienceItem) => {
+  const handleAddExperience = () => {
+    setResume({
+      ...resume,
+      experienceItems: [
+        ...resume.experienceItems,
+        {
+          id: nanoid(),
+          employerName: "",
+          jobTitle: "",
+          workCity: "",
+          workState: "",
+          startDate: "",
+          endDate: "",
+        },
+      ],
+    });
+  };
+
+  const experienceElements = resume.experienceItems.map((experienceItem) => {
     return (
-      <ExperienceForm
-        key={experienceItem.id}
-        id={experienceItem.id}
-        experienceItem={experienceItem}
-        handleChangeExperience={handleChangeExperience}
-        handleDeleteExperience={handleDeleteExperience}
-      />
+      <ExperienceForm key={experienceItem.id} experienceItem={experienceItem} />
     );
   });
+
   return (
     <>
       <FormSectionHeader>Experience</FormSectionHeader>

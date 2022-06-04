@@ -1,4 +1,4 @@
-export type Resume = {
+export type ResumeType = {
   personalItems: ResumePersonalItems;
   experienceItems: ResumeExperienceItems[];
   educationItems: ResumeEducationItems[];

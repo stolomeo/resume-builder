@@ -1,21 +1,42 @@
 import { Button, FormWrapper, Input } from "../styles";
-import { ResumeExperienceItems } from "../../../types/";
-import { ChangeEvent } from "react";
+import { ResumeType, ResumeExperienceItems } from "../../../types/";
+import { ChangeEvent, useContext } from "react";
+import { ResumeContext } from "../../../context/ResumeContext";
 
 type Props = {
-  id: string;
   experienceItem: ResumeExperienceItems;
-  handleChangeExperience: (e: ChangeEvent, id: string) => void;
-  handleDeleteExperience: (id: string) => void;
 };
-export default function ExperienceForm({
-  id,
-  experienceItem,
-  handleChangeExperience,
-  handleDeleteExperience,
-}: Props) {
-  const { employerName, jobTitle, workCity, workState, startDate, endDate } =
-    experienceItem;
+export default function ExperienceForm({ experienceItem }: Props) {
+  const { resume, setResume } = useContext(ResumeContext);
+
+  const {
+    id,
+    employerName,
+    jobTitle,
+    workCity,
+    workState,
+    startDate,
+    endDate,
+  } = experienceItem;
+
+  const handleChangeExperience = (e: ChangeEvent, id: string) => {
+    const { name, value } = e.target as HTMLTextAreaElement;
+    const newExperience = resume.experienceItems.map((experienceItem) => {
+      if (experienceItem.id === id) {
+        return { ...experienceItem, [name]: value };
+      }
+      return experienceItem;
+    });
+    setResume({ ...resume, experienceItems: [...newExperience] });
+  };
+
+  const handleDeleteExperience = (id: string) => {
+    const newExperience = resume.experienceItems.filter((experienceItem) => {
+      return experienceItem.id !== id;
+    });
+    setResume({ ...resume, experienceItems: [...newExperience] });
+  };
+
   return (
     <FormWrapper>
       <Input

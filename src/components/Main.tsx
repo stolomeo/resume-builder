@@ -1,14 +1,15 @@
 import styled from "styled-components";
 import Form from "./Form";
 import Preview from "./Preview";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { ChangeEvent } from "react";
 import { nanoid } from "nanoid";
 import { emptyResume, exampleResume } from "../utils/";
-import { Resume } from "../types/";
+import { ResumeType } from "../types/";
+import { ResumeContext } from "../context/ResumeContext";
 
 export default function Main() {
-  const [resume, setResume] = useState<Resume>(emptyResume);
+  const [resume, setResume] = useState<ResumeType>(emptyResume);
 
   const handleChangePersonal = (e: ChangeEvent) => {
     const { name, value } = e.target as HTMLTextAreaElement;
@@ -18,19 +19,6 @@ export default function Main() {
         ...resume.personalItems,
         [name]: value,
       },
-    });
-  };
-
-  const handleChangeExperience = (e: ChangeEvent, id: string) => {
-    const { name, value } = e.target as HTMLTextAreaElement;
-    setResume((oldResume) => {
-      const newExperience = oldResume.experienceItems.map((experienceItem) => {
-        if (experienceItem.id === id) {
-          return { ...experienceItem, [name]: value };
-        }
-        return experienceItem;
-      });
-      return { ...oldResume, experienceItems: [...newExperience] };
     });
   };
 
@@ -58,24 +46,6 @@ export default function Main() {
       });
       return { ...oldResume, skillItems: [...newSkill] };
     });
-  };
-
-  const handleAddExperience = () => {
-    setResume((oldResume) => ({
-      ...oldResume,
-      experienceItems: [
-        ...oldResume.experienceItems,
-        {
-          id: nanoid(),
-          employerName: "",
-          jobTitle: "",
-          workCity: "",
-          workState: "",
-          startDate: "",
-          endDate: "",
-        },
-      ],
-    }));
   };
 
   const handleAddEducation = () => {
@@ -108,17 +78,6 @@ export default function Main() {
     }));
   };
 
-  const handleDeleteExperience = (id: string) => {
-    setResume((oldResume) => {
-      const newExperience = oldResume.experienceItems.filter(
-        (experienceItem) => {
-          return experienceItem.id !== id;
-        }
-      );
-      return { ...oldResume, experienceItems: [...newExperience] };
-    });
-  };
-
   const handleDeleteEducation = (id: string) => {
     setResume((oldResume) => {
       const newEducation = oldResume.educationItems.filter((educationItem) => {
@@ -141,26 +100,24 @@ export default function Main() {
     setResume(exampleResume);
   };
 
-  console.log(handleChangeSkill);
-
   return (
-    <MainWrapper>
-      <Form
-        resume={resume}
-        handleChangePersonal={handleChangePersonal}
-        handleChangeExperience={handleChangeExperience}
-        handleChangeEducation={handleChangeEducation}
-        handleChangeSkill={handleChangeSkill}
-        handleAddExperience={handleAddExperience}
-        handleAddEducation={handleAddEducation}
-        handleAddSkill={handleAddSkill}
-        handleDeleteExperience={handleDeleteExperience}
-        handleDeleteEducation={handleDeleteEducation}
-        handleDeleteSkill={handleDeleteSkill}
-        handleLoadExample={handleLoadExample}
-      />
-      <Preview resume={resume} />
-    </MainWrapper>
+    <ResumeContext.Provider value={{ resume, setResume }}>
+      <MainWrapper>
+        <Form
+          resume={resume}
+          setResume={setResume}
+          handleChangePersonal={handleChangePersonal}
+          handleChangeEducation={handleChangeEducation}
+          handleChangeSkill={handleChangeSkill}
+          handleAddEducation={handleAddEducation}
+          handleAddSkill={handleAddSkill}
+          handleDeleteEducation={handleDeleteEducation}
+          handleDeleteSkill={handleDeleteSkill}
+          handleLoadExample={handleLoadExample}
+        />
+        <Preview resume={resume} />
+      </MainWrapper>
+    </ResumeContext.Provider>
   );
 }
 

@@ -37,6 +37,7 @@ const emptyResume = {
       skill: "",
     },
   ],
+  setResume: () => {},
 };
 
 export default emptyResume;
