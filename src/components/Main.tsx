@@ -46,6 +46,7 @@ export default function Main() {
       return { ...oldResume, educationItems: [...newEducation] };
     });
   };
+
   const handleChangeSkill = (e: ChangeEvent, id: string) => {
     const { name, value } = e.target as HTMLTextAreaElement;
     setResume((oldResume) => {
