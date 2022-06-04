@@ -1,20 +1,24 @@
-import { ChangeEvent } from "react";
 import styled from "styled-components";
-import { Resume } from "../../types";
-import Education from "./Education/";
-import Experience from "./Experience/";
 import Personal from "./Personal/";
+import Experience from "./Experience/";
+import Education from "./Education/";
+import Skill from "./Skill";
+import { Resume } from "../../types";
 import { Button } from "./styles";
+import { ChangeEvent } from "react";
 
 type Props = {
   resume: Resume;
   handleChangePersonal: (e: ChangeEvent) => void;
   handleChangeExperience: (e: ChangeEvent, id: string) => void;
   handleChangeEducation: (e: ChangeEvent, id: string) => void;
+  handleChangeSkill: (e: ChangeEvent, id: string) => void;
   handleAddExperience: () => void;
   handleAddEducation: () => void;
+  handleAddSkill: () => void;
   handleDeleteExperience: (id: string) => void;
   handleDeleteEducation: (id: string) => void;
+  handleDeleteSkill: (id: string) => void;
   handleLoadExample: () => void;
 };
 
@@ -23,13 +27,16 @@ export default function Form({
   handleChangePersonal,
   handleChangeExperience,
   handleChangeEducation,
+  handleChangeSkill,
   handleAddExperience,
   handleAddEducation,
+  handleAddSkill,
   handleDeleteExperience,
   handleDeleteEducation,
+  handleDeleteSkill,
   handleLoadExample,
 }: Props) {
-  const { personalItems, experienceItems, educationItems } = resume;
+  const { personalItems, experienceItems, educationItems, skillItems } = resume;
   return (
     <FormWrapper>
       <Personal
@@ -47,6 +54,12 @@ export default function Form({
         handleChangeEducation={handleChangeEducation}
         handleAddEducation={handleAddEducation}
         handleDeleteEducation={handleDeleteEducation}
+      />
+      <Skill
+        skillItems={skillItems}
+        handleChangeSkill={handleChangeSkill}
+        handleAddSkill={handleAddSkill}
+        handleDeleteSkill={handleDeleteSkill}
       />
       <Button onClick={handleLoadExample}>Load Example</Button>
     </FormWrapper>

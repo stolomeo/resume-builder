@@ -1,6 +1,6 @@
+import ExperienceForm from "./ExperienceForm";
 import { Button, FormSectionHeader, SectionWrapper } from "../styles";
 import { ChangeEvent } from "react";
-import ExperienceForm from "./ExperienceForm";
 import { ResumeExperienceItems } from "../../../types";
 
 type Props = {

@@ -1,7 +1,7 @@
+import styled from "styled-components";
+import EducationItems from "./EducationItems";
 import { ResumeEducationItems } from "../../../types";
 import { SectionHeader, SectionItems } from "../styles";
-import EducationItems from "./EducationItems";
-import styled from "styled-components";
 
 type Props = {
   educationItems: ResumeEducationItems[];

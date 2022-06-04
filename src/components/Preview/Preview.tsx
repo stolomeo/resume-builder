@@ -1,21 +1,23 @@
 import styled from "styled-components";
-import { Resume } from "../../types";
-import Education from "./Education/Education";
-import Experience from "./Experience/Experience";
 import Personal from "./Personal/Personal";
+import Experience from "./Experience/Experience";
+import Education from "./Education/Education";
+import Skill from "./Skill";
+import { Resume } from "../../types";
 
 type Props = {
   resume: Resume;
 };
 
 export default function Preview({ resume }: Props) {
-  const { personalItems, experienceItems, educationItems } = resume;
+  const { personalItems, experienceItems, educationItems, skillItems } = resume;
 
   return (
     <PreviewWrapper>
       <Personal personalItems={personalItems} />
       <Experience experienceItems={experienceItems} />
       <Education educationItems={educationItems} />
+      <Skill skillItems={skillItems} />
     </PreviewWrapper>
   );
 }

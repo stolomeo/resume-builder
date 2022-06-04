@@ -1,5 +1,5 @@
-import { ResumePersonalItems } from "../../../types/";
 import styled from "styled-components";
+import { ResumePersonalItems } from "../../../types/";
 
 type Props = {
   personalItems: ResumePersonalItems;

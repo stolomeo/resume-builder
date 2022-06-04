@@ -31,6 +31,12 @@ const emptyResume = {
       graduationDate: "",
     },
   ],
+  skillItems: [
+    {
+      id: nanoid(),
+      skill: "",
+    },
+  ],
 };
 
 export default emptyResume;

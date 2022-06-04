@@ -58,6 +58,40 @@ const exampleResume = {
       graduationDate: "Jun 2016",
     },
   ],
+  skillItems: [
+    {
+      id: nanoid(),
+      skill: "JavaScript",
+    },
+    {
+      id: nanoid(),
+      skill: "TypeScript",
+    },
+    {
+      id: nanoid(),
+      skill: "Java",
+    },
+    {
+      id: nanoid(),
+      skill: "Python",
+    },
+    {
+      id: nanoid(),
+      skill: "C++",
+    },
+    {
+      id: nanoid(),
+      skill: "C",
+    },
+    {
+      id: nanoid(),
+      skill: "Rust",
+    },
+    {
+      id: nanoid(),
+      skill: "Swift",
+    },
+  ],
 };
 
 export default exampleResume;

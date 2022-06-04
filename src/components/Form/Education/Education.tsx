@@ -1,6 +1,6 @@
+import EducationForm from "./EducationForm";
 import { Button, FormSectionHeader, SectionWrapper } from "../styles";
 import { ChangeEvent } from "react";
-import EducationForm from "./EducationForm";
 import { ResumeEducationItems } from "../../../types";
 
 type Props = {
