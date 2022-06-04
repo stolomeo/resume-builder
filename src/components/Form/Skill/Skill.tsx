@@ -1,8 +1,8 @@
-import SkillForm from "./SkillForm";
-import { Button, FormSectionHeader, SectionWrapper } from "../styles";
+import { nanoid } from "nanoid";
 import { useContext } from "react";
 import ResumeContext from "../../../context/ResumeContext";
-import { nanoid } from "nanoid";
+import { Button, FormSectionHeader, SectionWrapper } from "../styles";
+import SkillForm from "./SkillForm";
 
 export default function Skill() {
   const { resume, setResume } = useContext(ResumeContext);

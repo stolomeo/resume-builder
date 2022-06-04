@@ -1,7 +1,7 @@
-import { Button, FormWrapper, Input } from "../styles";
-import { ResumeSkillItems } from "../../../types";
 import { ChangeEvent, useContext } from "react";
 import ResumeContext from "../../../context/ResumeContext";
+import { ResumeSkillItems } from "../../../types";
+import { Button, FormWrapper, Input } from "../styles";
 
 type Props = {
   skillItem: ResumeSkillItems;

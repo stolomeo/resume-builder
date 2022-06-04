@@ -1,12 +1,12 @@
+import { useContext } from "react";
 import styled from "styled-components";
-import Personal from "./Personal/";
-import Experience from "./Experience/";
+import ResumeContext from "../../context/ResumeContext";
+import { emptyResume, exampleResume } from "../../utils";
 import Education from "./Education/";
+import Experience from "./Experience/";
+import Personal from "./Personal/";
 import Skill from "./Skill";
 import { Button } from "./styles";
-import { emptyResume, exampleResume } from "../../utils";
-import { useContext } from "react";
-import ResumeContext from "../../context/ResumeContext";
 
 export default function Form() {
   const { setResume } = useContext(ResumeContext);

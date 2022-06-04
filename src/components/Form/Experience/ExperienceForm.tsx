@@ -1,7 +1,7 @@
-import { Button, FormWrapper, Input } from "../styles";
-import { ExperienceItemsType } from "../../../types/";
 import { ChangeEvent, useContext } from "react";
 import ResumeContext from "../../../context/ResumeContext";
+import { ExperienceItemsType } from "../../../types/";
+import { Button, FormWrapper, Input } from "../styles";
 
 type Props = {
   experienceItem: ExperienceItemsType;

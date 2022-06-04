@@ -1,5 +1,5 @@
-import { Items, ItemList, Item } from "../styles";
 import { EducationItemsType } from "../../../types/";
+import { Item, ItemList, Items } from "../styles";
 
 type Props = {
   educationItem: EducationItemsType;
