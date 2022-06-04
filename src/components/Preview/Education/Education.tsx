@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import ResumeContext from "../../../context/ResumeContext";
+import ResumeContext from "../../../context/";
 import { PreviewSection, SectionHeader, SectionItems } from "../styles";
 import EducationItems from "./EducationItems";
 

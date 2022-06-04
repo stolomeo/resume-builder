@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Education from "./Education/Education";
-import Experience from "./Experience/Experience";
-import Personal from "./Personal/Personal";
+import Education from "./Education/";
+import Experience from "./Experience/";
+import Personal from "./Personal/";
 import Skill from "./Skill";
 
 export default function Preview() {

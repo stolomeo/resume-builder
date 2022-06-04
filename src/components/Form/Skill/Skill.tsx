@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 import { useContext } from "react";
-import ResumeContext from "../../../context/ResumeContext";
+import ResumeContext from "../../../context/";
 import { Button, FormSectionHeader, SectionWrapper } from "../styles";
 import SkillForm from "./SkillForm";
 

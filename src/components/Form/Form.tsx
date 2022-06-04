@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import ResumeContext from "../../context/ResumeContext";
+import ResumeContext from "../../context/";
 import { emptyResume, exampleResume } from "../../utils";
 import Education from "./Education/";
 import Experience from "./Experience/";

@@ -1,5 +1,5 @@
 import { ChangeEvent, useContext } from "react";
-import ResumeContext from "../../../context/ResumeContext";
+import ResumeContext from "../../../context/";
 import { FormSectionHeader, Input, SectionWrapper } from "../styles";
 
 export default function Personal() {

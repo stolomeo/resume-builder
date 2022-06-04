@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import ResumeContext from "../../../context/ResumeContext";
+import ResumeContext from "../../../context/";
 import { Item } from "../styles";
 
 export default function Personal() {

@@ -1,5 +1,5 @@
 import { ChangeEvent, useContext } from "react";
-import ResumeContext from "../../../context/ResumeContext";
+import ResumeContext from "../../../context/";
 import { EducationItemsType } from "../../../types/";
 import { Button, FormWrapper, Input } from "../styles";
 
