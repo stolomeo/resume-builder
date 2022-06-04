@@ -7,7 +7,9 @@ type ResumeContextType = {
   setResume: (resume: ResumeType) => void;
 };
 
-export const ResumeContext = createContext<ResumeContextType>({
+const ResumeContext = createContext<ResumeContextType>({
   resume: emptyResume,
   setResume: () => {},
 });
+
+export default ResumeContext;
