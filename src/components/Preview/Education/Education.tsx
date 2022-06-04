@@ -14,7 +14,7 @@ export default function Education({ educationItems }: Props) {
   });
 
   return (
-    <PreviewSection mt="0.5rem">
+    <PreviewSection mt="1rem">
       <SectionHeader>EDUCATION</SectionHeader>
       <hr />
       <SectionItems flexD="column" gap=".8rem">

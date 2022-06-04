@@ -12,7 +12,7 @@ export default function Skill({ skillItems }: Props) {
   });
 
   return (
-    <PreviewSection mt="0.5">
+    <PreviewSection mt="1rem">
       <SectionHeader>SKILLS</SectionHeader>
       <hr />
       <SectionItems flexD="row" gap=".3rem">
