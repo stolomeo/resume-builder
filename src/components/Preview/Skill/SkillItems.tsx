@@ -7,9 +7,5 @@ type Props = {
 
 export default function SkillItems({ skillItem }: Props) {
   const { skill } = skillItem;
-  return (
-    <Items>
-      <p>{skill}</p>
-    </Items>
-  );
+  return <p>{skill};</p>;
 }
