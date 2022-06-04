@@ -1,6 +1,7 @@
 import { ResumeEducationItems } from "../../../types";
-import { SectionHeader } from "../styles";
+import { SectionHeader, SectionItems } from "../styles";
 import EducationItems from "./EducationItems";
+import styled from "styled-components";
 
 type Props = {
   educationItems: ResumeEducationItems[];
@@ -14,10 +15,14 @@ export default function Education({ educationItems }: Props) {
   });
 
   return (
-    <section className="resume-section">
+    <EducationSection>
       <SectionHeader>EDUCATION</SectionHeader>
       <hr />
-      {educationElements}
-    </section>
+      <SectionItems>{educationElements}</SectionItems>
+    </EducationSection>
   );
 }
+
+const EducationSection = styled.section`
+  margin-top: 1rem;
+`;

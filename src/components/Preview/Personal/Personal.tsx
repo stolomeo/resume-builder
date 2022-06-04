@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { ResumePersonalItems } from "../../../types/";
+import styled from "styled-components";
 
 type Props = {
   personalItems: ResumePersonalItems;
@@ -8,7 +8,7 @@ export default function Personal({ personalItems }: Props) {
   const { firstName, lastName, email, phone, homeCity, homeState } =
     personalItems;
   return (
-    <section className="resume-header">
+    <section>
       <FullName>
         {firstName} {lastName}
       </FullName>

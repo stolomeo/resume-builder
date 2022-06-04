@@ -2,10 +2,10 @@ import { useState } from "react";
 import { ChangeEvent } from "react";
 import { nanoid } from "nanoid";
 import { emptyResume, exampleResume } from "../utils/";
+import { Resume } from "../types/";
 import Preview from "./Preview";
 import Form from "./Form";
 import styled from "styled-components";
-import { Resume } from "../types/";
 
 export default function Main() {
   const [resume, setResume] = useState<Resume>(emptyResume);

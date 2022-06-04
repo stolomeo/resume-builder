@@ -1,4 +1,4 @@
-import { BottomItems, TopItems } from "../styles";
+import { BottomItems, Items, TopItems } from "../styles";
 import { ResumeEducationItems } from "../../../types/";
 
 type Props = {
@@ -9,7 +9,7 @@ export default function EducationItems({ educationItem }: Props) {
   const { university, schoolCity, schoolState, degree, major, graduationDate } =
     educationItem;
   return (
-    <>
+    <Items>
       <TopItems>
         <p>{university}</p>
         <p>{graduationDate}</p>
@@ -22,6 +22,6 @@ export default function EducationItems({ educationItem }: Props) {
           {schoolCity}, {schoolState}
         </p>
       </BottomItems>
-    </>
+    </Items>
   );
 }
