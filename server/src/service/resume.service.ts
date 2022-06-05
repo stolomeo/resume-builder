@@ -10,3 +10,8 @@ export const getExampleResumeCol = async () => {
   const db = await getDb();
   return db.collection<ResumeType>("resumeExample");
 };
+
+export const getEmptyResume = async () => {
+  const col = await getEmptyResumeCol();
+  return col.find().toArray();
+};
