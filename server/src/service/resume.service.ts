@@ -6,12 +6,17 @@ export const getEmptyResumeCol = async () => {
   return db.collection<ResumeType>("resumeEmpty");
 };
 
+export const getEmptyResume = async () => {
+  const col = await getEmptyResumeCol();
+  return col.find().toArray();
+};
+
 export const getExampleResumeCol = async () => {
   const db = await getDb();
   return db.collection<ResumeType>("resumeExample");
 };
 
-export const getEmptyResume = async () => {
-  const col = await getEmptyResumeCol();
+export const getExampleResume = async () => {
+  const col = await getExampleResumeCol();
   return col.find().toArray();
 };
