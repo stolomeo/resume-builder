@@ -12,9 +12,20 @@ export const FormSectionHeader = styled.h2`
 `;
 
 export const Button = styled.button`
+  background-color: ${({ theme }) => theme.colors.dark};
+  color: ${({ theme }) => theme.colors.light};
   padding: 1rem;
   border-radius: 5px;
   font-weight: bold;
+  box-shadow: ${({ theme }) => theme.boxShadows.bS2};
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.darkHover};
+    &:active {
+      background-color: ${({ theme }) => theme.colors.darkActive};
+      box-shadow: ${({ theme }) => theme.boxShadows.active};
+      outline: none;
+    }
+  }
 `;
 
 export const Input = styled.input`

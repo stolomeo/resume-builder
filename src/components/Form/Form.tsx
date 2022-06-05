@@ -37,7 +37,6 @@ const FormWrapper = styled.div`
   width: 210mm;
   padding: 2rem;
   border-radius: 5px;
-  background-color: rgb(238, 238, 238);
   box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
   gap: 1rem;
 `;

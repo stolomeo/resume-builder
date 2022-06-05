@@ -11,5 +11,14 @@ declare module "styled-components" {
       darkHover: string;
       darkActive: string;
     };
+    fonts: {
+      garamound: string;
+      roboto: string;
+    };
+    boxShadows: {
+      bS1: string;
+      bS2: string;
+      active: string;
+    };
   }
 }

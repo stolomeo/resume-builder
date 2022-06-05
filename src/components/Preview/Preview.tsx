@@ -16,9 +16,9 @@ export default function Preview() {
 }
 
 const PreviewWrapper = styled.div`
-  font-family: "EB Garamond", serif;
-  background-color: rgb(238, 238, 238);
-  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  font-family: ${({ theme }) => theme.fonts.garamound};
+  background-color: ${({ theme }) => theme.colors.light};
+  box-shadow: ${({ theme }) => theme.boxShadows.bS1};
   border-radius: 5px;
   display: flex;
   flex-direction: column;
