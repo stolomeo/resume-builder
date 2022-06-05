@@ -1,8 +1,12 @@
 # Resume Builder
 
-## This application is still in development
+### This application is still in development
 
 [Live Demo](https://stolomeo.github.io/resume-builder/)
+
+## Current State:
+
+![Current State](./preview.gif)
 
 ## Getting started
 
