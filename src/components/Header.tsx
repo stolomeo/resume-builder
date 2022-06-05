@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default function Header() {
   return (
     <HeaderWrapper>
-      <HeaderText>CV CREATOR</HeaderText>;
+      <HeaderText>Resume Builder</HeaderText>;
     </HeaderWrapper>
   );
 }
@@ -17,7 +17,7 @@ const HeaderWrapper = styled.section`
 `;
 
 const HeaderText = styled.h1`
-  font-size: 48px;
+  font-size: 54px;
   font-family: ${({ theme }) => theme.fonts.zen};
   color: ${({ theme }) => theme.colors.light};
   &:hover {
