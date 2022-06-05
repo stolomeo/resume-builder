@@ -14,6 +14,7 @@ declare module "styled-components" {
     fonts: {
       garamound: string;
       roboto: string;
+      zen: string;
     };
     boxShadows: {
       primary: string;

@@ -18,7 +18,7 @@ const HeaderWrapper = styled.section`
 
 const HeaderText = styled.h1`
   font-size: 48px;
-  font-family: "Zen Tokyo Zoo", cursive;
+  font-family: ${({ theme }) => theme.fonts.zen};
   color: ${({ theme }) => theme.colors.light};
   &:hover {
     background-color: ${({ theme }) => theme.colors.lightHover};
