@@ -17,14 +17,14 @@ export const Button = styled.button`
   padding: 1rem;
   border-radius: 5px;
   font-weight: bold;
-  box-shadow: ${({ theme }) => theme.boxShadows.bS2};
+  box-shadow: ${({ theme }) => theme.boxShadows.button};
   &:hover {
     background-color: ${({ theme }) => theme.colors.darkHover};
-    &:active {
-      background-color: ${({ theme }) => theme.colors.darkActive};
-      box-shadow: ${({ theme }) => theme.boxShadows.active};
-      outline: none;
-    }
+  }
+  &:active {
+    background-color: ${({ theme }) => theme.colors.darkActive};
+    box-shadow: ${({ theme }) => theme.boxShadows.active};
+    outline: none;
   }
 `;
 
@@ -32,6 +32,8 @@ export const Input = styled.input`
   padding: 0.5rem;
   border-radius: 5px;
   border: 1px solid transparent;
+  box-shadow: ${({ theme }) => theme.boxShadows.input};
+  font-size: 16px;
 `;
 
 export const SectionWrapper = styled.section<{ flexD: string }>`

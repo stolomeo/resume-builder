@@ -15,8 +15,9 @@ const Theme: DefaultTheme = {
     roboto: "Roboto, sans-serif",
   },
   boxShadows: {
-    bS1: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-    bS2: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+    primary: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+    button: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+    input: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
     active: "inset 0px 0px 5px #c1c1c1",
   },
 };

@@ -34,9 +34,10 @@ export default function Form() {
 const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  font-family: ${({ theme }) => theme.fonts.roboto};
   width: 210mm;
   padding: 2rem;
   border-radius: 5px;
-  box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+  box-shadow: ${({ theme }) => theme.boxShadows.primary};
   gap: 1rem;
 `;

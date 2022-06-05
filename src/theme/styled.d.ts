@@ -16,8 +16,9 @@ declare module "styled-components" {
       roboto: string;
     };
     boxShadows: {
-      bS1: string;
-      bS2: string;
+      primary: string;
+      button: string;
+      input: string;
       active: string;
     };
   }

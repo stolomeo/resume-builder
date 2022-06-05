@@ -18,7 +18,7 @@ export default function Preview() {
 const PreviewWrapper = styled.div`
   font-family: ${({ theme }) => theme.fonts.garamound};
   background-color: ${({ theme }) => theme.colors.light};
-  box-shadow: ${({ theme }) => theme.boxShadows.bS1};
+  box-shadow: ${({ theme }) => theme.boxShadows.primary};
   border-radius: 5px;
   display: flex;
   flex-direction: column;
