@@ -7,7 +7,6 @@
 ## Current State:
 
 ![Current State](./preview.gif)
- ter
 
 ## Getting started
 
