@@ -14,6 +14,9 @@ const HeaderWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media print {
+    display: none;
+  }
 `;
 
 const HeaderText = styled.h1`

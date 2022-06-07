@@ -19,12 +19,17 @@ export default function Form() {
     setResume(emptyResume);
   };
 
+  const handlePrint = () => {
+    window.print();
+  };
+
   return (
     <FormWrapper>
       <Personal />
       <Experience />
       <Education />
       <Skill />
+      <Button onClick={handlePrint}>Generate PDF</Button>
       <Button onClick={handleLoadExample}>Load Example</Button>
       <Button onClick={handleReset}>Reset</Button>
     </FormWrapper>
@@ -40,4 +45,7 @@ const FormWrapper = styled.div`
   border-radius: 5px;
   box-shadow: ${({ theme }) => theme.boxShadows.primary};
   gap: 1rem;
+  @media print {
+    display: none;
+  }
 `;

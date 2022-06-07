@@ -25,4 +25,11 @@ const PreviewWrapper = styled.div`
   gap: 0.5rem;
   padding: 1rem;
   width: 210mm;
+  @media print {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
 `;
