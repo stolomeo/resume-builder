@@ -24,6 +24,14 @@ const GlobalStyle = createGlobalStyle`
     button {
         cursor: pointer;
     }
+    @media print { 
+        @page {
+            margin: 0;
+        } 
+        body {
+            margin: 0;
+        }
+    }
 `;
 
 export default GlobalStyle;

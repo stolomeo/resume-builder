@@ -26,6 +26,7 @@ const PreviewWrapper = styled.div`
   padding: 1rem;
   width: 210mm;
   @media print {
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
