@@ -1,3 +1,4 @@
+import { LockOutlined } from "@mui/icons-material";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -19,7 +20,9 @@ export default function Login() {
           alignItems: "center",
         }}
       >
-        <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}></Avatar>
+        <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+          <LockOutlined />
+        </Avatar>
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
@@ -53,6 +56,7 @@ export default function Login() {
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
+            href="/"
           >
             Sign In
           </Button>
@@ -63,7 +67,7 @@ export default function Login() {
               </Link>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="register" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>

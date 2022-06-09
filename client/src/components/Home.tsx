@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+
 export default function Home() {
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -22,7 +23,9 @@ export default function Home() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             News
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit" href="/login">
+            Login
+          </Button>
         </Toolbar>
       </AppBar>
     </Box>

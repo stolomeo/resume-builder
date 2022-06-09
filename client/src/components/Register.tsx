@@ -10,6 +10,7 @@ import Link from "@mui/material/Link";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
 import { createUser } from "../services/user";
 
 function Copyright(props: any) {
@@ -21,11 +22,11 @@ function Copyright(props: any) {
       {...props}
     >
       {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
+      <Link color="inherit" component={RouterLink} to="/">
         Resume Builder
-      </Link>{" "}
+      </Link>
+      {""}
       {new Date().getFullYear()}
-      {"."}
     </Typography>
   );
 }
@@ -121,12 +122,13 @@ export default function Register() {
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
+            href="/"
           >
             Sign Up
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="/login" variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>
