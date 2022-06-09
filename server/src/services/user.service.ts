@@ -1,6 +1,8 @@
 import { getDb } from "../gateway/mongo";
 
 type User = {
+  firstname: string;
+  lastname: string;
   username: string;
   password: string;
 };

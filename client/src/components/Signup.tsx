@@ -9,6 +9,8 @@ import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
+import { useState } from "react";
+import { createUser } from "../services/user";
 
 function Copyright(props: any) {
   return (
@@ -20,7 +22,7 @@ function Copyright(props: any) {
     >
       {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        Resume Builder
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -29,12 +31,18 @@ function Copyright(props: any) {
 }
 
 export default function Signup() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
+    await createUser({
+      firstname,
+      lastname,
+      email,
+      password,
     });
   };
 
@@ -64,6 +72,7 @@ export default function Signup() {
                 id="firstName"
                 label="First Name"
                 autoFocus
+                onChange={(e) => setFirstname(e.target.value)}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -74,6 +83,7 @@ export default function Signup() {
                 label="Last Name"
                 name="lastName"
                 autoComplete="family-name"
+                onChange={(e) => setLastname(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -84,6 +94,7 @@ export default function Signup() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                onChange={(e) => setEmail(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -95,6 +106,7 @@ export default function Signup() {
                 type="password"
                 id="password"
                 autoComplete="new-password"
+                onChange={(e) => setPassword(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
