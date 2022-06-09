@@ -1,16 +1,16 @@
 import { ThemeProvider } from "styled-components";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Main from "./components/Main";
+import Signup from "./components/Signup";
 import { GlobalStyle, Theme } from "./theme/";
 
 function App() {
   return (
     <ThemeProvider theme={Theme}>
       <GlobalStyle />
-      <Header />
-      <Main />
-      <Footer />
+      {/* <Header /> */}
+      {/* <Main /> */}
+      <Signup />
+      {/* <Login /> */}
+      {/* <Footer /> */}
     </ThemeProvider>
   );
 }
