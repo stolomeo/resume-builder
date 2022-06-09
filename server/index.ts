@@ -1,7 +1,11 @@
 import cors from "cors";
 import { config } from "dotenv";
 import express from "express";
-import { getEmptyResume, getExampleResume } from "./src/service/resume.service";
+import {
+  getEmptyResume,
+  getExampleResume,
+} from "./src/services/resume.service";
+import { createUser } from "./src/services/user.service";
 
 config();
 
@@ -17,6 +21,17 @@ app.get("/emptyResume", async (req, res) => {
 app.get("/exampleResume", async (req, res) => {
   const exampleResume = await getExampleResume();
   res.send(exampleResume);
+});
+
+app.post("/user", async (req, res) => {
+  try {
+    await createUser(req.body);
+    res.send(200);
+  } catch (error) {
+    res.status(400).send({
+      message: "Error",
+    });
+  }
 });
 
 app.listen(3001);
