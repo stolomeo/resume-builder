@@ -30,7 +30,7 @@ function Copyright(props: any) {
   );
 }
 
-export default function Signup() {
+export default function Register() {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");

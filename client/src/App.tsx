@@ -1,18 +1,21 @@
-import { ThemeProvider } from "styled-components";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
-import { GlobalStyle, Theme } from "./theme/";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 function App() {
   return (
-    <ThemeProvider theme={Theme}>
-      <GlobalStyle />
-      {/* <Header /> */}
-      {/* <Main /> */}
-      <Home />
-      {/* <Signup /> */}
-      {/* <Login /> */}
-      {/* <Footer /> */}
-    </ThemeProvider>
+    <BrowserRouter>
+      <Routes>
+        {/* <Header /> */}
+        {/* <Main /> */}
+        <Route index element={<Home />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+        {/* <Login /> */}
+        {/* <Footer /> */}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
