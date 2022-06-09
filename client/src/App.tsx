@@ -1,5 +1,5 @@
 import { ThemeProvider } from "styled-components";
-import Signup from "./components/Signup";
+import Home from "./components/Home";
 import { GlobalStyle, Theme } from "./theme/";
 
 function App() {
@@ -8,7 +8,8 @@ function App() {
       <GlobalStyle />
       {/* <Header /> */}
       {/* <Main /> */}
-      <Signup />
+      <Home />
+      {/* <Signup /> */}
       {/* <Login /> */}
       {/* <Footer /> */}
     </ThemeProvider>
