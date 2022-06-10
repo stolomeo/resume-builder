@@ -1,12 +1,12 @@
 import { useState } from "react";
 import styled from "styled-components";
-import ResumeContext from "../context/";
-import { ResumeType } from "../types/";
+import Form from "../components/Form";
+import Preview from "../components/Preview";
+import ResumeContext from "../context";
+import { ResumeType } from "../types";
 import { emptyResume } from "../utils";
-import Form from "./Form";
-import Preview from "./Preview";
 
-export default function Main() {
+export default function Create() {
   const [resume, setResume] = useState<ResumeType>(emptyResume);
 
   return (
