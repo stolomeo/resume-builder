@@ -1,4 +1,4 @@
 import { Link } from "@mui/material";
 export default function Home() {
-  return <Link href="/main">Build</Link>;
+  return <Link href="/create">Build</Link>;
 }
