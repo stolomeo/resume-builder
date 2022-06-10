@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import styled from "styled-components";
 import ResumeContext from "../../context/";
-import { emptyResume, exampleResume } from "../../utils";
+import { getExampleResume } from "../../services/resume";
+import { emptyResume } from "../../utils";
 import Education from "./Education/";
 import Experience from "./Experience/";
 import Personal from "./Personal/";
@@ -11,8 +12,10 @@ import { Button } from "./styles";
 export default function Form() {
   const { setResume } = useContext(ResumeContext);
 
-  const handleLoadExample = () => {
+  const handleLoadExample = async () => {
+    const exampleResume = await getExampleResume();
     setResume(exampleResume);
+    console.log(exampleResume);
   };
 
   const handleReset = () => {

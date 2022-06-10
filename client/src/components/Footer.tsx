@@ -20,7 +20,9 @@ const FooterWrapper = styled.footer`
   padding: 0.5rem;
   background-color: ${({ theme }) => theme.colors.dark};
   color: ${({ theme }) => theme.colors.light};
-  flex-shrink: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 `;
 
 const GithubLink = styled.a`

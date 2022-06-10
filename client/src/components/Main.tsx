@@ -2,12 +2,12 @@ import { useState } from "react";
 import styled from "styled-components";
 import ResumeContext from "../context/";
 import { ResumeType } from "../types/";
-import exampleResume from "../utils/exampleResume";
+import { emptyResume } from "../utils";
 import Form from "./Form";
 import Preview from "./Preview";
 
 export default function Main() {
-  const [resume, setResume] = useState<ResumeType>(exampleResume);
+  const [resume, setResume] = useState<ResumeType>(emptyResume);
 
   return (
     <ResumeContext.Provider value={{ resume, setResume }}>

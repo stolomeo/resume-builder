@@ -8,7 +8,8 @@ export const getEmptyResumeCol = async () => {
 
 export const getEmptyResume = async () => {
   const col = await getEmptyResumeCol();
-  return col.find().toArray();
+  const resume: any[] = await col.find().toArray();
+  return resume[0];
 };
 
 export const getExampleResumeCol = async () => {
@@ -18,5 +19,6 @@ export const getExampleResumeCol = async () => {
 
 export const getExampleResume = async () => {
   const col = await getExampleResumeCol();
-  return col.find().toArray();
+  const resume: any[] = await col.find().toArray();
+  return resume[0]; // front end requires single object
 };
