@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import { ResumeType } from "../types";
-import { exampleResume } from "../utils";
+import { emptyResume } from "../utils";
 
 type ResumeContextType = {
   resume: ResumeType;
@@ -8,7 +8,7 @@ type ResumeContextType = {
 };
 
 const ResumeContext = createContext<ResumeContextType>({
-  resume: exampleResume,
+  resume: emptyResume,
   setResume: () => {},
 });
 
