@@ -15,12 +15,13 @@ export default function Form() {
   const handleLoadExample = async () => {
     const exampleResume = await getExampleResume();
     setResume(exampleResume);
-    console.log(exampleResume);
   };
 
   const handleReset = () => {
     setResume(emptyResume);
   };
+
+  const handleSave = () => {};
 
   const handlePrint = () => {
     window.print();
@@ -33,6 +34,7 @@ export default function Form() {
       <Education />
       <Skill />
       <Button onClick={handlePrint}>Generate PDF</Button>
+      <Button>Save</Button>
       <Button onClick={handleLoadExample}>Load Example</Button>
       <Button onClick={handleReset}>Reset</Button>
     </FormWrapper>

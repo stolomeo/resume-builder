@@ -1,6 +1,7 @@
 import cors from "cors";
 import { config } from "dotenv";
 import express from "express";
+import * as functions from "firebase-functions";
 import {
   getEmptyResume,
   getExampleResume,
@@ -34,4 +35,4 @@ app.post("/user", async (req, res) => {
   }
 });
 
-app.listen(3001);
+export const api = functions.https.onRequest(app);

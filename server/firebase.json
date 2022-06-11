@@ -1,0 +1,16 @@
+{
+  "functions": {
+    "source": "dist",
+    "runtime": "nodejs16"
+  },
+  "hosting": {
+    "public": "dist",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  },
+  "emulators": {
+    "hosting": {
+      "host": "localhost",
+      "port": "5050"
+    }
+  }
+}

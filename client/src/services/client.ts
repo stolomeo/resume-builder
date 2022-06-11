@@ -2,6 +2,6 @@ import axios from "axios";
 
 export const getClient = () => {
   return axios.create({
-    baseURL: "http://localhost:3001",
+    baseURL: "https://us-central1-resume-builder-66554.cloudfunctions.net/api",
   });
 };
