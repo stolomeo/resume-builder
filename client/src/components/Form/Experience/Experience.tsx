@@ -1,7 +1,7 @@
+import { Button, Typography } from "@mui/material";
 import { nanoid } from "nanoid";
 import { useContext } from "react";
 import ResumeContext from "../../../context/";
-import { Button, FormSectionHeader, SectionWrapper } from "../styles";
 import ExperienceForm from "./ExperienceForm";
 
 export default function Experience() {
@@ -33,11 +33,15 @@ export default function Experience() {
 
   return (
     <>
-      <FormSectionHeader>Experience</FormSectionHeader>
-      <SectionWrapper flexD="column">
+      <Typography component="h2" variant="h6">
+        WORK EXPERIENCE
+      </Typography>
+      <>
         {experienceElements}
-        <Button onClick={handleAddExperience}>Add</Button>
-      </SectionWrapper>
+        <Button variant="outlined" onClick={handleAddExperience}>
+          Add Experience
+        </Button>
+      </>
     </>
   );
 }

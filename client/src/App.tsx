@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 import Create from "./pages/Create";
 import Home from "./pages/Home";
@@ -11,14 +10,11 @@ function App() {
     <BrowserRouter>
       <Nav />
       <Routes>
-        {/* <Header /> */}
         <Route index element={<Home />} />
         <Route path="login" element={<Login />} />
         <Route path="create" element={<Create />} />
         <Route path="register" element={<Register />} />
-        {/* <Login /> */}
       </Routes>
-      <Footer />
     </BrowserRouter>
   );
 }

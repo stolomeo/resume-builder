@@ -1,7 +1,7 @@
+import { Button, Typography } from "@mui/material";
 import { nanoid } from "nanoid";
 import { useContext } from "react";
 import ResumeContext from "../../../context/";
-import { Button, FormSectionHeader, SectionWrapper } from "../styles";
 import EducationForm from "./EducationForm";
 
 export default function Education() {
@@ -33,11 +33,13 @@ export default function Education() {
 
   return (
     <>
-      <FormSectionHeader>Education</FormSectionHeader>
-      <SectionWrapper flexD="column">
-        {educationElements}
-        <Button onClick={handleAddEducation}>Add</Button>
-      </SectionWrapper>
+      <Typography component="h2" variant="h6">
+        EDUCATION
+      </Typography>
+      {educationElements}
+      <Button variant="outlined" onClick={handleAddEducation}>
+        Add Education
+      </Button>
     </>
   );
 }

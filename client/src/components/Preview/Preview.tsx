@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import styled from "styled-components";
 import Education from "./Education/";
 import Experience from "./Experience/";
@@ -6,12 +7,19 @@ import Skill from "./Skill";
 
 export default function Preview() {
   return (
-    <PreviewWrapper>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: ".5rem",
+        width: "40%",
+      }}
+    >
       <Personal />
       <Experience />
       <Education />
       <Skill />
-    </PreviewWrapper>
+    </Box>
   );
 }
 
@@ -24,9 +32,10 @@ const PreviewWrapper = styled.div`
   flex-direction: column;
   gap: 0.5rem;
   padding: 1rem;
-  width: 210mm;
+  width: 30%;
   @media print {
     display: block;
+    width: 100%;
     position: fixed;
     top: 0;
     left: 0;

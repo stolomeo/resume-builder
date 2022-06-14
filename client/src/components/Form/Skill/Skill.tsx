@@ -1,7 +1,7 @@
+import { Box, Button, Typography } from "@mui/material";
 import { nanoid } from "nanoid";
 import { useContext } from "react";
 import ResumeContext from "../../../context/";
-import { Button, FormSectionHeader, SectionWrapper } from "../styles";
 import SkillForm from "./SkillForm";
 
 export default function Skill() {
@@ -25,12 +25,16 @@ export default function Skill() {
   });
 
   return (
-    <>
-      <FormSectionHeader>Skills</FormSectionHeader>
-      <SectionWrapper flexD="row">
+    <Box sx={{ gap: "1.5rem", display: "flex", flexDirection: "column" }}>
+      <Typography component="h2" variant="h6">
+        SKILLS
+      </Typography>
+      <>
         {skillElements}
-        <Button onClick={handleAddSkill}>Add</Button>
-      </SectionWrapper>
-    </>
+        <Button variant="outlined" onClick={handleAddSkill}>
+          Add Skill
+        </Button>
+      </>
+    </Box>
   );
 }

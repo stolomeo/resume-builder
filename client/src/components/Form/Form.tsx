@@ -1,56 +1,26 @@
-import { useContext } from "react";
-import styled from "styled-components";
-import ResumeContext from "../../context/";
-import { getExampleResume } from "../../services/resume";
-import { emptyResume } from "../../utils";
-import Education from "./Education/";
-import Experience from "./Experience/";
-import Personal from "./Personal/";
-import Skill from "./Skill";
-import { Button } from "./styles";
+import { Box } from "@mui/material";
+import { Dispatch, SetStateAction } from "react";
+import { handleComponentSelection } from "../../utils/handleComponentSelection";
 
-export default function Form() {
-  const { setResume } = useContext(ResumeContext);
+type Props = {
+  count: number;
+  setCount: Dispatch<SetStateAction<number>>;
+};
 
-  const handleLoadExample = async () => {
-    const exampleResume = await getExampleResume();
-    setResume(exampleResume);
-  };
-
-  const handleReset = () => {
-    setResume(emptyResume);
-  };
-
-  const handleSave = () => {};
-
-  const handlePrint = () => {
-    window.print();
-  };
+export default function Form({ count, setCount }: Props) {
+  const formComponent = handleComponentSelection(count);
 
   return (
-    <FormWrapper>
-      <Personal />
-      <Experience />
-      <Education />
-      <Skill />
-      <Button onClick={handlePrint}>Generate PDF</Button>
-      <Button>Save</Button>
-      <Button onClick={handleLoadExample}>Load Example</Button>
-      <Button onClick={handleReset}>Reset</Button>
-    </FormWrapper>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        width: "40%",
+        padding: "0 0 0 3rem",
+        borderRight: "1px solid black",
+      }}
+    >
+      {formComponent}
+    </Box>
   );
 }
-
-const FormWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  font-family: ${({ theme }) => theme.fonts.roboto};
-  width: 210mm;
-  padding: 2rem;
-  border-radius: 5px;
-  box-shadow: ${({ theme }) => theme.boxShadows.primary};
-  gap: 1rem;
-  @media print {
-    display: none;
-  }
-`;

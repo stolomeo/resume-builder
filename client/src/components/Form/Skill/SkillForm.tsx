@@ -1,7 +1,7 @@
+import { Box, Button, TextField } from "@mui/material";
 import { ChangeEvent, useContext } from "react";
 import ResumeContext from "../../../context/";
 import { ResumeSkillItems } from "../../../types";
-import { Button, FormWrapper, Input } from "../styles";
 
 type Props = {
   skillItem: ResumeSkillItems;
@@ -30,16 +30,18 @@ export default function SkillForm({ skillItem }: Props) {
   const { skill, id } = skillItem;
 
   return (
-    <FormWrapper flexD="row">
-      <Input
+    <Box sx={{ display: "flex", gap: "3rem" }}>
+      <TextField
+        variant="standard"
         type="text"
         name="skill"
         placeholder="Skill"
         value={skill}
         onChange={(e) => handleChangeSkill(e, id)}
       />
-
-      <Button onClick={() => handleDeleteSkill(id)}>Delete</Button>
-    </FormWrapper>
+      <Button variant="outlined" onClick={() => handleDeleteSkill(id)}>
+        Delete Skill
+      </Button>
+    </Box>
   );
 }
