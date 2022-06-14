@@ -16,8 +16,10 @@ export default function Form({ count, setCount }: Props) {
         display: "flex",
         flexDirection: "column",
         width: "40%",
-        padding: "0 0 0 3rem",
+        padding: "0 3rem",
         borderRight: "1px solid black",
+        height: "500px",
+        overflow: "auto",
       }}
     >
       {formComponent}

@@ -1,7 +1,7 @@
+import { Typography } from "@mui/material";
 import { useContext } from "react";
 import styled from "styled-components";
 import ResumeContext from "../../../context/";
-import { Item } from "../styles";
 
 export default function Personal() {
   const { resume } = useContext(ResumeContext);
@@ -10,17 +10,17 @@ export default function Personal() {
     resume.personalItems;
   return (
     <section>
-      <FullName>
+      <Typography component="h1" variant="h6" fontWeight="bold">
         {firstName} {lastName}
-      </FullName>
+      </Typography>
       <ContactInfoWrapper>
-        <Item>{email}</Item>
-        <Item>❖</Item>
-        <Item>{phone}</Item>
-        <Item>❖</Item>
-        <Item>
+        <Typography>{email}</Typography>
+        <Typography>❖</Typography>
+        <Typography>{phone}</Typography>
+        <Typography>❖</Typography>
+        <Typography>
           {homeCity}, {homeState}
-        </Item>
+        </Typography>
       </ContactInfoWrapper>
       <hr />
     </section>

@@ -32,7 +32,6 @@ export default function Create() {
           marginLeft: "15vw",
           width: "calc(100% - 15vw)",
           height: "calc(100% - 10vh - 65px - 2px)",
-          overflow: "auto",
         }}
       >
         <Sidebar count={count} setCount={setCount} />
@@ -50,7 +49,7 @@ export default function Create() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#14171d",
+          backgroundColor: "#eee",
           borderTop: "1px solid #202530",
           gap: "5rem",
         }}

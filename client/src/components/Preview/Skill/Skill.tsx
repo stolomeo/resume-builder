@@ -1,6 +1,6 @@
+import { Box, Typography } from "@mui/material";
 import { useContext } from "react";
 import ResumeContext from "../../../context/";
-import { PreviewSection, SectionHeader, SectionItems } from "../styles";
 import SkillItems from "./SkillItems";
 
 export default function Skill() {
@@ -11,12 +11,14 @@ export default function Skill() {
   });
 
   return (
-    <PreviewSection mt="1rem">
-      <SectionHeader>SKILLS</SectionHeader>
+    <Box sx={{ marginTop: "1rem" }}>
+      <Typography component="h2" variant="subtitle1" fontWeight="bold">
+        SKILLS
+      </Typography>
       <hr />
-      <SectionItems flexD="row" gap=".3rem">
+      <Box sx={{ display: "flex", gap: ".3rem" }}>
         <strong>Skills:</strong> {skillElements}
-      </SectionItems>
-    </PreviewSection>
+      </Box>
+    </Box>
   );
 }
