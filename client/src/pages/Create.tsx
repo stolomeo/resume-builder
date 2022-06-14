@@ -3,6 +3,7 @@ import { useState } from "react";
 import Form from "../components/Form";
 import Preview from "../components/Preview";
 import Sidebar from "../components/Sidebar";
+import Tool from "../components/Tool";
 import ResumeContext from "../context";
 import { ResumeType } from "../types";
 import { emptyResume } from "../utils";
@@ -22,13 +23,9 @@ export default function Create() {
 
   return (
     <ResumeContext.Provider value={{ resume, setResume }}>
-      {/* <Box sx={{ display: "flex", justifyContent: "center" }}>
-        <Tool count={count} setCount={setCount} />
-      </Box> */}
       <Box
         sx={{
           display: "flex",
-          marginTop: "10vh",
           marginLeft: "15vw",
           width: "calc(100% - 15vw)",
           height: "calc(100% - 10vh - 65px - 2px)",
@@ -36,7 +33,16 @@ export default function Create() {
       >
         <Sidebar count={count} setCount={setCount} />
         <Form count={count} setCount={setCount} />
-        <Preview />
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            width: "70%",
+          }}
+        >
+          <Tool setCount={setCount} />
+          <Preview />
+        </Box>
       </Box>
       <Box
         sx={{

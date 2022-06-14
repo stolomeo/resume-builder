@@ -21,7 +21,7 @@ export default function Tool({ setCount }: Props) {
 
   const handleReset = () => {
     setResume(emptyResume);
-    setCount(0);
+    setCount(25);
   };
 
   const handlePrint = () => {
@@ -34,16 +34,15 @@ export default function Tool({ setCount }: Props) {
   };
 
   return (
-    <Box
-      sx={{
-        flexGrow: 1,
-      }}
-    >
-      <AppBar position="static">
+    <Box>
+      <AppBar
+        position="static"
+        sx={{ backgroundColor: "black", border: "1px solid black" }}
+      >
         <Toolbar
+          variant="dense"
           sx={{
             gap: "1rem",
-            backgroundColor: "darkgrey",
             display: "flex",
             justifyContent: "center",
           }}

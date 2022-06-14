@@ -33,7 +33,7 @@ export default function Experience() {
 
   return (
     <>
-      <Typography component="h2" variant="h6">
+      <Typography component="h2" variant="h6" marginBottom="1.5rem">
         WORK EXPERIENCE
       </Typography>
       <>
