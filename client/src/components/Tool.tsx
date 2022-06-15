@@ -43,7 +43,6 @@ export default function Tool({ setCount }: Props) {
             display: "flex",
             justifyContent: "center",
             bgcolor: `background.default`,
-            border: "1px solid black",
           }}
         >
           <IconButton size="medium" onClick={handleReset}>
