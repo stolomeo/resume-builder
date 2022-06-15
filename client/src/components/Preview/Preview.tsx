@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import { grey } from "@mui/material/colors";
 import styled from "styled-components";
 import Education from "./Education/";
 import Experience from "./Experience/";
@@ -14,7 +13,7 @@ export default function Preview() {
         flexDirection: "column",
         gap: ".5rem",
         border: "1px solid #202530",
-        bgcolor: grey.A100,
+        bgcolor: "#f9f9f9",
         color: "#000",
         padding: "1rem",
         overflow: "auto",

@@ -1,4 +1,5 @@
 import { Box, Button, Container, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -27,7 +28,8 @@ export default function Hero() {
             templates.
           </Typography>
           <Button
-            href="/create"
+            component={Link}
+            to="/create"
             variant="contained"
             size="large"
             sx={{ width: "30%" }}

@@ -7,10 +7,12 @@ import {
   Container,
   FormControlLabel,
   Grid,
-  Link,
+  Link as MaterialLink,
   TextField,
   Typography,
 } from "@mui/material";
+
+import { Link as RouterLink } from "react-router-dom";
 
 export default function Login() {
   return (
@@ -65,14 +67,18 @@ export default function Login() {
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link href="#" variant="body2">
+              <MaterialLink component={RouterLink} to="#" variant="body2">
                 Forgot password?
-              </Link>
+              </MaterialLink>
             </Grid>
             <Grid item>
-              <Link href="register" variant="body2">
+              <MaterialLink
+                component={RouterLink}
+                to="/register"
+                variant="body2"
+              >
                 {"Don't have an account? Sign Up"}
-              </Link>
+              </MaterialLink>
             </Grid>
           </Grid>
         </Box>

@@ -39,7 +39,7 @@ export default function Tool({ setCount }: Props) {
   };
 
   return (
-    <Box>
+    <Box sx={{ zIndex: -1 }}>
       <AppBar position="static">
         <Toolbar
           variant="dense"
