@@ -27,8 +27,7 @@ export default function Create() {
         sx={{
           display: "flex",
           marginLeft: "15vw",
-          width: "calc(100% - 15vw)",
-          height: "calc(100% - 10vh - 65px - 2px)",
+          height: "84vh",
         }}
       >
         <Sidebar count={count} setCount={setCount} />
@@ -47,7 +46,7 @@ export default function Create() {
       <Box
         sx={{
           width: "100%",
-          height: "65px",
+          height: "8vh",
           position: "fixed",
           bottom: "0",
           left: "0",
@@ -55,7 +54,6 @@ export default function Create() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#eee",
           borderTop: "1px solid #202530",
           gap: "5rem",
         }}

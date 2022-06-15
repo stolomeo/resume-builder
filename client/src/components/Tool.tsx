@@ -35,25 +35,24 @@ export default function Tool({ setCount }: Props) {
 
   return (
     <Box>
-      <AppBar
-        position="static"
-        sx={{ backgroundColor: "black", border: "1px solid black" }}
-      >
+      <AppBar position="static">
         <Toolbar
           variant="dense"
           sx={{
             gap: "1rem",
             display: "flex",
             justifyContent: "center",
+            bgcolor: `background.default`,
+            border: "1px solid black",
           }}
         >
-          <IconButton size="medium" color="inherit" onClick={handleReset}>
+          <IconButton size="medium" onClick={handleReset}>
             <RestartAlt fontSize="medium" />
           </IconButton>
-          <IconButton size="medium" color="inherit" onClick={handlePrint}>
+          <IconButton size="medium" onClick={handlePrint}>
             <PictureAsPdf fontSize="medium" />
           </IconButton>
-          <IconButton size="medium" color="inherit" onClick={handleExample}>
+          <IconButton size="medium" onClick={handleExample}>
             <SettingsAccessibility fontSize="medium" />
           </IconButton>
         </Toolbar>

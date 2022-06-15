@@ -16,9 +16,9 @@ export default function Form({ count, setCount }: Props) {
         display: "flex",
         flexDirection: "column",
         width: "40%",
-        padding: "0 3rem",
-        borderRight: "1px solid black",
-        height: "500px",
+        padding: "1rem 5rem",
+        border: "1px solid #202530",
+        height: "100%",
         overflow: "auto",
       }}
     >

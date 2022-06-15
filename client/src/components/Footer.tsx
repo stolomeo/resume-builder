@@ -1,4 +1,4 @@
-import { FaGithub } from "react-icons/fa";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import styled from "styled-components";
 
 export default function Footer() {
@@ -6,7 +6,7 @@ export default function Footer() {
     <FooterWrapper>
       <p>Copyright © 2022 stolomeo</p>
       <GithubLink href="https://github.com/stolomeo" target="_blank">
-        <FaGithub />
+        <GitHubIcon />
       </GithubLink>
     </FooterWrapper>
   );

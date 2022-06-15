@@ -1,41 +1,41 @@
+import { Switch } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 
-export default function Nav() {
+type Props = {
+  isDarkMode: boolean;
+  setIsDarkMode: (isDarkMode: boolean) => void;
+};
+
+export default function Nav({ isDarkMode, setIsDarkMode }: Props) {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar sx={{ backgroundColor: "#fff", gap: "1rem" }}>
-          <IconButton href="/" size="medium" edge="start" color="success">
-            <img src="https://i.ibb.co/3yYR00R/logo.png" alt="Website logo" />
-          </IconButton>
+    <AppBar position="static" sx={{ bgcolor: `background.paper` }}>
+      <Toolbar sx={{ height: "8vh" }}>
+        <IconButton href="/" size="medium" edge="start" color="inherit">
           <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, color: "black" }}
-          ></Typography>
-          <Button
-            color="primary"
-            variant="outlined"
-            href="/login"
-            size="medium"
+            component="h1"
+            variant="h4"
+            sx={{ color: `text.primary` }}
           >
-            Sign in
-          </Button>
-          <Button
-            color="primary"
-            variant="outlined"
-            href="/login"
-            size="medium"
-          >
-            Get Started
-          </Button>
-        </Toolbar>
-      </AppBar>
-    </Box>
+            ezcv.app
+          </Typography>
+        </IconButton>
+        <Switch onChange={() => setIsDarkMode(!isDarkMode)} />
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{ flexGrow: 1, color: "black" }}
+        ></Typography>
+        <Button variant="outlined" href="/login" size="medium">
+          Sign in
+        </Button>
+        <Button variant="outlined" href="/login" size="medium">
+          Get Started
+        </Button>
+      </Toolbar>
+    </AppBar>
   );
 }

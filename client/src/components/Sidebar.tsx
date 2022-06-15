@@ -17,11 +17,11 @@ export default function Sidebar({ count, setCount }: Props) {
     <Box
       sx={{
         width: "15vw",
-        height: "100vh",
+        height: "84vh",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        borderRight: "1px solid #202530",
+        border: "1px solid #202530",
         position: "fixed",
         top: "25",
         left: "0",

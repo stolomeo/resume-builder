@@ -1,3 +1,5 @@
+import { createTheme } from "@mui/material";
+import { blueGrey, grey, purple } from "@mui/material/colors";
 import { DefaultTheme } from "styled-components";
 
 const Theme: DefaultTheme = {
@@ -22,5 +24,30 @@ const Theme: DefaultTheme = {
     active: "inset 0px 0px 5px #c1c1c1",
   },
 };
+
+export const lightTheme = createTheme({
+  palette: {
+    mode: "light",
+    primary: {
+      main: purple[800],
+    },
+    background: {
+      default: blueGrey[50],
+    },
+  },
+});
+
+export const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+    primary: {
+      main: purple.A200,
+    },
+    background: {
+      default: grey[900],
+    },
+    text: {},
+  },
+});
 
 export default Theme;

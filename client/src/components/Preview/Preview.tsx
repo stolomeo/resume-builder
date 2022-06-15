@@ -12,11 +12,11 @@ export default function Preview() {
         display: "flex",
         flexDirection: "column",
         gap: ".5rem",
-        border: "1px solid black",
-        backgroundColor: "white",
+        border: "1px solid #202530",
+        backgroundColor: "#fafafa",
         padding: "1rem",
         overflow: "auto",
-        height: "545px",
+        height: "100%",
       }}
     >
       <Personal />
