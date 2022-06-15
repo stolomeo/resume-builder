@@ -21,7 +21,7 @@ export default function Sidebar({ count, setCount }: Props) {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        border: "1px solid #202530",
+        border: "1px solid rgba(0, 0, 0, 0.1)",
         position: "fixed",
         top: "25",
         left: "0",

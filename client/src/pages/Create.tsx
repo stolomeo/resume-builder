@@ -54,7 +54,6 @@ export default function Create() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          borderTop: "1px solid #202530",
           gap: "5rem",
         }}
       >

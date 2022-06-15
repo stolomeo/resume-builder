@@ -20,5 +20,11 @@ export const getExampleResumeCol = async () => {
 export const getExampleResume = async () => {
   const col = await getExampleResumeCol();
   const resume: any[] = await col.find().toArray();
-  return resume[0]; // front end requires single object
+  return resume[0];
+};
+
+export const createResume = async (resume: ResumeType) => {
+  const col = await getExampleResumeCol();
+  const { insertedId } = await col.insertOne(resume);
+  return insertedId.toString();
 };

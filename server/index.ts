@@ -35,4 +35,15 @@ app.post("/user", async (req, res) => {
   }
 });
 
+app.post("/exampleResume", async (req, res) => {
+  try {
+    await createUser(req.body);
+    res.send(200);
+  } catch (error) {
+    res.status(400).send({
+      message: "Error",
+    });
+  }
+});
+
 export const api = functions.https.onRequest(app);
