@@ -18,8 +18,8 @@ export default function DevTemplate() {
           alignItems: "center",
         }}
       >
-        <Typography variant="subtitle2">Sebastian Tolomeo</Typography>
-        <Typography variant="caption">
+        <Typography fontSize={13}>Sebastian Tolomeo</Typography>
+        <Typography fontSize={11}>
           tolomeosebastian@gmail.com | +1 954-913-6585
         </Typography>
         <Typography variant="caption">
