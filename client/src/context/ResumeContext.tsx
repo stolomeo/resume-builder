@@ -1,15 +1,21 @@
 import { createContext } from "react";
-import { ResumeType } from "../types";
-import { emptyResume } from "../utils";
+import { UserType } from "../types";
 
-type ResumeContextType = {
-  resume: ResumeType;
-  setResume: (resume: ResumeType) => void;
+type UserContextType = {
+  user: UserType;
+  setUser: (user: UserType) => void;
 };
 
-const ResumeContext = createContext<ResumeContextType>({
-  resume: emptyResume,
-  setResume: () => {},
+export const blankUser: UserType = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  password: "",
+};
+
+const UserContext = createContext<UserContextType>({
+  user: blankUser,
+  setUser: () => {},
 });
 
-export default ResumeContext;
+export default UserContext;

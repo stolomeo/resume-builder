@@ -1,13 +1,7 @@
+import { UserType } from "../types";
 import { getClient } from "./client";
 
-type User = {
-  firstname: string;
-  lastname: string;
-  email: string;
-  password: string;
-};
-
-export const createUser = async (user: User) => {
+export const createUser = async (user: UserType) => {
   const client = getClient();
   await client.post("/user", user);
 };
