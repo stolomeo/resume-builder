@@ -1,26 +1,34 @@
 import { Box, Button, Typography } from "@mui/material";
 import { nanoid } from "nanoid";
 import { useContext } from "react";
-import ResumeContext from "../../../context/";
+import UserContext from "../../../context/UserContext";
+import { ResumeType } from "../../../types";
 import SkillForm from "./SkillForm";
 
 export default function Skill() {
-  const { resume, setResume } = useContext(ResumeContext);
+  const { user, setUser } = useContext(UserContext);
 
   const handleAddSkill = () => {
-    setResume({
+    let resume: ResumeType = user.resume;
+    resume = {
       ...resume,
       skillItems: [
         ...resume.skillItems,
         {
           id: nanoid(),
-          skill: "",
+          employerName: "",
+          jobTitle: "",
+          workCity: "",
+          workState: "",
+          startDate: "",
+          endDate: "",
         },
       ],
-    });
+    };
+    setUser({ ...user, resume: resume });
   };
 
-  const skillElements = resume.skillItems.map((skillItem) => {
+  const skillElements = user.resume.skillItems.map((skillItem) => {
     return <SkillForm key={skillItem.id} skillItem={skillItem} />;
   });
 

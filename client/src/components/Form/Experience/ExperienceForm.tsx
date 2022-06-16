@@ -1,13 +1,13 @@
 import { Box, Button, TextField } from "@mui/material";
 import { ChangeEvent, useContext } from "react";
-import ResumeContext from "../../../context/";
+import UserContext from "../../../context/UserContext";
 import { ExperienceItemsType } from "../../../types/";
 
 type Props = {
   experienceItem: ExperienceItemsType;
 };
 export default function ExperienceForm({ experienceItem }: Props) {
-  const { resume, setResume } = useContext(ResumeContext);
+  const { user, setUser } = useContext(UserContext);
 
   const {
     id,
@@ -21,20 +21,22 @@ export default function ExperienceForm({ experienceItem }: Props) {
 
   const handleChangeExperience = (e: ChangeEvent, id: string) => {
     const { name, value } = e.target as HTMLTextAreaElement;
-    const newExperience = resume.experienceItems.map((experienceItem) => {
+    let resume = user.resume;
+    resume.experienceItems = resume.experienceItems.map((experienceItem) => {
       if (experienceItem.id === id) {
         return { ...experienceItem, [name]: value };
       }
       return experienceItem;
     });
-    setResume({ ...resume, experienceItems: [...newExperience] });
+    setUser({ ...user, resume: resume });
   };
 
   const handleDeleteExperience = (id: string) => {
-    const newExperience = resume.experienceItems.filter((experienceItem) => {
+    let resume = user.resume;
+    resume.experienceItems = resume.experienceItems.filter((experienceItem) => {
       return experienceItem.id !== id;
     });
-    setResume({ ...resume, experienceItems: [...newExperience] });
+    setUser({ ...user, resume: resume });
   };
 
   return (

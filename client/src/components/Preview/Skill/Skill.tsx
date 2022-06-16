@@ -1,12 +1,12 @@
 import { Box, Typography } from "@mui/material";
 import { useContext } from "react";
-import ResumeContext from "../../../context/";
+import UserContext from "../../../context/UserContext";
 import SkillItems from "./SkillItems";
 
 export default function Skill() {
-  const { resume } = useContext(ResumeContext);
+  const { user } = useContext(UserContext);
 
-  const skillElements = resume.skillItems.map((skillItem) => {
+  const skillElements = user.resume.skillItems.map((skillItem) => {
     return <SkillItems key={skillItem.id} skillItem={skillItem} />;
   });
 

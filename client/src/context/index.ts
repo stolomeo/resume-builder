@@ -1,3 +1,3 @@
-import ResumeContext from "./ResumeContext";
+import UserContext from "./UserContext";
 
-export default ResumeContext;
+export default UserContext;

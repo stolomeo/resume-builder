@@ -3,7 +3,7 @@ import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Nav from "./components/Nav";
 import isDarkModeContext from "./context/isDarkModeContext";
-import UserContext, { blankUser } from "./context/ResumeContext";
+import UserContext, { blankUser } from "./context/UserContext";
 import Create from "./pages/Create";
 import DevTemplate from "./pages/DevTemplate";
 import Home from "./pages/Home";

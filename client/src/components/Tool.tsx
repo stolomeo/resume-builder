@@ -1,5 +1,4 @@
 import {
-  CloudUpload,
   PictureAsPdf,
   RestartAlt,
   SettingsAccessibility,
@@ -9,19 +8,18 @@ import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import { Dispatch, SetStateAction, useContext } from "react";
-import ResumeContext from "../context";
-import { createResume, getExampleResume } from "../services/resume";
-import { emptyResume } from "../utils";
+import UserContext from "../context/UserContext";
+import { getExampleResume } from "../services/resume";
 
 type Props = {
   setCount: Dispatch<SetStateAction<number>>;
 };
 
 export default function Tool({ setCount }: Props) {
-  const { resume, setResume } = useContext(ResumeContext);
+  const { user, setUser } = useContext(UserContext);
 
   const handleReset = () => {
-    setResume(emptyResume);
+    // setUser(emptyResume);
     setCount(25);
   };
 
@@ -31,12 +29,12 @@ export default function Tool({ setCount }: Props) {
 
   const handleExample = async () => {
     const exampleResume = await getExampleResume();
-    setResume(exampleResume);
+    setUser(exampleResume);
   };
 
-  const handleSave = async () => {
-    await createResume(resume);
-  };
+  // const handleSave = async () => {
+  //   await createResume(resume);
+  // };
 
   return (
     <Box sx={{ zIndex: -1 }}>
@@ -53,9 +51,9 @@ export default function Tool({ setCount }: Props) {
           <IconButton size="medium" onClick={handleReset}>
             <RestartAlt fontSize="medium" />
           </IconButton>
-          <IconButton size="medium" onClick={handleSave}>
+          {/* <IconButton size="medium" onClick={handleSave}>
             <CloudUpload fontSize="medium" />
-          </IconButton>
+          </IconButton> */}
           <IconButton size="medium" onClick={handlePrint}>
             <PictureAsPdf fontSize="medium" />
           </IconButton>

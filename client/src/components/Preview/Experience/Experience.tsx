@@ -1,19 +1,21 @@
 import { useContext } from "react";
-import ResumeContext from "../../../context/";
+import UserContext from "../../../context/UserContext";
 import { PreviewSection, SectionHeader, SectionItems } from "../styles";
 import ExperienceItems from "./ExperienceItems";
 
 export default function Experience() {
-  const { resume } = useContext(ResumeContext);
+  const { user } = useContext(UserContext);
 
-  const experienceElements = resume.experienceItems.map((experienceItem) => {
-    return (
-      <ExperienceItems
-        key={experienceItem.id}
-        experienceItem={experienceItem}
-      />
-    );
-  });
+  const experienceElements = user.resume.experienceItems.map(
+    (experienceItem) => {
+      return (
+        <ExperienceItems
+          key={experienceItem.id}
+          experienceItem={experienceItem}
+        />
+      );
+    }
+  );
 
   return (
     <PreviewSection>

@@ -3,13 +3,9 @@ import { useState } from "react";
 import Form from "../components/Form";
 import Sidebar from "../components/Sidebar";
 import Tool from "../components/Tool";
-import ResumeContext from "../context";
-import { ResumeType } from "../types";
-import { emptyResume } from "../utils";
 import DevTemplate from "./DevTemplate";
 
 export default function Create() {
-  const [resume, setResume] = useState<ResumeType>(emptyResume);
   const [count, setCount] = useState(25);
 
   const handleNext = () => {
@@ -22,7 +18,7 @@ export default function Create() {
   };
 
   return (
-    <ResumeContext.Provider value={{ resume, setResume }}>
+    <>
       <Box
         sx={{
           display: "flex",
@@ -67,6 +63,6 @@ export default function Create() {
           Next
         </Button>
       </Box>
-    </ResumeContext.Provider>
+    </>
   );
 }

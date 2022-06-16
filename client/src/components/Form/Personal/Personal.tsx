@@ -1,22 +1,19 @@
 import { Box, TextField, Typography } from "@mui/material";
 import { ChangeEvent, useContext } from "react";
-import ResumeContext from "../../../context/";
+import UserContext from "../../../context/UserContext";
 
 export default function Personal() {
-  const { resume, setResume } = useContext(ResumeContext);
+  const { user, setUser } = useContext(UserContext);
 
   const { firstName, lastName, email, phone, homeCity, homeState } =
-    resume.personalItems;
+    user.resume.personalItems;
 
   const handleChangePersonal = (e: ChangeEvent) => {
     const { name, value } = e.target as HTMLTextAreaElement;
-    setResume({
-      ...resume,
-      personalItems: {
-        ...resume.personalItems,
-        [name]: value,
-      },
-    });
+    let resume = user.resume;
+    resume.personalItems[name] = value;
+    // resume.personalItems = {...resume.personalItems,[name]: value};
+    setUser({ ...user, resume: resume });
   };
   return (
     <Box
@@ -35,7 +32,8 @@ export default function Personal() {
         InputProps={{ style: {} }}
         type="text"
         name="firstName"
-        placeholder="First Name"
+        label="First Name"
+        placeholder="Jane Doe"
         value={firstName}
         onChange={handleChangePersonal}
       />

@@ -25,4 +25,5 @@ export type UserType = {
   lastName: string;
   email: string;
   password: string;
+  resume: ResumeType;
 };
