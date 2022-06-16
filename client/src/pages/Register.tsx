@@ -15,8 +15,8 @@ import { useNavigate } from "react-router-dom";
 import { createUser } from "../services/user";
 
 export default function Register() {
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
+  const [firstName, setFirstname] = useState("");
+  const [lastName, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   let navigate = useNavigate();
@@ -24,10 +24,11 @@ export default function Register() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     await createUser({
-      firstname,
-      lastname,
+      firstName,
+      lastName,
       email,
       password,
+      resume,
     });
     navigate("/");
   };
