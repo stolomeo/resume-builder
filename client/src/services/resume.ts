@@ -1,4 +1,4 @@
-import { ResumeType } from "../types";
+import { UserType } from "../types";
 import { getClient } from "./client";
 
 export const getEmptyResume = async () => {
@@ -13,7 +13,7 @@ export const getExampleResume = async () => {
   return response.data;
 };
 
-export const createResume = async (resume: ResumeType) => {
+export const createResume = async (user: UserType) => {
   const client = getClient();
-  await client.post("/exampleResume", resume);
+  await client.post("/users", user);
 };
