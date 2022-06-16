@@ -21,19 +21,24 @@ export default function DevTemplate() {
         <Typography variant="h5">Sebastian Tolomeo</Typography>
         <Typography>tolomeosebastian@gmail.com | +1 954-913-6585</Typography>
         <Typography>
-          <a href="https://www.Linkedin.com/in/ sebastian-tolomeo">
-            <LinkedIn />
-          </a>
-          |
           <a href="https://www.github.com/stolomeo">
             <GitHub />
+          </a>
+          |
+          <a href="https://www.Linkedin.com/in/ sebastian-tolomeo">
+            <LinkedIn />
           </a>
         </Typography>
       </Box>
       <Box sx={{ display: "flex", alignItems: "flex-end" }}>
         <Typography flexGrow={0}>EDUCATION</Typography>
         <hr
-          style={{ flexGrow: "1", marginLeft: ".5rem", borderColor: "blue" }}
+          style={{
+            flexGrow: "1",
+            marginLeft: ".5rem",
+            borderColor: "#000080",
+            borderWidth: ".1px",
+          }}
         />
       </Box>
       <Box
@@ -49,8 +54,12 @@ export default function DevTemplate() {
         <Typography fontWeight={700}>Apr 2022</Typography>
       </Box>
       <Box sx={{ display: "flex", justifyContent: "space-between", px: 3 }}>
-        <Typography fontStyle={"italic"}>Boca Code</Typography>
-        <Typography fontStyle={"italic"}>Boca Raton, FL</Typography>
+        <Typography fontStyle={"italic"} variant="subtitle2">
+          Boca Code
+        </Typography>
+        <Typography fontStyle={"italic"} variant="subtitle2">
+          Boca Raton, FL
+        </Typography>
       </Box>
       <Box
         sx={{
@@ -65,15 +74,22 @@ export default function DevTemplate() {
         <Typography fontWeight={700}>Dec 2020</Typography>
       </Box>
       <Box sx={{ display: "flex", justifyContent: "space-between", px: 3 }}>
-        <Typography fontStyle={"italic"}>
+        <Typography fontStyle={"italic"} variant="subtitle2">
           Florida Atlantic University
         </Typography>
-        <Typography fontStyle={"italic"}>Boca Raton, FL</Typography>
+        <Typography fontStyle={"italic"} variant="subtitle2">
+          Boca Raton, FL
+        </Typography>
       </Box>
       <Box sx={{ display: "flex", alignItems: "flex-end" }}>
         <Typography flexGrow={0}>SKILLS</Typography>
         <hr
-          style={{ flexGrow: "1", marginLeft: ".5rem", borderColor: "blue" }}
+          style={{
+            flexGrow: "1",
+            marginLeft: ".5rem",
+            borderColor: "#000080",
+            borderWidth: ".1px",
+          }}
         />
       </Box>
       <Box sx={{ display: "flex" }}>
@@ -92,7 +108,12 @@ export default function DevTemplate() {
       <Box sx={{ display: "flex", alignItems: "flex-end" }}>
         <Typography flexGrow={0}>NOTABLE PROJECTS</Typography>
         <hr
-          style={{ flexGrow: "1", marginLeft: ".5rem", borderColor: "blue" }}
+          style={{
+            flexGrow: "1",
+            marginLeft: ".5rem",
+            borderColor: "#000080",
+            borderWidth: ".1px",
+          }}
         />
       </Box>
       <Box
@@ -106,7 +127,9 @@ export default function DevTemplate() {
         <Typography fontWeight={700}>Jun 2022</Typography>
       </Box>
       <Box sx={{ display: "flex", justifyContent: "space-between", px: 3 }}>
-        <Typography fontStyle={"italic"}>Author & Lead Developer</Typography>
+        <Typography fontStyle={"italic"} variant="subtitle2">
+          Author & Lead Developer
+        </Typography>
       </Box>
       <Typography variant="body2" px={5}>
         • Developed a web application that allows users to effortlessly create a
@@ -135,7 +158,9 @@ export default function DevTemplate() {
         <Typography fontWeight={700}>May 2022</Typography>
       </Box>
       <Box sx={{ display: "flex", justifyContent: "space-between", px: 3 }}>
-        <Typography fontStyle={"italic"}>Author & Lead Developer</Typography>
+        <Typography fontStyle={"italic"} variant="subtitle2">
+          Author & Lead Developer
+        </Typography>
       </Box>
       <Typography variant="body2" px={5}>
         • Created a web application using Pokemon sprites so that users can test
@@ -167,7 +192,9 @@ export default function DevTemplate() {
         <Typography fontWeight={700}>Apr 2022</Typography>
       </Box>
       <Box sx={{ display: "flex", justifyContent: "space-between", px: 3 }}>
-        <Typography fontStyle={"italic"}>Author & Lead Developer</Typography>
+        <Typography fontStyle={"italic"} variant="subtitle2">
+          Author & Lead Developer
+        </Typography>
       </Box>
       <Typography variant="body2" px={5}>
         • Assembled a web application to mimic a popular family dice game
@@ -193,7 +220,9 @@ export default function DevTemplate() {
         <Typography fontWeight={700}>Mar 2022</Typography>
       </Box>
       <Box sx={{ display: "flex", justifyContent: "space-between", px: 3 }}>
-        <Typography fontStyle={"italic"}>Author & Lead Developer</Typography>
+        <Typography fontStyle={"italic"} variant="subtitle2">
+          Author & Lead Developer
+        </Typography>
       </Box>
       <Typography variant="body2" px={5}>
         • Created a simple weather application which retrieves live weather data
@@ -221,7 +250,9 @@ export default function DevTemplate() {
         <Typography fontWeight={700}>Mar 2022</Typography>
       </Box>
       <Box sx={{ display: "flex", justifyContent: "space-between", px: 3 }}>
-        <Typography fontStyle={"italic"}>Author & Lead Developer</Typography>
+        <Typography fontStyle={"italic"} variant="subtitle2">
+          Author & Lead Developer
+        </Typography>
       </Box>
       <Typography variant="body2" px={5}>
         • Developed a dynamically rendered and interactive restaurant website
@@ -240,7 +271,12 @@ export default function DevTemplate() {
       <Box sx={{ display: "flex", alignItems: "flex-end" }}>
         <Typography flexGrow={0}>EXPERIENCE</Typography>
         <hr
-          style={{ flexGrow: "1", marginLeft: ".5rem", borderColor: "blue" }}
+          style={{
+            flexGrow: "1",
+            marginLeft: ".5rem",
+            borderColor: "#000080",
+            borderWidth: ".1px",
+          }}
         />
       </Box>
       <Box
@@ -254,8 +290,12 @@ export default function DevTemplate() {
         <Typography fontWeight={700}>Jul 2021 - Present</Typography>
       </Box>
       <Box sx={{ display: "flex", justifyContent: "space-between", px: 3 }}>
-        <Typography fontStyle={"italic"}>Area Manager</Typography>
-        <Typography fontStyle={"italic"}>Orlando, FL</Typography>
+        <Typography fontStyle={"italic"} variant="subtitle2">
+          Area Manager
+        </Typography>
+        <Typography fontStyle={"italic"} variant="subtitle2">
+          Orlando, FL
+        </Typography>
       </Box>
       <Typography variant="body2" px={5}>
         • Led and developed a team of Amazon associates
@@ -274,8 +314,12 @@ export default function DevTemplate() {
         <Typography fontWeight={700}>May 2017 - Jun 2021</Typography>
       </Box>
       <Box sx={{ display: "flex", justifyContent: "space-between", px: 3 }}>
-        <Typography fontStyle={"italic"}>Sales Representative</Typography>
-        <Typography fontStyle={"italic"}>Boca Raton, FL</Typography>
+        <Typography fontStyle={"italic"} variant="subtitle2">
+          Sales Representative
+        </Typography>
+        <Typography fontStyle={"italic"} variant="subtitle2">
+          Boca Raton, FL
+        </Typography>
       </Box>
       <Typography variant="body2" px={5}>
         • Presented, promoted, and sold products/services using solid arguments
