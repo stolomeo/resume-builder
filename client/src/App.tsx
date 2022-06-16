@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Nav from "./components/Nav";
 import isDarkModeContext from "./context/isDarkModeContext";
 import Create from "./pages/Create";
+import DevTemplate from "./pages/DevTemplate";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -21,6 +22,7 @@ function App() {
           <Routes>
             <Route index element={<Home />} />
             <Route path="login" element={<Login />} />
+            <Route path="devtemplate" element={<DevTemplate />} />
             <Route path="create" element={<Create />} />
             <Route path="register" element={<Register />} />
           </Routes>
