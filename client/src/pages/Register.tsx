@@ -13,6 +13,7 @@ import {
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { createUser } from "../services/user";
+import emptyResume from "../utils/emptyResume";
 
 export default function Register() {
   const [firstName, setFirstname] = useState("");
@@ -28,7 +29,7 @@ export default function Register() {
       lastName,
       email,
       password,
-      resume,
+      resume: emptyResume,
     });
     navigate("/");
   };

@@ -1,9 +1,9 @@
 import { Box, Button, LinearProgress } from "@mui/material";
 import { useState } from "react";
 import Form from "../components/Form";
+import Preview from "../components/Preview";
 import Sidebar from "../components/Sidebar";
 import Tool from "../components/Tool";
-import DevTemplate from "./DevTemplate";
 
 export default function Create() {
   const [count, setCount] = useState(25);
@@ -36,7 +36,7 @@ export default function Create() {
           }}
         >
           <Tool setCount={setCount} />
-          <DevTemplate />
+          <Preview />
         </Box>
       </Box>
       <Box

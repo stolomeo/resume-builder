@@ -1,6 +1,7 @@
 import { nanoid } from "nanoid";
+import { ResumeType } from "../types";
 
-const emptyResume = {
+const emptyResume: ResumeType = {
   personalItems: {
     firstName: "",
     lastName: "",
