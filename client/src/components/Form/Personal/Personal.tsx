@@ -31,7 +31,7 @@ export default function Personal() {
       </Typography>
 
       <TextField
-        variant="outlined"
+        variant="standard"
         InputProps={{ style: {} }}
         type="text"
         name="firstName"
@@ -40,7 +40,7 @@ export default function Personal() {
         onChange={handleChangePersonal}
       />
       <TextField
-        variant="outlined"
+        variant="standard"
         InputProps={{ style: {} }}
         type="text"
         name="lastName"
@@ -49,7 +49,7 @@ export default function Personal() {
         onChange={handleChangePersonal}
       />
       <TextField
-        variant="outlined"
+        variant="standard"
         InputProps={{ style: {} }}
         type="text"
         name="email"
@@ -58,7 +58,7 @@ export default function Personal() {
         onChange={handleChangePersonal}
       />
       <TextField
-        variant="outlined"
+        variant="standard"
         InputProps={{ style: {} }}
         type="text"
         name="phone"
@@ -67,7 +67,7 @@ export default function Personal() {
         onChange={handleChangePersonal}
       />
       <TextField
-        variant="outlined"
+        variant="standard"
         InputProps={{ style: {} }}
         type="text"
         name="homeCity"
@@ -76,7 +76,7 @@ export default function Personal() {
         onChange={handleChangePersonal}
       />
       <TextField
-        variant="outlined"
+        variant="standard"
         InputProps={{ style: {} }}
         type="text"
         name="homeState"

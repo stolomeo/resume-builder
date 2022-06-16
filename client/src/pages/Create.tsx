@@ -1,12 +1,12 @@
 import { Box, Button, LinearProgress } from "@mui/material";
 import { useState } from "react";
 import Form from "../components/Form";
-import Preview from "../components/Preview";
 import Sidebar from "../components/Sidebar";
 import Tool from "../components/Tool";
 import ResumeContext from "../context";
 import { ResumeType } from "../types";
 import { emptyResume } from "../utils";
+import DevTemplate from "./DevTemplate";
 
 export default function Create() {
   const [resume, setResume] = useState<ResumeType>(emptyResume);
@@ -40,7 +40,7 @@ export default function Create() {
           }}
         >
           <Tool setCount={setCount} />
-          <Preview />
+          <DevTemplate />
         </Box>
       </Box>
       <Box

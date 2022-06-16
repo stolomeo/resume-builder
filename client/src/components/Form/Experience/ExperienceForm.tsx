@@ -47,7 +47,7 @@ export default function ExperienceForm({ experienceItem }: Props) {
         }}
       >
         <TextField
-          variant="outlined"
+          variant="standard"
           type="text"
           name="employerName"
           placeholder="Employer name"
@@ -55,7 +55,7 @@ export default function ExperienceForm({ experienceItem }: Props) {
           onChange={(e) => handleChangeExperience(e, id)}
         />
         <TextField
-          variant="outlined"
+          variant="standard"
           type="text"
           name="jobTitle"
           placeholder="Job title"
@@ -63,7 +63,7 @@ export default function ExperienceForm({ experienceItem }: Props) {
           onChange={(e) => handleChangeExperience(e, id)}
         />
         <TextField
-          variant="outlined"
+          variant="standard"
           type="text"
           name="workCity"
           placeholder="City"
@@ -71,7 +71,7 @@ export default function ExperienceForm({ experienceItem }: Props) {
           onChange={(e) => handleChangeExperience(e, id)}
         />
         <TextField
-          variant="outlined"
+          variant="standard"
           type="text"
           name="workState"
           placeholder="State"
@@ -79,7 +79,7 @@ export default function ExperienceForm({ experienceItem }: Props) {
           onChange={(e) => handleChangeExperience(e, id)}
         />
         <TextField
-          variant="outlined"
+          variant="standard"
           type="text"
           name="startDate"
           placeholder="Start date"
@@ -87,7 +87,7 @@ export default function ExperienceForm({ experienceItem }: Props) {
           onChange={(e) => handleChangeExperience(e, id)}
         />
         <TextField
-          variant="outlined"
+          variant="standard"
           type="text"
           name="endDate"
           placeholder="End date"
