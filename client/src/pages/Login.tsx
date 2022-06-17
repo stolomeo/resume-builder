@@ -27,6 +27,7 @@ export default function Login() {
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const pulledUser = await getUser(email);
+    console.log(pulledUser);
     //if invalid alert not valid
     setUser(pulledUser);
     navigate("/create");

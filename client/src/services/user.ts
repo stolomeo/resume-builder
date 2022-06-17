@@ -8,6 +8,7 @@ export const createUser = async (user: UserType) => {
 
 export const getUser = async (email: string) => {
   const client = getClient();
-  const returnedUser: UserType = await client.get(`/users/${email}`);
-  return returnedUser;
+  const returnedUser = await client.get(`/users/${email}`);
+  const data = returnedUser.data;
+  return data;
 };
