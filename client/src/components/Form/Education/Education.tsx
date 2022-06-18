@@ -1,31 +1,34 @@
 import { Button, Typography } from "@mui/material";
 import { nanoid } from "nanoid";
 import { useContext } from "react";
-import ResumeContext from "../../../context/";
+import UserContext from "../../../context/UserContext";
+import { ResumeType } from "../../../types";
 import EducationForm from "./EducationForm";
 
 export default function Education() {
-  const { resume, setResume } = useContext(ResumeContext);
+  const { user, setUser } = useContext(UserContext);
 
   const handleAddEducation = () => {
-    setResume({
+    let resume: ResumeType = user.resume;
+    resume = {
       ...resume,
       educationItems: [
         ...resume.educationItems,
         {
           id: nanoid(),
-          university: "",
-          degree: "",
-          major: "",
-          schoolCity: "",
-          schoolState: "",
-          graduationDate: "",
+          employerName: "",
+          jobTitle: "",
+          workCity: "",
+          workState: "",
+          startDate: "",
+          endDate: "",
         },
       ],
-    });
+    };
+    setUser({ ...user, resume: resume });
   };
 
-  const educationElements = resume.educationItems.map((educationItem) => {
+  const educationElements = user.resume.educationItems.map((educationItem) => {
     return (
       <EducationForm key={educationItem.id} educationItem={educationItem} />
     );

@@ -1,12 +1,12 @@
 import { useContext } from "react";
-import ResumeContext from "../../../context/";
+import UserContext from "../../../context/UserContext";
 import { PreviewSection, SectionHeader, SectionItems } from "../styles";
 import EducationItems from "./EducationItems";
 
 export default function Education() {
-  const { resume } = useContext(ResumeContext);
+  const { user } = useContext(UserContext);
 
-  const educationElements = resume.educationItems.map((educationItem) => {
+  const educationElements = user.resume.educationItems.map((educationItem) => {
     return (
       <EducationItems key={educationItem.id} educationItem={educationItem} />
     );

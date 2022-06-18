@@ -1,6 +1,6 @@
 import { Box, Button, TextField } from "@mui/material";
 import { ChangeEvent, useContext } from "react";
-import ResumeContext from "../../../context/";
+import UserContext from "../../../context/UserContext";
 import { EducationItemsType } from "../../../types/";
 
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
 };
 
 export default function EducationForm({ educationItem }: Props) {
-  const { resume, setResume } = useContext(ResumeContext);
+  const { user, setUser } = useContext(UserContext);
 
   const {
     id,
@@ -22,22 +22,23 @@ export default function EducationForm({ educationItem }: Props) {
 
   const handleChangeEducation = (e: ChangeEvent, id: string) => {
     const { name, value } = e.target as HTMLTextAreaElement;
-    const newEducation = resume.educationItems.map((educationItem) => {
+    let resume = user.resume;
+    resume.educationItems = resume.educationItems.map((educationItem) => {
       if (educationItem.id === id) {
         return { ...educationItem, [name]: value };
       }
       return educationItem;
     });
-    setResume({ ...resume, educationItems: [...newEducation] });
+    setUser({ ...user, resume: resume });
   };
 
   const handleDeleteEducation = (id: string) => {
-    const newEducation = resume.educationItems.filter((educationItem) => {
+    let resume = user.resume;
+    resume.educationItems = resume.educationItems.filter((educationItem) => {
       return educationItem.id !== id;
     });
-    setResume({ ...resume, educationItems: [...newEducation] });
+    setUser({ ...user, resume: resume });
   };
-
   return (
     <>
       <Box sx={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>

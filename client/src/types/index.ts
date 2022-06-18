@@ -19,3 +19,11 @@ export type EducationItemsType = {
 export type ResumeSkillItems = {
   [name: string]: string;
 };
+
+export type UserType = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  resume: ResumeType;
+};

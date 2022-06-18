@@ -11,10 +11,27 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import { useContext, useState } from "react";
 
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
+import UserContext from "../context";
+import { getUser } from "../services/user";
 
 export default function Login() {
+  const { user, setUser } = useContext(UserContext);
+  let navigate = useNavigate();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const pulledUser = await getUser(email);
+    console.log(pulledUser);
+    //if invalid alert not valid
+    setUser(pulledUser);
+    navigate("/create");
+  };
   return (
     <Container component="main" maxWidth="xs">
       <Box
@@ -31,7 +48,7 @@ export default function Login() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <Box component="form" noValidate sx={{ mt: 1 }}>
+        <Box component="form" noValidate sx={{ mt: 1 }} onSubmit={handleLogin}>
           <TextField
             margin="normal"
             required
@@ -41,6 +58,7 @@ export default function Login() {
             name="email"
             autoComplete="email"
             autoFocus
+            onChange={(e) => setEmail(e.target.value)}
           />
           <TextField
             margin="normal"
@@ -61,7 +79,6 @@ export default function Login() {
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
-            href="/"
           >
             Sign In
           </Button>

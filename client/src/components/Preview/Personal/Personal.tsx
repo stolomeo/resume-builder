@@ -1,13 +1,13 @@
 import { Typography } from "@mui/material";
 import { useContext } from "react";
 import styled from "styled-components";
-import ResumeContext from "../../../context/";
+import UserContext from "../../../context/UserContext";
 
 export default function Personal() {
-  const { resume } = useContext(ResumeContext);
+  const { user } = useContext(UserContext);
 
   const { firstName, lastName, email, phone, homeCity, homeState } =
-    resume.personalItems;
+    user.resume.personalItems;
   return (
     <section>
       <Typography component="h1" variant="h6" fontWeight="bold">
