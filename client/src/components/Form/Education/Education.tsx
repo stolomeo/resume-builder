@@ -1,48 +1,41 @@
-import { Button, Typography } from "@mui/material";
-import { nanoid } from "nanoid";
-import { useContext } from "react";
-import UserContext from "../../../context/UserContext";
-import { ResumeType } from "../../../types";
-import EducationForm from "./EducationForm";
-
 export default function Education() {
-  const { user, setUser } = useContext(UserContext);
+  // const { user, setUser } = useContext(UserContext);
 
-  const handleAddEducation = () => {
-    let resume: ResumeType = user.resume;
-    resume = {
-      ...resume,
-      educationItems: [
-        ...resume.educationItems,
-        {
-          id: nanoid(),
-          employerName: "",
-          jobTitle: "",
-          workCity: "",
-          workState: "",
-          startDate: "",
-          endDate: "",
-        },
-      ],
-    };
-    setUser({ ...user, resume: resume });
-  };
+  // const handleAddEducation = () => {
+  //   let resume: ResumeType = user.resume;
+  //   resume = {
+  //     ...resume,
+  //     educationItems: [
+  //       ...resume.educationItems,
+  //       {
+  //         id: nanoid(),
+  //         employerName: "",
+  //         jobTitle: "",
+  //         workCity: "",
+  //         workState: "",
+  //         startDate: "",
+  //         endDate: "",
+  //       },
+  //     ],
+  //   };
+  //   setUser({ ...user, resume: resume });
+  // };
 
-  const educationElements = user.resume.educationItems.map((educationItem) => {
-    return (
-      <EducationForm key={educationItem.id} educationItem={educationItem} />
-    );
-  });
+  // const educationElements = user.resume.educationItems.map((educationItem) => {
+  //   return (
+  //     <EducationForm key={educationItem.id} educationItem={educationItem} />
+  //   );
+  // });
 
   return (
     <>
-      <Typography component="h2" variant="h6" marginBottom="1.5rem">
+      {/* <Typography component="h2" variant="h6" marginBottom="1.5rem">
         EDUCATION
       </Typography>
       {educationElements}
       <Button variant="outlined" onClick={handleAddEducation}>
         Add Education
-      </Button>
+      </Button> */}
     </>
   );
 }

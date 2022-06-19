@@ -1,4 +1,10 @@
-import { BarChart, Person, School, WorkHistory } from "@mui/icons-material";
+import {
+  BarChart,
+  FolderShared,
+  Person,
+  School,
+  WorkHistory,
+} from "@mui/icons-material";
 import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -29,7 +35,7 @@ export default function Sidebar({ count, setCount }: Props) {
     >
       <List>
         <ListItem disablePadding>
-          <ListItemButton onClick={() => setCount((count = 25))}>
+          <ListItemButton onClick={() => setCount((count = 20))}>
             <ListItemIcon>
               <Person />
             </ListItemIcon>
@@ -37,15 +43,7 @@ export default function Sidebar({ count, setCount }: Props) {
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
-          <ListItemButton onClick={() => setCount((count = 50))}>
-            <ListItemIcon>
-              <WorkHistory />
-            </ListItemIcon>
-            <ListItemText primary="Experience" />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton onClick={() => setCount((count = 75))}>
+          <ListItemButton onClick={() => setCount((count = 40))}>
             <ListItemIcon>
               <School />
             </ListItemIcon>
@@ -53,11 +51,27 @@ export default function Sidebar({ count, setCount }: Props) {
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
-          <ListItemButton onClick={() => setCount((count = 100))}>
+          <ListItemButton onClick={() => setCount((count = 60))}>
             <ListItemIcon>
               <BarChart />
             </ListItemIcon>
             <ListItemText primary="Skills" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton onClick={() => setCount((count = 80))}>
+            <ListItemIcon>
+              <FolderShared />
+            </ListItemIcon>
+            <ListItemText primary="Projects" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemButton onClick={() => setCount((count = 100))}>
+            <ListItemIcon>
+              <WorkHistory />
+            </ListItemIcon>
+            <ListItemText primary="Experience" />
           </ListItemButton>
         </ListItem>
       </List>

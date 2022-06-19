@@ -1,16 +1,19 @@
-import Education from "../components/Form/Education";
-import Experience from "../components/Form/Experience";
-import Personal from "../components/Form/Personal";
-import Skill from "../components/Form/Skill";
+import Education from "../components/DevForm/Education";
+import Experience from "../components/DevForm/Experience";
+import PersonalForm from "../components/DevForm/PersonalForm";
+import Projects from "../components/DevForm/Projects";
+import Skills from "../components/DevForm/Skills";
 
 export const handleComponentSelection = (count: number) => {
-  if (count === 25) {
-    return <Personal />;
-  } else if (count === 50) {
-    return <Experience />;
-  } else if (count === 75) {
+  if (count === 20) {
+    return <PersonalForm />;
+  } else if (count === 40) {
     return <Education />;
+  } else if (count === 60) {
+    return <Skills />;
+  } else if (count === 80) {
+    return <Projects />;
   } else if (count === 100) {
-    return <Skill />;
+    return <Experience />;
   }
 };

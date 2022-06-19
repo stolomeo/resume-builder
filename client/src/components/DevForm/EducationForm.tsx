@@ -1,6 +1,37 @@
-import { Box, TextField } from "@mui/material";
+import { Box, Button, TextField } from "@mui/material";
+import { ChangeEvent, useContext } from "react";
+import UserContext from "../../context";
+import { EducationItemsType } from "../../types";
 
-export default function EducationForm() {
+type Props = {
+  educationItem: EducationItemsType;
+};
+
+export default function EducationForm({ educationItem }: Props) {
+  const { user, setUser } = useContext(UserContext);
+
+  const { id, majorAndDegree, schoolName, schoolLocation, graduationDate } =
+    educationItem;
+
+  const handleChangeEducation = (e: ChangeEvent, id: string) => {
+    const { name, value } = e.target as HTMLTextAreaElement;
+    let resume = user.resume;
+    resume.educationItems = resume.educationItems.map((educationItem) => {
+      if (educationItem.id === id) {
+        return { ...educationItem, [name]: value };
+      }
+      return educationItem;
+    });
+    setUser({ ...user, resume: resume });
+  };
+
+  const handleDeleteEducation = (id: string) => {
+    let resume = user.resume;
+    resume.educationItems = resume.educationItems.filter((educationItem) => {
+      return educationItem.id !== id;
+    });
+    setUser({ ...user, resume: resume });
+  };
   return (
     <>
       <Box sx={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
@@ -10,8 +41,8 @@ export default function EducationForm() {
           name="majorAndDegree"
           label="Degree/Major"
           placeholder="Bachelor of Science - Computer Science"
-          //   value={majorAndDegree}
-          //   onChange={(e) => handleChangeEducation(e, id)}
+          value={majorAndDegree}
+          onChange={(e) => handleChangeEducation(e, id)}
         />
         <TextField
           variant="standard"
@@ -19,8 +50,8 @@ export default function EducationForm() {
           name="schoolName"
           label="School Name"
           placeholder="Harvard University"
-          //   value={schoolName}
-          //   onChange={(e) => handleChangeEducation(e, id)}
+          value={schoolName}
+          onChange={(e) => handleChangeEducation(e, id)}
         />
         <TextField
           variant="standard"
@@ -28,8 +59,8 @@ export default function EducationForm() {
           name="schoolLocation"
           label="School Location"
           placeholder="Cambridge, MA"
-          //   value={schoolLocation}
-          //   onChange={(e) => handleChangeEducation(e, id)}
+          value={schoolLocation}
+          onChange={(e) => handleChangeEducation(e, id)}
         />
         <TextField
           variant="standard"
@@ -37,13 +68,13 @@ export default function EducationForm() {
           name="graduationDate"
           label="Graduation Date"
           placeholder="Dec 2020"
-          //   value={graduationDate}
-          //   onChange={(e) => handleChangeEducation(e, id)}
+          value={graduationDate}
+          onChange={(e) => handleChangeEducation(e, id)}
         />
       </Box>
-      {/* <Button variant="outlined" onClick={() => handleDeleteEducation(id)}>
+      <Button variant="outlined" onClick={() => handleDeleteEducation(id)}>
         Delete Education
-      </Button> */}
+      </Button>
     </>
   );
 }

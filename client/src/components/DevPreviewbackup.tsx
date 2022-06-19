@@ -1,53 +1,7 @@
 import { GitHub, LinkedIn } from "@mui/icons-material";
 import { Box, Container, Typography } from "@mui/material";
-import { useContext } from "react";
-import UserContext from "../context";
 
-export default function DevPreview() {
-  const { user } = useContext(UserContext);
-  const { fullName, email, phone, githubLink, linkedinLink } =
-    user.resume.personalItems;
-
-  const educationElements = user.resume.educationItems.map((educationItem) => {
-    const { id, majorAndDegree, schoolName, schoolLocation, graduationDate } =
-      educationItem;
-
-    return (
-      <>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            px: 3,
-          }}
-        >
-          <Typography fontWeight={700}>{majorAndDegree}</Typography>
-          <Typography fontWeight={700}>{graduationDate}</Typography>
-        </Box>
-        <Box sx={{ display: "flex", justifyContent: "space-between", px: 3 }}>
-          <Typography fontStyle={"italic"} variant="subtitle2">
-            {schoolName}
-          </Typography>
-          <Typography fontStyle={"italic"} variant="subtitle2">
-            {schoolLocation}
-          </Typography>
-        </Box>
-      </>
-    );
-  });
-
-  const languageElements = user.resume.languageItems.map((languageItem) => {
-    const { id, language } = languageItem;
-    return language;
-  });
-
-  const technologyElements = user.resume.technologyItems.map(
-    (technologyItem) => {
-      const { id, technology } = technologyItem;
-      return technology;
-    }
-  );
-
+export default function DevPreviewbackup() {
   return (
     <Container
       maxWidth="md"
@@ -64,16 +18,14 @@ export default function DevPreview() {
           alignItems: "center",
         }}
       >
-        <Typography variant="h5">{fullName}</Typography>
+        <Typography variant="h5">Sebastian Tolomeo</Typography>
+        <Typography>tolomeosebastian@gmail.com | +1 954-913-6585</Typography>
         <Typography>
-          {email} | {phone}
-        </Typography>
-        <Typography>
-          <a href={githubLink}>
+          <a href="https://www.github.com/stolomeo">
             <GitHub />
           </a>
           |
-          <a href={linkedinLink}>
+          <a href="https://www.Linkedin.com/in/sebastian-tolomeo">
             <LinkedIn />
           </a>
         </Typography>
@@ -89,7 +41,46 @@ export default function DevPreview() {
           }}
         />
       </Box>
-      {educationElements}
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          px: 3,
+        }}
+      >
+        <Typography fontWeight={700}>
+          Software Engineering Career Course
+        </Typography>
+        <Typography fontWeight={700}>Apr 2022</Typography>
+      </Box>
+      <Box sx={{ display: "flex", justifyContent: "space-between", px: 3 }}>
+        <Typography fontStyle={"italic"} variant="subtitle2">
+          Boca Code
+        </Typography>
+        <Typography fontStyle={"italic"} variant="subtitle2">
+          Boca Raton, FL
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          px: 3,
+        }}
+      >
+        <Typography fontWeight={700}>
+          Bachelor of Business Administration - Management Information Systems
+        </Typography>
+        <Typography fontWeight={700}>Dec 2020</Typography>
+      </Box>
+      <Box sx={{ display: "flex", justifyContent: "space-between", px: 3 }}>
+        <Typography fontStyle={"italic"} variant="subtitle2">
+          Florida Atlantic University
+        </Typography>
+        <Typography fontStyle={"italic"} variant="subtitle2">
+          Boca Raton, FL
+        </Typography>
+      </Box>
       <Box sx={{ display: "flex", alignItems: "flex-end" }}>
         <Typography flexGrow={0}>SKILLS</Typography>
         <hr
@@ -107,8 +98,11 @@ export default function DevPreview() {
           <Typography>Technologies</Typography>
         </Box>
         <Box sx={{ display: "flex", flexDirection: "column" }}>
-          <Typography>{languageElements}</Typography>
-          <Typography>{technologyElements}</Typography>
+          <Typography>JavaScript | TypeScript | Sass | SQL | Java</Typography>
+          <Typography>
+            React | React Native | Node.js | Express | MongoDB | Firebase |
+            Webpack | Jest | Git
+          </Typography>
         </Box>
       </Box>
       <Box sx={{ display: "flex", alignItems: "flex-end" }}>

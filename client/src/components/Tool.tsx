@@ -11,7 +11,7 @@ import Toolbar from "@mui/material/Toolbar";
 import { Dispatch, SetStateAction, useContext } from "react";
 import UserContext from "../context/UserContext";
 import { createResume, getExampleResume } from "../services/resume";
-import { emptyResume } from "../utils";
+import emptyDevResume from "../utils/emptyDevResume";
 
 type Props = {
   setCount: Dispatch<SetStateAction<number>>;
@@ -20,9 +20,11 @@ type Props = {
 export default function Tool({ setCount }: Props) {
   const { user, setUser } = useContext(UserContext);
 
+  console.log(emptyDevResume);
+
   const handleReset = () => {
-    setUser({ ...user, resume: emptyResume });
-    setCount(25);
+    setUser({ ...user, resume: { ...emptyDevResume } });
+    setCount(20);
   };
 
   const handlePrint = () => {
@@ -51,7 +53,7 @@ export default function Tool({ setCount }: Props) {
               bgcolor: `background.default`,
             }}
           >
-            <IconButton size="medium" onClick={handleReset}>
+            <IconButton size="medium" onClick={() => handleReset}>
               <RestartAlt fontSize="medium" />
             </IconButton>
             <IconButton size="medium" onClick={handleSave}>

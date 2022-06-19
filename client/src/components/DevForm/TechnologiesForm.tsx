@@ -1,20 +1,49 @@
-import { Box, TextField } from "@mui/material";
+import { Box, Button, TextField } from "@mui/material";
+import { ChangeEvent, useContext } from "react";
+import UserContext from "../../context";
+import { TechnologyItemsType } from "../../types";
 
-export default function TechnologiesForm() {
+type Props = {
+  technologyItem: TechnologyItemsType;
+};
+export default function TechnologiesForm({ technologyItem }: Props) {
+  const { user, setUser } = useContext(UserContext);
+
+  const handleChangeTechnology = (e: ChangeEvent, id: string) => {
+    const { name, value } = e.target as HTMLTextAreaElement;
+    let resume = user.resume;
+    resume.technologyItems = resume.technologyItems.map((technologyItem) => {
+      if (technologyItem.id === id) {
+        return { ...technologyItem, [name]: value };
+      }
+      return technologyItem;
+    });
+    setUser({ ...user, resume: resume });
+  };
+
+  const handleDeleteTechnology = (id: string) => {
+    let resume = user.resume;
+    resume.technologyItems = resume.technologyItems.filter((technologyItem) => {
+      return technologyItem.id !== id;
+    });
+    setUser({ ...user, resume: resume });
+  };
+
+  const { technology, id } = technologyItem;
   return (
-    <Box sx={{ display: "flex", gap: "3rem" }}>
+    <Box sx={{ display: "flex", flexDirection: "column" }}>
       <TextField
         variant="standard"
         type="text"
         name="technology"
         label="Technology"
-        placeholder="JavaScript"
-        // value={skill}
-        // onChange={(e) => handleChangeSkill(e, id)}
+        placeholder="React"
+        value={technology}
+        onChange={(e) => handleChangeTechnology(e, id)}
       />
-      {/* <Button variant="outlined" onClick={() => handleDeleteSkill(id)}>
-        Delete Skill
-      </Button> */}
+      <Button variant="outlined" onClick={() => handleDeleteTechnology(id)}>
+        Delete
+      </Button>
     </Box>
   );
 }

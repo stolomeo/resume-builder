@@ -20,10 +20,40 @@ export type ResumeSkillItems = {
   [name: string]: string;
 };
 
+export type LanguageItemsType = {
+  [name: string]: string;
+};
+export type TechnologyItemsType = {
+  [name: string]: string;
+};
+
+export type ProjectItemsType = {
+  [name: string]: string;
+};
+
+export type ProjectPointItemsType = {
+  [name: string]: string;
+};
+
+export type JobPointItemsType = {
+  [name: string]: string;
+};
+
 export type UserType = {
   firstName: string;
   lastName: string;
   email: string;
   password: string;
-  resume: ResumeType;
+  resume: DevResumeType;
+};
+
+export type DevResumeType = {
+  personalItems: PersonalItemsType;
+  educationItems: EducationItemsType[];
+  languageItems: LanguageItemsType[];
+  technologyItems: TechnologyItemsType[];
+  projectItems: ProjectItemsType[];
+  experienceItems: ExperienceItemsType[];
+  projectPointItems: ProjectPointItemsType[];
+  jobPointItems: JobPointItemsType[];
 };

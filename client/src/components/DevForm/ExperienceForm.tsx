@@ -1,6 +1,38 @@
 import { Box, Button, TextField } from "@mui/material";
+import { ChangeEvent, useContext } from "react";
+import UserContext from "../../context";
+import { ExperienceItemsType } from "../../types";
+import JobPoints from "./JobPoints";
 
-export default function ExperienceForm() {
+type Props = {
+  experienceItem: ExperienceItemsType;
+};
+
+export default function ExperienceForm({ experienceItem }: Props) {
+  const { user, setUser } = useContext(UserContext);
+
+  const { id, jobTitle, employerName, workLocation, startDate, endDate } =
+    experienceItem;
+
+  const handleChangeExperience = (e: ChangeEvent, id: string) => {
+    const { name, value } = e.target as HTMLTextAreaElement;
+    let resume = user.resume;
+    resume.experienceItems = resume.experienceItems.map((experienceItem) => {
+      if (experienceItem.id === id) {
+        return { ...experienceItem, [name]: value };
+      }
+      return experienceItem;
+    });
+    setUser({ ...user, resume: resume });
+  };
+
+  const handleDeleteExperience = (id: string) => {
+    let resume = user.resume;
+    resume.experienceItems = resume.experienceItems.filter((experienceItem) => {
+      return experienceItem.id !== id;
+    });
+    setUser({ ...user, resume: resume });
+  };
   return (
     <>
       <Box
@@ -16,8 +48,8 @@ export default function ExperienceForm() {
           name="jobTitle"
           label="Position Name"
           placeholder="Software Engineer"
-          //   value={employerName}
-          //   onChange={(e) => handleChangeExperience(e, id)}
+          value={jobTitle}
+          onChange={(e) => handleChangeExperience(e, id)}
         />
         <TextField
           variant="standard"
@@ -25,8 +57,8 @@ export default function ExperienceForm() {
           name="employerName"
           label="Company Name"
           placeholder="Apple"
-          //   value={jobTitle}
-          //   onChange={(e) => handleChangeExperience(e, id)}
+          value={employerName}
+          onChange={(e) => handleChangeExperience(e, id)}
         />
         <TextField
           variant="standard"
@@ -34,8 +66,8 @@ export default function ExperienceForm() {
           name="workLocation"
           label="Location"
           placeholder="Cupertino, CA"
-          //   value={workCity}
-          //   onChange={(e) => handleChangeExperience(e, id)}
+          value={workLocation}
+          onChange={(e) => handleChangeExperience(e, id)}
         />
         <TextField
           variant="standard"
@@ -43,8 +75,8 @@ export default function ExperienceForm() {
           name="startDate"
           label="Start date"
           placeholder="Apr 2021"
-          //   value={startDate}
-          //   onChange={(e) => handleChangeExperience(e, id)}
+          value={startDate}
+          onChange={(e) => handleChangeExperience(e, id)}
         />
         <TextField
           variant="standard"
@@ -52,24 +84,12 @@ export default function ExperienceForm() {
           name="endDate"
           label="End date"
           placeholder="Jun 2022"
-          //   value={endDate}
-          //   onChange={(e) => handleChangeExperience(e, id)}
-        />
-        <TextField
-          variant="standard"
-          type="text"
-          name="responsibility"
-          label="Job Responsibility"
-          placeholder="Designed, developed, implemented, and supported complex JAVA/J2EE applications"
-          //   value={endDate}
-          //   onChange={(e) => handleChangeExperience(e, id)}
+          value={endDate}
+          onChange={(e) => handleChangeExperience(e, id)}
         />
       </Box>
-      <Button
-        variant="outlined"
-        sx={{ mt: 2 }}
-        // onClick={() => handleDeleteExperience(id)}
-      >
+      <JobPoints />
+      <Button variant="outlined" onClick={() => handleDeleteExperience(id)}>
         Delete Experience
       </Button>
     </>

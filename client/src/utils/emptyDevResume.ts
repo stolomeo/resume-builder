@@ -35,12 +35,12 @@ const emptyDevResume = {
       projectName: "",
       projectRole: "",
       projectEndDate: "",
-      projectPoints: [
-        {
-          id: nanoid(),
-          point: "",
-        },
-      ],
+    },
+  ],
+  projectPointItems: [
+    {
+      id: nanoid(),
+      projectPoint: "",
     },
   ],
   experienceItems: [
@@ -51,12 +51,12 @@ const emptyDevResume = {
       workLocation: "",
       startDate: "",
       endDate: "",
-      jobResponsibilities: [
-        {
-          id: nanoid(),
-          responsibility: "",
-        },
-      ],
+    },
+  ],
+  jobPointItems: [
+    {
+      id: nanoid(),
+      jobPoint: "",
     },
   ],
 };

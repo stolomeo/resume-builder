@@ -1,4 +1,4 @@
-import { Switch } from "@mui/material";
+import { DarkMode, LightMode } from "@mui/icons-material";
 import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
@@ -13,7 +13,7 @@ export default function Nav() {
 
   return (
     <AppBar position="static" sx={{ bgcolor: `background.paper` }}>
-      <Toolbar sx={{ height: "8vh" }}>
+      <Toolbar sx={{ height: "8vh", gap: 2 }}>
         <IconButton
           component={Link}
           to="/"
@@ -29,12 +29,16 @@ export default function Nav() {
             ezcv.app
           </Typography>
         </IconButton>
-        <Switch onChange={() => setIsDarkMode(!isDarkMode)} />
         <Typography
           variant="h6"
           component="div"
           sx={{ flexGrow: 1, color: "black" }}
         ></Typography>
+        <IconButton onClick={() => setIsDarkMode(!isDarkMode)}>
+          {isDarkMode && <LightMode />}
+          {!isDarkMode && <DarkMode />}
+        </IconButton>
+
         <Button variant="outlined" component={Link} to="/login" size="medium">
           Sign in
         </Button>

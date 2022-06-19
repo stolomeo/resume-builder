@@ -28,7 +28,7 @@ export default function Login() {
     e.preventDefault();
     const pulledUser = await getUser(email);
     console.log(pulledUser);
-    //if invalid alert not valid
+    //if invalid alert not
     setUser(pulledUser);
     navigate("/create");
   };

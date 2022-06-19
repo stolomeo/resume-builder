@@ -1,20 +1,20 @@
 import { Box, Button, LinearProgress } from "@mui/material";
 import { useState } from "react";
 import Form from "../components/Form";
-import Preview from "../components/Preview";
 import Sidebar from "../components/Sidebar";
 import Tool from "../components/Tool";
+import DevTemplate from "./DevTemplate";
 
 export default function Create() {
-  const [count, setCount] = useState(25);
+  const [count, setCount] = useState(20);
 
   const handleNext = () => {
     if (count === 100) return;
-    setCount(count + 25);
+    setCount(count + 20);
   };
   const handlePrev = () => {
-    if (count === 25) return;
-    setCount(count - 25);
+    if (count === 20) return;
+    setCount(count - 20);
   };
 
   return (
@@ -36,7 +36,7 @@ export default function Create() {
           }}
         >
           <Tool setCount={setCount} />
-          <Preview />
+          <DevTemplate />
         </Box>
       </Box>
       <Box
