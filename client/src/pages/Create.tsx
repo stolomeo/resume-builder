@@ -1,4 +1,4 @@
-import { Box, Button, LinearProgress } from "@mui/material";
+import { AppBar, Box, Button, LinearProgress, Toolbar } from "@mui/material";
 import { useState } from "react";
 import Form from "../components/Form";
 import Sidebar from "../components/Sidebar";
@@ -39,30 +39,36 @@ export default function Create() {
           <DevTemplate />
         </Box>
       </Box>
-      <Box
-        sx={{
-          width: "100%",
-          height: "8vh",
-          position: "fixed",
-          bottom: "0",
-          left: "0",
-          right: "0",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "5rem",
-        }}
-      >
-        <Button variant="outlined" onClick={handlePrev}>
-          Prev
-        </Button>
-        <Box sx={{ width: "25%" }}>
-          <LinearProgress variant="determinate" value={count} />
-        </Box>
-        <Button variant="outlined" onClick={handleNext}>
-          Next
-        </Button>
-      </Box>
+      <AppBar position="fixed" color="primary" sx={{ top: "auto", bottom: 0 }}>
+        {/* <Box
+          sx={{
+            width: "100%",
+            height: "8vh",
+            position: "fixed",
+            bottom: "0",
+            left: "0",
+            right: "0",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "5rem",
+          }}
+        > */}
+        <Toolbar
+          sx={{ display: "flex", justifyContent: "center", gap: "2rem" }}
+        >
+          <Button variant="outlined" onClick={handlePrev}>
+            Prev
+          </Button>
+          <Box sx={{ width: "25%" }}>
+            <LinearProgress variant="determinate" value={count} />
+          </Box>
+          <Button variant="outlined" onClick={handleNext}>
+            Next
+          </Button>
+        </Toolbar>
+        {/* </Box> */}
+      </AppBar>
     </>
   );
 }
