@@ -28,7 +28,11 @@ export type TechnologyItemsType = {
 };
 
 export type ProjectItemsType = {
-  [name: string]: string;
+  id: string;
+  projectName: string;
+  projectRole: string;
+  projectEndDate: string;
+  projectPointItems: ProjectPointItemsType[];
 };
 
 export type ProjectPointItemsType = {
@@ -54,6 +58,6 @@ export type DevResumeType = {
   technologyItems: TechnologyItemsType[];
   projectItems: ProjectItemsType[];
   experienceItems: ExperienceItemsType[];
-  projectPointItems: ProjectPointItemsType[];
+  // projectPointItems: ProjectPointItemsType[];
   jobPointItems: JobPointItemsType[];
 };

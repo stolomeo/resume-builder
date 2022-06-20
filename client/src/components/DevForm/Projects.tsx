@@ -19,6 +19,12 @@ export default function Projects() {
           projectName: "",
           projectRole: "",
           projectEndDate: "",
+          projectPointItems: [
+            {
+              id: nanoid(),
+              projectPoint: "",
+            },
+          ],
         },
       ],
     };

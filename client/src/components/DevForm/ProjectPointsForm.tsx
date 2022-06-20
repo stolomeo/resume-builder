@@ -1,7 +1,4 @@
-import { Button, TextField } from "@mui/material";
 import { Box } from "@mui/system";
-import { ChangeEvent, useContext } from "react";
-import UserContext from "../../context";
 import { ProjectPointItemsType } from "../../types";
 
 type Props = {
@@ -9,37 +6,36 @@ type Props = {
 };
 
 export default function ProjectPointsForm({ projectPointItem }: Props) {
-  const { user, setUser } = useContext(UserContext);
-  console.log(user.resume);
+  // const { user, setUser } = useContext(UserContext);
 
-  const handleChangeProjectPoint = (e: ChangeEvent, id: string) => {
-    const { name, value } = e.target as HTMLTextAreaElement;
-    let resume = user.resume;
-    resume.projectPointItems = resume.projectPointItems.map(
-      (projectPointItem) => {
-        if (projectPointItem.id === id) {
-          return { ...projectPointItem, [name]: value };
-        }
-        return projectPointItem;
-      }
-    );
-    setUser({ ...user, resume: resume });
-  };
+  // const handleChangeProjectPoint = (e: ChangeEvent, id: string) => {
+  //   const { name, value } = e.target as HTMLTextAreaElement;
+  //   let resume = user.resume;
+  //   resume.projectPointItems = resume.projectPointItems.map(
+  //     (projectPointItem) => {
+  //       if (projectPointItem.id === id) {
+  //         return { ...projectPointItem, [name]: value };
+  //       }
+  //       return projectPointItem;
+  //     }
+  //   );
+  //   setUser({ ...user, resume: resume });
+  // };
 
-  const handleDeleteProjectPoint = (id: string) => {
-    let resume = user.resume;
-    resume.projectPointItems = resume.projectPointItems.filter(
-      (projectPointItem) => {
-        return projectPointItem.id !== id;
-      }
-    );
-    setUser({ ...user, resume: resume });
-  };
+  // const handleDeleteProjectPoint = (id: string) => {
+  //   let resume = user.resume;
+  //   resume.projectPointItems = resume.projectPointItems.filter(
+  //     (projectPointItem) => {
+  //       return projectPointItem.id !== id;
+  //     }
+  //   );
+  //   setUser({ ...user, resume: resume });
+  // };
 
   const { projectPoint, id } = projectPointItem;
   return (
     <Box sx={{ display: "flex", flexDirection: "column", mt: 1.5 }}>
-      <TextField
+      {/* <TextField
         variant="standard"
         type="text"
         name="projectPoint"
@@ -50,7 +46,7 @@ export default function ProjectPointsForm({ projectPointItem }: Props) {
       />
       <Button variant="outlined" onClick={() => handleDeleteProjectPoint(id)}>
         Delete
-      </Button>
+      </Button> */}
     </Box>
   );
 }

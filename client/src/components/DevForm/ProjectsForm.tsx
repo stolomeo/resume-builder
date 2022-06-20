@@ -10,7 +10,7 @@ type Props = {
 export default function ProjectsForm({ projectItem }: Props) {
   const { user, setUser } = useContext(UserContext);
 
-  const { id, projectName, projectRole, projectEndDate } = projectItem;
+  const { id, projectName, projectRole, projectEndDate } = projectItem as any;
 
   const handleChangeProject = (e: ChangeEvent, id: string) => {
     const { name, value } = e.target as HTMLTextAreaElement;
@@ -63,7 +63,7 @@ export default function ProjectsForm({ projectItem }: Props) {
           onChange={(e) => handleChangeProject(e, id)}
         />
       </Box>
-      <ProjectPoints />
+      <ProjectPoints id={id} />
       <Button variant="outlined" onClick={() => handleDeleteProject(id)}>
         Delete Project
       </Button>
