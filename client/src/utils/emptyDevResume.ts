@@ -43,7 +43,6 @@ const emptyDevResume = {
       ],
     },
   ],
-
   experienceItems: [
     {
       id: nanoid(),

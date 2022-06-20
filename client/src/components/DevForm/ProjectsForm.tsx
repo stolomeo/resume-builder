@@ -1,8 +1,9 @@
 import { Box, Button, TextField } from "@mui/material";
+import { nanoid } from "nanoid";
 import { ChangeEvent, useContext } from "react";
 import UserContext from "../../context";
-import { ProjectItemsType } from "../../types";
-import ProjectPoints from "./ProjectPoints";
+import { ProjectItemsType, ProjectPointItemsType } from "../../types";
+import ProjectPointsForm from "./ProjectPointsForm";
 
 type Props = {
   projectItem: ProjectItemsType;
@@ -10,7 +11,8 @@ type Props = {
 export default function ProjectsForm({ projectItem }: Props) {
   const { user, setUser } = useContext(UserContext);
 
-  const { id, projectName, projectRole, projectEndDate } = projectItem as any;
+  let { id, projectName, projectRole, projectEndDate, projectPointItems } =
+    projectItem as any;
 
   const handleChangeProject = (e: ChangeEvent, id: string) => {
     const { name, value } = e.target as HTMLTextAreaElement;
@@ -31,6 +33,32 @@ export default function ProjectsForm({ projectItem }: Props) {
     });
     setUser({ ...user, resume: resume });
   };
+
+  const handleAddProjectDetail = () => {
+    let resume = user.resume;
+    let projectItemIndex = 0;
+    let currentItemIndex = 0;
+    resume.projectItems.forEach((item) => {
+      if (item.id === projectItem.id) {
+        projectItemIndex = currentItemIndex;
+      }
+      currentItemIndex += 1;
+    });
+    resume.projectItems[projectItemIndex].projectPointItems = [
+      ...projectPointItems,
+      {
+        id: nanoid(),
+        projectPoint: "",
+      },
+    ];
+    setUser({ ...user, resume: resume });
+  };
+
+  const projectPointItemElements = projectPointItems.map(
+    (projectPointItem: ProjectPointItemsType) => {
+      return <ProjectPointsForm projectPointItem={projectPointItem} />;
+    }
+  );
 
   return (
     <>
@@ -63,7 +91,10 @@ export default function ProjectsForm({ projectItem }: Props) {
           onChange={(e) => handleChangeProject(e, id)}
         />
       </Box>
-      <ProjectPoints id={id} />
+      {projectPointItemElements}
+      <Button variant="outlined" onClick={handleAddProjectDetail}>
+        Add project detail
+      </Button>
       <Button variant="outlined" onClick={() => handleDeleteProject(id)}>
         Delete Project
       </Button>

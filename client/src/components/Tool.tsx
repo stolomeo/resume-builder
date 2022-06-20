@@ -57,14 +57,14 @@ export default function Tool({ setCount }: Props) {
             projectName: "",
             projectRole: "",
             projectEndDate: "",
+            projectPointItems: [
+              {
+                id: nanoid(),
+                projectPoint: "",
+              },
+            ],
           },
         ],
-        // projectPointItems: [
-        //   {
-        //     id: nanoid(),
-        //     projectPoint: "",
-        //   },
-        // ],
 
         experienceItems: [
           {

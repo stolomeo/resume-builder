@@ -40,16 +40,15 @@ export default function DevTemplate() {
     );
   });
 
-  const projectPointElements = user.resume.projectPointItems.map(
-    (projectPointItem) => {
+  const projectPointElements =
+    user.resume.projectItems[0].projectPointItems.map((projectPointItem) => {
       const { id, projectPoint } = projectPointItem;
       return (
         <Typography variant="body2" px={5} fontSize={9}>
           • {projectPoint}
         </Typography>
       );
-    }
-  );
+    });
 
   const projectElements = user.resume.projectItems.map((projectItem) => {
     const { id, projectName, projectRole, projectEndDate } = projectItem;
