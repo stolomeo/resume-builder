@@ -29,7 +29,7 @@ export default function Register() {
       lastName,
       email,
       password,
-      resume: { ...emptyDevResume },
+      resume: emptyDevResume,
     });
     navigate("/");
   };

@@ -6,10 +6,12 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import UserContext from "../context";
 import isDarkModeContext from "../context/isDarkModeContext";
 
 export default function Nav() {
   const { isDarkMode, setIsDarkMode } = useContext(isDarkModeContext);
+  const { user } = useContext(UserContext);
 
   return (
     <AppBar position="static" sx={{ bgcolor: `background.paper` }}>
@@ -40,7 +42,7 @@ export default function Nav() {
         </IconButton>
 
         <Button variant="outlined" component={Link} to="/login" size="medium">
-          Sign in
+          {user.email === "" ? "Sign In" : "Sign Out"}
         </Button>
       </Toolbar>
     </AppBar>
