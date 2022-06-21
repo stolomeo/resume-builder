@@ -41,7 +41,7 @@ export default function Create() {
       </Box>
       <AppBar
         position="fixed"
-        color="primary"
+        color="inherit"
         sx={{
           top: "auto",
           bottom: 0,
