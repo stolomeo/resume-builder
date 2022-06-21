@@ -29,6 +29,7 @@ export default function Projects() {
       ],
     };
     setUser({ ...user, resume: resume });
+    console.log(user.resume);
   };
 
   const projectElements = user.resume.projectItems.map((projectItem) => {

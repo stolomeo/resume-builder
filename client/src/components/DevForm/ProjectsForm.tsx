@@ -36,15 +36,7 @@ export default function ProjectsForm({ projectItem }: Props) {
 
   const handleAddProjectDetail = () => {
     let resume = user.resume;
-    let projectItemIndex = 0;
-    let currentItemIndex = 0;
-    resume.projectItems.forEach((item) => {
-      if (item.id === projectItem.id) {
-        projectItemIndex = currentItemIndex;
-      }
-      currentItemIndex += 1;
-    });
-    resume.projectItems[projectItemIndex].projectPointItems = [
+    resume.projectItems[0].projectPointItems = [
       ...projectPointItems,
       {
         id: nanoid(),
@@ -52,6 +44,7 @@ export default function ProjectsForm({ projectItem }: Props) {
       },
     ];
     setUser({ ...user, resume: resume });
+    console.log(user.resume);
   };
 
   const projectPointItemElements = projectPointItems.map(

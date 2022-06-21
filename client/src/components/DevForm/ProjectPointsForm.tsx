@@ -30,6 +30,7 @@ export default function ProjectPointsForm({ projectPointItem }: Props) {
     });
 
     setUser({ ...user, resume: user.resume });
+    console.log(user.resume);
   };
 
   const handleDeleteProjectPoint = (id: string) => {
