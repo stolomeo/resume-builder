@@ -102,7 +102,15 @@ export default function Tool({ setCount }: Props) {
   };
 
   return (
-    <AppBar position="static" sx={{ bgcolor: "inherit" }}>
+    <AppBar
+      position="static"
+      sx={{
+        bgcolor: "inherit",
+        "@media print": {
+          display: "none",
+        },
+      }}
+    >
       <Toolbar
         variant="dense"
         sx={{

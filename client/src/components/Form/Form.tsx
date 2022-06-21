@@ -20,6 +20,9 @@ export default function Form({ count, setCount }: Props) {
         border: "1px solid rgba(0, 0, 0, 0.1)",
         height: "100%",
         overflow: "auto",
+        "@media print": {
+          display: "none",
+        },
       }}
     >
       {formComponent}

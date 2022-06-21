@@ -31,6 +31,9 @@ export default function Sidebar({ count, setCount }: Props) {
         position: "fixed",
         top: "25",
         left: "0",
+        "@media print": {
+          display: "none",
+        },
       }}
     >
       <List>

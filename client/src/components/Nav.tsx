@@ -14,7 +14,15 @@ export default function Nav() {
   const { user } = useContext(UserContext);
 
   return (
-    <AppBar position="static" sx={{ bgcolor: `background.paper` }}>
+    <AppBar
+      position="static"
+      sx={{
+        bgcolor: `background.paper`,
+        "@media print": {
+          display: "none",
+        },
+      }}
+    >
       <Toolbar sx={{ height: "8vh", gap: 2 }}>
         <IconButton
           component={Link}

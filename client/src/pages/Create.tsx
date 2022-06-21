@@ -39,7 +39,17 @@ export default function Create() {
           <DevTemplate />
         </Box>
       </Box>
-      <AppBar position="fixed" color="primary" sx={{ top: "auto", bottom: 0 }}>
+      <AppBar
+        position="fixed"
+        color="primary"
+        sx={{
+          top: "auto",
+          bottom: 0,
+          "@media print": {
+            display: "none",
+          },
+        }}
+      >
         {/* <Box
           sx={{
             width: "100%",

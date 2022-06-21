@@ -152,6 +152,10 @@ export default function DevTemplate() {
         flexDirection: "column",
         height: "100%",
         overflow: "auto",
+        "@media print": {
+          width: "100vw",
+          height: "100vh",
+        },
       }}
     >
       <Box
