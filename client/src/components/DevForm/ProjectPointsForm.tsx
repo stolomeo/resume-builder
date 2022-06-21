@@ -59,7 +59,7 @@ export default function ProjectPointsForm({ projectPointItem }: Props) {
         onChange={(e) => handleChangeProjectPoint(e, id)}
       />
       <Button variant="outlined" onClick={() => handleDeleteProjectPoint(id)}>
-        Delete
+        Delete Project Detail
       </Button>
     </Box>
   );

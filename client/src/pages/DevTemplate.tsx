@@ -1,6 +1,6 @@
-import { GitHub, LinkedIn } from "@mui/icons-material";
 import { Box, Container, Link, Typography } from "@mui/material";
 import { useContext } from "react";
+import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import UserContext from "../context";
 
 export default function DevTemplate() {
@@ -21,18 +21,50 @@ export default function DevTemplate() {
             px: 3,
           }}
         >
-          <Typography fontWeight={700} fontSize=".6rem">
+          <Typography
+            fontWeight={700}
+            fontSize=".6rem"
+            sx={{
+              "@media print": {
+                fontSize: "12px",
+              },
+            }}
+          >
             {majorAndDegree}
           </Typography>
-          <Typography fontWeight={700} fontSize=".6rem">
+          <Typography
+            fontWeight={700}
+            fontSize=".6rem"
+            sx={{
+              "@media print": {
+                fontSize: "12px",
+              },
+            }}
+          >
             {graduationDate}
           </Typography>
         </Box>
         <Box sx={{ display: "flex", justifyContent: "space-between", px: 3 }}>
-          <Typography fontStyle={"italic"} fontSize=".5em">
+          <Typography
+            fontStyle={"italic"}
+            fontSize=".5em"
+            sx={{
+              "@media print": {
+                fontSize: "12px",
+              },
+            }}
+          >
             {schoolName}
           </Typography>
-          <Typography fontStyle={"italic"} fontSize=".5em">
+          <Typography
+            fontStyle={"italic"}
+            fontSize=".5em"
+            sx={{
+              "@media print": {
+                fontSize: "12px",
+              },
+            }}
+          >
             {schoolLocation}
           </Typography>
         </Box>
@@ -56,7 +88,16 @@ export default function DevTemplate() {
       projectItem;
     const pointItemTag = projectPointItems.map((projectPointItem) => {
       return (
-        <Typography variant="body2" px={5} fontSize={9}>
+        <Typography
+          variant="body2"
+          px={5}
+          fontSize={9}
+          sx={{
+            "@media print": {
+              fontSize: "12px",
+            },
+          }}
+        >
           • {projectPointItem.projectPoint}
         </Typography>
       );
@@ -70,15 +111,39 @@ export default function DevTemplate() {
             px: 3,
           }}
         >
-          <Typography fontWeight={700} fontSize=".6rem">
+          <Typography
+            fontWeight={700}
+            fontSize=".6rem"
+            sx={{
+              "@media print": {
+                fontSize: "12px",
+              },
+            }}
+          >
             {projectName}
           </Typography>
-          <Typography fontWeight={700} fontSize=".6rem">
+          <Typography
+            fontWeight={700}
+            fontSize=".6rem"
+            sx={{
+              "@media print": {
+                fontSize: "12px",
+              },
+            }}
+          >
             {projectEndDate}
           </Typography>
         </Box>
         <Box sx={{ display: "flex", justifyContent: "space-between", px: 3 }}>
-          <Typography fontStyle={"italic"} fontSize=".5em">
+          <Typography
+            fontStyle={"italic"}
+            fontSize=".5em"
+            sx={{
+              "@media print": {
+                fontSize: "12px",
+              },
+            }}
+          >
             {projectRole}
           </Typography>
         </Box>
@@ -99,7 +164,16 @@ export default function DevTemplate() {
       } = experienceItem;
       const pointItemTag = experiencePointItems.map((experiencePointItem) => {
         return (
-          <Typography variant="body2" px={5} fontSize={9}>
+          <Typography
+            variant="body2"
+            px={5}
+            fontSize={9}
+            sx={{
+              "@media print": {
+                fontSize: "12px",
+              },
+            }}
+          >
             • {experiencePointItem.experiencePoint}
           </Typography>
         );
@@ -113,18 +187,50 @@ export default function DevTemplate() {
               px: 3,
             }}
           >
-            <Typography fontWeight={700} fontSize=".6rem">
+            <Typography
+              fontWeight={700}
+              fontSize=".6rem"
+              sx={{
+                "@media print": {
+                  fontSize: "12px",
+                },
+              }}
+            >
               {employerName}
             </Typography>
-            <Typography fontWeight={700} fontSize=".6rem">
+            <Typography
+              fontWeight={700}
+              fontSize=".6rem"
+              sx={{
+                "@media print": {
+                  fontSize: "12px",
+                },
+              }}
+            >
               {startDate} - {endDate}
             </Typography>
           </Box>
           <Box sx={{ display: "flex", justifyContent: "space-between", px: 3 }}>
-            <Typography fontStyle={"italic"} fontSize=".5em">
+            <Typography
+              fontStyle={"italic"}
+              fontSize=".5em"
+              sx={{
+                "@media print": {
+                  fontSize: "12px",
+                },
+              }}
+            >
               {jobTitle}
             </Typography>
-            <Typography fontStyle={"italic"} fontSize=".5em">
+            <Typography
+              fontStyle={"italic"}
+              fontSize=".5em"
+              sx={{
+                "@media print": {
+                  fontSize: "12px",
+                },
+              }}
+            >
               {workLocation}
             </Typography>
           </Box>
@@ -149,12 +255,14 @@ export default function DevTemplate() {
       maxWidth="sm"
       sx={{
         display: "flex",
+        mt: 1.5,
         flexDirection: "column",
         height: "100%",
         overflow: "auto",
         "@media print": {
           display: "block",
           width: "100%",
+          height: "100%",
           position: "fixed",
           top: 0,
           left: 0,
@@ -169,22 +277,57 @@ export default function DevTemplate() {
           alignItems: "center",
         }}
       >
-        <Typography fontSize={13}>{fullName}</Typography>
-        <Typography fontSize={11}>
-          {email} | {phone}
+        <Typography
+          sx={{
+            "@media print": {
+              fontSize: "18px",
+            },
+          }}
+          fontSize={13}
+        >
+          {fullName}
         </Typography>
-        <Typography variant="caption">
+        <Typography
+          fontSize={11}
+          sx={{
+            "@media print": {
+              fontSize: "12px",
+            },
+          }}
+        >
+          {phone} | {email}
+        </Typography>
+        <Typography
+          variant="caption"
+          fontSize={8}
+          sx={{
+            "@media print": {
+              fontSize: "10px",
+            },
+          }}
+        >
           <Link href={githubLink}>
-            <GitHub />
-          </Link>
-
+            <FaGithubSquare />
+            github
+          </Link>{" "}
+          |{" "}
           <Link href={linkedinLink}>
-            <LinkedIn />
+            <FaLinkedin />
+            linkedin
           </Link>
         </Typography>
       </Box>
       <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-        <Typography flexGrow={0} fontSize={11} variant="subtitle2">
+        <Typography
+          flexGrow={0}
+          fontSize={11}
+          variant="subtitle2"
+          sx={{
+            "@media print": {
+              fontSize: "14px",
+            },
+          }}
+        >
           EDUCATION
         </Typography>
         <hr
@@ -198,7 +341,16 @@ export default function DevTemplate() {
       </Box>
       {educationElements}
       <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-        <Typography flexGrow={0} fontSize={11} variant="subtitle2">
+        <Typography
+          flexGrow={0}
+          fontSize={11}
+          variant="subtitle2"
+          sx={{
+            "@media print": {
+              fontSize: "14px",
+            },
+          }}
+        >
           SKILLS
         </Typography>
         <hr
@@ -212,10 +364,28 @@ export default function DevTemplate() {
       </Box>
       <Box sx={{ display: "flex" }}>
         <Box sx={{ maxWidth: "fit-content", textAlign: "right", pl: 5, pr: 2 }}>
-          <Typography fontWeight={700} variant="subtitle2" fontSize={9}>
+          <Typography
+            fontWeight={700}
+            variant="subtitle2"
+            fontSize={9}
+            sx={{
+              "@media print": {
+                fontSize: "12px",
+              },
+            }}
+          >
             Programming Languages
           </Typography>
-          <Typography fontWeight={700} variant="subtitle2" fontSize={9}>
+          <Typography
+            fontWeight={700}
+            variant="subtitle2"
+            fontSize={9}
+            sx={{
+              "@media print": {
+                fontSize: "12px",
+              },
+            }}
+          >
             Technologies
           </Typography>
         </Box>
@@ -226,12 +396,39 @@ export default function DevTemplate() {
             justifyContent: "center",
           }}
         >
-          <Typography fontSize={8}>{languageElements.join(" | ")}</Typography>
-          <Typography fontSize={8}>{technologyItems.join(" | ")}</Typography>
+          <Typography
+            fontSize={8}
+            sx={{
+              "@media print": {
+                fontSize: "12px",
+              },
+            }}
+          >
+            {languageElements.join(" | ")}
+          </Typography>
+          <Typography
+            fontSize={8}
+            sx={{
+              "@media print": {
+                fontSize: "12px",
+              },
+            }}
+          >
+            {technologyItems.join(" | ")}
+          </Typography>
         </Box>
       </Box>
       <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-        <Typography flexGrow={0} fontSize={11} variant="subtitle2">
+        <Typography
+          flexGrow={0}
+          fontSize={11}
+          variant="subtitle2"
+          sx={{
+            "@media print": {
+              fontSize: "14px",
+            },
+          }}
+        >
           NOTABLE PROJECTS
         </Typography>
         <hr
@@ -245,7 +442,16 @@ export default function DevTemplate() {
       </Box>
       {projectElements}
       <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-        <Typography flexGrow={0} fontSize={11} variant="subtitle2">
+        <Typography
+          flexGrow={0}
+          fontSize={11}
+          variant="subtitle2"
+          sx={{
+            "@media print": {
+              fontSize: "14px",
+            },
+          }}
+        >
           EXPERIENCE
         </Typography>
         <hr
