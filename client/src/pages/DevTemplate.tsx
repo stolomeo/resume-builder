@@ -40,18 +40,27 @@ export default function DevTemplate() {
     );
   });
 
-  const projectPointElements =
-    user.resume.projectItems[0].projectPointItems.map((projectPointItem) => {
-      const { id, projectPoint } = projectPointItem;
+  // const projectPointElements = user.resume.projectItems.map((projectItem) => {
+  //   const { projectPointItems } = projectItem;
+  //   const pointItemTag = projectPointItems.map((projectPointItem) => {
+  //     return (
+  //       <Typography variant="body2" px={5} fontSize={9}>
+  //         • {projectPointItem.projectPoint}
+  //       </Typography>
+  //     );
+  //   });
+  // });
+
+  const projectElements = user.resume.projectItems.map((projectItem) => {
+    const { id, projectName, projectRole, projectEndDate, projectPointItems } =
+      projectItem;
+    const pointItemTag = projectPointItems.map((projectPointItem) => {
       return (
         <Typography variant="body2" px={5} fontSize={9}>
-          • {projectPoint}
+          • {projectPointItem.projectPoint}
         </Typography>
       );
     });
-
-  const projectElements = user.resume.projectItems.map((projectItem) => {
-    const { id, projectName, projectRole, projectEndDate } = projectItem;
     return (
       <>
         <Box
@@ -73,7 +82,7 @@ export default function DevTemplate() {
             {projectRole}
           </Typography>
         </Box>
-        {projectPointElements}
+        {pointItemTag}
       </>
     );
   });

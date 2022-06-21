@@ -36,7 +36,14 @@ export default function ProjectsForm({ projectItem }: Props) {
 
   const handleAddProjectDetail = () => {
     let resume = user.resume;
-    resume.projectItems[0].projectPointItems = [
+    let itemIndex = 0;
+    // Search algorithm. O(n) runtime
+    resume.projectItems.forEach((item, index) => {
+      if (item.id === projectItem.id) {
+        itemIndex = index;
+      }
+    });
+    resume.projectItems[itemIndex].projectPointItems = [
       ...projectPointItems,
       {
         id: nanoid(),

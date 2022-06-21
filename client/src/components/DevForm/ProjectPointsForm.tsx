@@ -15,6 +15,7 @@ export default function ProjectPointsForm({ projectPointItem }: Props) {
     const { name, value } = e.target as HTMLTextAreaElement;
     let items = user.resume.projectItems;
     let itemIndex = 0;
+    // Depth first search. Graph Theory. Runtime O(n^2)
     items.forEach((item) => {
       let pointItemIndex = 0;
       item.projectPointItems.forEach((pointItem) => {
