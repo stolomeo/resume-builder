@@ -74,12 +74,12 @@ export default function Tool({ setCount }: Props) {
             workLocation: "",
             startDate: "",
             endDate: "",
-          },
-        ],
-        jobPointItems: [
-          {
-            id: nanoid(),
-            jobPoint: "",
+            experiencePointItems: [
+              {
+                id: nanoid(),
+                experiencePoint: "",
+              },
+            ],
           },
         ],
       },

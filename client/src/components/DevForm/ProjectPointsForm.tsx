@@ -35,13 +35,15 @@ export default function ProjectPointsForm({ projectPointItem }: Props) {
   };
 
   const handleDeleteProjectPoint = (id: string) => {
-    // let resume = user.resume;
-    // resume.projectPointItems = resume.projectPointItems.filter(
-    //   (projectPointItem) => {
-    //     return projectPointItem.id !== id;
-    //   }
-    // );
-    // setUser({ ...user, resume: resume });
+    console.log(id);
+    let items = user.resume.projectItems;
+    items.forEach((item, index) => {
+      const keptItems = item.projectPointItems.filter((projectPointItem) => {
+        return projectPointItem.id !== id;
+      });
+      items[index].projectPointItems = keptItems;
+    });
+    setUser({ ...user, resume: user.resume });
   };
 
   const { projectPoint, id } = projectPointItem;

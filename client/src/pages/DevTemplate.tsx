@@ -86,20 +86,24 @@ export default function DevTemplate() {
       </>
     );
   });
-
-  const jobPointElements = user.resume.jobPointItems.map((jobPointItem) => {
-    const { id, jobPoint } = jobPointItem;
-    return (
-      <Typography variant="body2" px={5} fontSize={9}>
-        • {jobPoint}
-      </Typography>
-    );
-  });
-
   const experienceElements = user.resume.experienceItems.map(
     (experienceItem) => {
-      const { id, jobTitle, employerName, workLocation, startDate, endDate } =
-        experienceItem;
+      const {
+        id,
+        jobTitle,
+        employerName,
+        workLocation,
+        startDate,
+        endDate,
+        experiencePointItems,
+      } = experienceItem;
+      const pointItemTag = experiencePointItems.map((experiencePointItem) => {
+        return (
+          <Typography variant="body2" px={5} fontSize={9}>
+            • {experiencePointItem.experiencePoint}
+          </Typography>
+        );
+      });
       return (
         <>
           <Box
@@ -124,7 +128,7 @@ export default function DevTemplate() {
               {workLocation}
             </Typography>
           </Box>
-          {jobPointElements}
+          {pointItemTag}
         </>
       );
     }

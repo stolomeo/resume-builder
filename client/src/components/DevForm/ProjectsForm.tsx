@@ -12,7 +12,7 @@ export default function ProjectsForm({ projectItem }: Props) {
   const { user, setUser } = useContext(UserContext);
 
   let { id, projectName, projectRole, projectEndDate, projectPointItems } =
-    projectItem as any;
+    projectItem;
 
   const handleChangeProject = (e: ChangeEvent, id: string) => {
     const { name, value } = e.target as HTMLTextAreaElement;

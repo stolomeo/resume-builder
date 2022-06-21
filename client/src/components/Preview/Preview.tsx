@@ -1,7 +1,6 @@
 import { Box } from "@mui/material";
 import styled from "styled-components";
 import Education from "./Education/";
-import Experience from "./Experience/";
 import Personal from "./Personal/";
 import Skill from "./Skill";
 
@@ -21,7 +20,7 @@ export default function Preview() {
       }}
     >
       <Personal />
-      <Experience />
+      {/* <Experience /> */}
       <Education />
       <Skill />
     </Box>

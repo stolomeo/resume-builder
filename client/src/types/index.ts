@@ -8,7 +8,7 @@ export type PersonalItemsType = {
   [name: string]: string;
 };
 
-export type ExperienceItemsType = {
+export type ExperiencePointItemsType = {
   [name: string]: string;
 };
 
@@ -39,8 +39,14 @@ export type ProjectPointItemsType = {
   [name: string]: string;
 };
 
-export type JobPointItemsType = {
-  [name: string]: string;
+export type ExperienceItemsType = {
+  id: string;
+  jobTitle: string;
+  employerName: string;
+  workLocation: string;
+  startDate: string;
+  endDate: string;
+  experiencePointItems: ExperiencePointItemsType[];
 };
 
 export type UserType = {
@@ -58,6 +64,4 @@ export type DevResumeType = {
   technologyItems: TechnologyItemsType[];
   projectItems: ProjectItemsType[];
   experienceItems: ExperienceItemsType[];
-  // projectPointItems: ProjectPointItemsType[];
-  jobPointItems: JobPointItemsType[];
 };

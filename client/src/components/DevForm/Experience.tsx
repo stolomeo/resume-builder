@@ -21,6 +21,12 @@ export default function Experience() {
           workLocation: "",
           startDate: "",
           endDate: "",
+          experiencePointItems: [
+            {
+              id: nanoid(),
+              experiencePoint: "",
+            },
+          ],
         },
       ],
     };
