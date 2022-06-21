@@ -94,7 +94,7 @@ export default function Tool({ setCount }: Props) {
 
   const handleExample = async () => {
     const exampleResume = await getExampleResume();
-    setUser(exampleResume);
+    setUser({ ...user, resume: exampleResume });
   };
 
   const handleSave = async () => {

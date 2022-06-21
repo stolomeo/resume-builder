@@ -353,15 +353,40 @@ export const non = {
   experienceItems: [
     {
       id: nanoid(),
-      jobTitle: "",
-      employerName: "",
+      jobTitle: "Area Manager",
+      employerName: "Amazon",
       workLocation: "",
-      startDate: "",
-      endDate: "",
+      startDate: "July 2021",
+      endDate: "Present",
       experiencePointItems: [
         {
           id: nanoid(),
-          experiencePoint: "",
+          experiencePoint: "Led and developed a team of Amazon associates",
+        },
+        {
+          id: nanoid(),
+          experiencePoint:
+            "Created, managed, and supported recognition and communication programs.",
+        },
+      ],
+    },
+    {
+      id: nanoid(),
+      jobTitle: "Area Manager",
+      employerName: "Sales Representative",
+      workLocation: "",
+      startDate: "May 2017",
+      endDate: "Jun 2021",
+      experiencePointItems: [
+        {
+          id: nanoid(),
+          experiencePoint:
+            "Presented, promoted, and sold products/services using solid arguments to existing and prospective customers",
+        },
+        {
+          id: nanoid(),
+          experiencePoint:
+            "Achieved highest conversion rate for two consecutive quarters",
         },
       ],
     },
