@@ -1,7 +1,7 @@
 import { Box, Button, TextField } from "@mui/material";
 import { ChangeEvent, useContext } from "react";
-import UserContext from "../../context";
-import { LanguageItemsType } from "../../types";
+import UserContext from "../../../context";
+import { LanguageItemsType } from "../../../types";
 
 type Props = {
   languageItem: LanguageItemsType;

@@ -1,8 +1,8 @@
 import { Button } from "@mui/material";
 import { nanoid } from "nanoid";
 import { useContext } from "react";
-import UserContext from "../../context";
-import { DevResumeType } from "../../types";
+import UserContext from "../../../context";
+import { DevResumeType } from "../../../types";
 import ProjectsForm from "./ProjectsForm";
 
 export default function Projects() {
@@ -17,7 +17,8 @@ export default function Projects() {
         {
           id: nanoid(),
           projectName: "",
-          projectRole: "",
+          projectLiveLink: "",
+          projectRepoLink: "",
           projectEndDate: "",
           projectPointItems: [
             {
@@ -29,7 +30,6 @@ export default function Projects() {
       ],
     };
     setUser({ ...user, resume: resume });
-    console.log(user.resume);
   };
 
   const projectElements = user.resume.projectItems.map((projectItem) => {

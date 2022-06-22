@@ -1,9 +1,9 @@
 import { AppBar, Box, Button, LinearProgress, Toolbar } from "@mui/material";
 import { useState } from "react";
+import DevTemplate from "../components/DevTemplate";
 import Form from "../components/Form";
 import Sidebar from "../components/Sidebar";
 import Tool from "../components/Tool";
-import DevTemplate from "./DevTemplate";
 
 export default function Create() {
   const [count, setCount] = useState(20);

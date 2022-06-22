@@ -1,11 +1,11 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import DevTemplate from "./components/DevTemplate";
 import Nav from "./components/Nav";
 import isDarkModeContext from "./context/isDarkModeContext";
 import UserContext, { blankUser } from "./context/UserContext";
 import Create from "./pages/Create";
-import DevTemplate from "./pages/DevTemplate";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";

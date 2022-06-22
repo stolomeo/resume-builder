@@ -72,20 +72,15 @@ export default function DevTemplate() {
     );
   });
 
-  // const projectPointElements = user.resume.projectItems.map((projectItem) => {
-  //   const { projectPointItems } = projectItem;
-  //   const pointItemTag = projectPointItems.map((projectPointItem) => {
-  //     return (
-  //       <Typography variant="body2" px={5} fontSize={9}>
-  //         • {projectPointItem.projectPoint}
-  //       </Typography>
-  //     );
-  //   });
-  // });
-
   const projectElements = user.resume.projectItems.map((projectItem) => {
-    const { id, projectName, projectRole, projectEndDate, projectPointItems } =
-      projectItem;
+    const {
+      id,
+      projectName,
+      projectLiveLink,
+      projectRepoLink,
+      projectEndDate,
+      projectPointItems,
+    } = projectItem;
     const pointItemTag = projectPointItems.map((projectPointItem) => {
       return (
         <Typography
@@ -141,10 +136,33 @@ export default function DevTemplate() {
             sx={{
               "@media print": {
                 fontSize: "12px",
+                fontWeight: 700,
               },
             }}
           >
-            {projectRole}
+            <Link
+              href={projectLiveLink}
+              sx={{
+                "@media print": {
+                  color: "#1976d2",
+                  fontSize: "12px",
+                },
+              }}
+            >
+              Live
+            </Link>{" "}
+            <span style={{ fontStyle: "normal" }}>|</span>{" "}
+            <Link
+              href={projectRepoLink}
+              sx={{
+                "@media print": {
+                  color: "#1976d2",
+                  fontSize: "12px",
+                },
+              }}
+            >
+              Repo
+            </Link>
           </Typography>
         </Box>
         {pointItemTag}
@@ -306,12 +324,26 @@ export default function DevTemplate() {
             },
           }}
         >
-          <Link href={githubLink}>
+          <Link
+            href={githubLink}
+            sx={{
+              "@media print": {
+                color: "#1976d2",
+              },
+            }}
+          >
             <FaGithubSquare />
             github
           </Link>{" "}
           |{" "}
-          <Link href={linkedinLink}>
+          <Link
+            href={linkedinLink}
+            sx={{
+              "@media print": {
+                color: "#1976d2",
+              },
+            }}
+          >
             <FaLinkedin />
             linkedin
           </Link>
@@ -334,7 +366,6 @@ export default function DevTemplate() {
           style={{
             flexGrow: "1",
             marginLeft: ".5rem",
-            // borderColor: "#000080",
             borderWidth: ".1px",
           }}
         />
@@ -357,7 +388,6 @@ export default function DevTemplate() {
           style={{
             flexGrow: "1",
             marginLeft: ".5rem",
-            // borderColor: "#000080",
             borderWidth: ".1px",
           }}
         />
@@ -435,7 +465,6 @@ export default function DevTemplate() {
           style={{
             flexGrow: "1",
             marginLeft: ".5rem",
-            // borderColor: "#000080",
             borderWidth: ".1px",
           }}
         />
@@ -458,7 +487,6 @@ export default function DevTemplate() {
           style={{
             flexGrow: "1",
             marginLeft: ".5rem",
-            // borderColor: "#000080",
             borderWidth: ".1px",
           }}
         />

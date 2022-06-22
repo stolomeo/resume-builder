@@ -1,8 +1,8 @@
 import { Button, TextField } from "@mui/material";
 import { Box } from "@mui/system";
 import { ChangeEvent, useContext } from "react";
-import UserContext from "../../context";
-import { ProjectPointItemsType } from "../../types";
+import UserContext from "../../../context";
+import { ProjectPointItemsType } from "../../../types";
 
 type Props = {
   projectPointItem: ProjectPointItemsType;
@@ -31,11 +31,9 @@ export default function ProjectPointsForm({ projectPointItem }: Props) {
     });
 
     setUser({ ...user, resume: user.resume });
-    console.log(user.resume);
   };
 
   const handleDeleteProjectPoint = (id: string) => {
-    console.log(id);
     let items = user.resume.projectItems;
     items.forEach((item, index) => {
       const keptItems = item.projectPointItems.filter((projectPointItem) => {

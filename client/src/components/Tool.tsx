@@ -55,7 +55,8 @@ export default function Tool({ setCount }: Props) {
           {
             id: nanoid(),
             projectName: "",
-            projectRole: "",
+            projectLiveLink: "",
+            projectRepoLink: "",
             projectEndDate: "",
             projectPointItems: [
               {
@@ -84,7 +85,6 @@ export default function Tool({ setCount }: Props) {
         ],
       },
     });
-    console.log(user);
     setCount(20);
   };
 

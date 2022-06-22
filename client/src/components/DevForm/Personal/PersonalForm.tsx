@@ -1,6 +1,6 @@
 import { Box, TextField } from "@mui/material";
 import { ChangeEvent, useContext } from "react";
-import UserContext from "../../context";
+import UserContext from "../../../context";
 
 export default function PersonalForm() {
   const { user, setUser } = useContext(UserContext);

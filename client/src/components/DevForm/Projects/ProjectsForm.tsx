@@ -1,8 +1,8 @@
 import { Box, Button, TextField } from "@mui/material";
 import { nanoid } from "nanoid";
 import { ChangeEvent, useContext } from "react";
-import UserContext from "../../context";
-import { ProjectItemsType, ProjectPointItemsType } from "../../types";
+import UserContext from "../../../context";
+import { ProjectItemsType, ProjectPointItemsType } from "../../../types";
 import ProjectPointsForm from "./ProjectPointsForm";
 
 type Props = {
@@ -11,8 +11,14 @@ type Props = {
 export default function ProjectsForm({ projectItem }: Props) {
   const { user, setUser } = useContext(UserContext);
 
-  let { id, projectName, projectRole, projectEndDate, projectPointItems } =
-    projectItem;
+  let {
+    id,
+    projectName,
+    projectLiveLink,
+    projectRepoLink,
+    projectEndDate,
+    projectPointItems,
+  } = projectItem;
 
   const handleChangeProject = (e: ChangeEvent, id: string) => {
     const { name, value } = e.target as HTMLTextAreaElement;
@@ -51,7 +57,6 @@ export default function ProjectsForm({ projectItem }: Props) {
       },
     ];
     setUser({ ...user, resume: resume });
-    console.log(user.resume);
   };
 
   const projectPointItemElements = projectPointItems.map(
@@ -75,10 +80,19 @@ export default function ProjectsForm({ projectItem }: Props) {
         <TextField
           variant="standard"
           type="text"
-          name="projectRole"
-          label="Project Role"
-          placeholder="Lead Developer"
-          value={projectRole}
+          name="projectLiveLink"
+          label="Live Link"
+          placeholder="https://ezcv.app/"
+          value={projectLiveLink}
+          onChange={(e) => handleChangeProject(e, id)}
+        />
+        <TextField
+          variant="standard"
+          type="text"
+          name="projectRepoLink"
+          label="Repo Link"
+          placeholder="https://github.com/stolomeo/resume-builder"
+          value={projectRepoLink}
           onChange={(e) => handleChangeProject(e, id)}
         />
         <TextField

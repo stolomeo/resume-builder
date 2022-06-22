@@ -1,8 +1,8 @@
 import { Box, Button, TextField } from "@mui/material";
 import { nanoid } from "nanoid";
 import { ChangeEvent, useContext } from "react";
-import UserContext from "../../context";
-import { ExperienceItemsType, ExperiencePointItemsType } from "../../types";
+import UserContext from "../../../context";
+import { ExperienceItemsType, ExperiencePointItemsType } from "../../../types";
 import ExperiencePointsForm from "./ExperiencePointsForm";
 
 type Props = {
@@ -58,7 +58,6 @@ export default function ExperienceForm({ experienceItem }: Props) {
       },
     ];
     setUser({ ...user, resume: resume });
-    console.log(user.resume);
   };
   const experiencePointItemElements = experiencePointItems.map(
     (experiencePointItem: ExperiencePointItemsType) => {

@@ -1,8 +1,8 @@
 import { Button } from "@mui/material";
 import { nanoid } from "nanoid";
 import { useContext } from "react";
-import UserContext from "../../context";
-import { DevResumeType } from "../../types";
+import UserContext from "../../../context";
+import { DevResumeType } from "../../../types";
 import EducationForm from "./EducationForm";
 
 export default function Education() {

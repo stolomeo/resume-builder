@@ -30,7 +30,8 @@ export type TechnologyItemsType = {
 export type ProjectItemsType = {
   id: string;
   projectName: string;
-  projectRole: string;
+  projectLiveLink: string;
+  projectRepoLink: string;
   projectEndDate: string;
   projectPointItems: ProjectPointItemsType[];
 };
