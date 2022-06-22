@@ -353,6 +353,7 @@ export default function DevTemplate() {
         <Typography
           flexGrow={0}
           fontSize={11}
+          fontWeight={700}
           variant="subtitle2"
           sx={{
             "@media print": {
@@ -375,6 +376,7 @@ export default function DevTemplate() {
         <Typography
           flexGrow={0}
           fontSize={11}
+          fontWeight={700}
           variant="subtitle2"
           sx={{
             "@media print": {
@@ -452,6 +454,7 @@ export default function DevTemplate() {
         <Typography
           flexGrow={0}
           fontSize={11}
+          fontWeight={700}
           variant="subtitle2"
           sx={{
             "@media print": {
@@ -474,6 +477,7 @@ export default function DevTemplate() {
         <Typography
           flexGrow={0}
           fontSize={11}
+          fontWeight={700}
           variant="subtitle2"
           sx={{
             "@media print": {
