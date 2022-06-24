@@ -1,6 +1,6 @@
 # Resume Builder
 
-### This application is still in development
+### The easiest way to build a resume
 
 [Live Demo](https://ezcv.app/)
 
