@@ -14,6 +14,7 @@ import {
 import { useContext, useState } from "react";
 
 import { Link as RouterLink, useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
 import UserContext from "../context";
 import { getUser } from "../services/user";
 
@@ -99,6 +100,7 @@ export default function Login() {
           </Grid>
         </Box>
       </Box>
+      <Footer />
     </Container>
   );
 }
