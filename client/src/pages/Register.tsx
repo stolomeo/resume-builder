@@ -1,14 +1,7 @@
-import {
-  Avatar,
-  Box,
-  Button,
-  Container,
-  Grid,
-  Link,
-  Typography,
-} from "@mui/material";
+import { Avatar, Box, Container, Grid, Link, Typography } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import SignUpButton from "../components/Buttons/SignUpButton";
 import MarketingCheckbox from "../components/Inputs/Checkboxes/MarketingCheckbox";
 import EmailInput from "../components/Inputs/TextFields/EmailInput";
 import FirstnameInput from "../components/Inputs/TextFields/FirstnameInput";
@@ -16,7 +9,7 @@ import LastnameInput from "../components/Inputs/TextFields/LastnameInput";
 import PasswordInput from "../components/Inputs/TextFields/PasswordInput";
 import Footer from "../components/Navigation/Footer";
 import { createUser } from "../services/user";
-import { UserAuth } from "../styles";
+import { avatar, userForm } from "../styles";
 import emptyDevResume from "../utils/emptyDevResume";
 
 export default function Register() {
@@ -39,8 +32,8 @@ export default function Register() {
   };
   return (
     <Container component="main" maxWidth="xs">
-      <Box sx={UserAuth}>
-        <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}></Avatar>
+      <Box sx={userForm}>
+        <Avatar sx={avatar}></Avatar>
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
@@ -62,14 +55,7 @@ export default function Register() {
               <MarketingCheckbox />
             </Grid>
           </Grid>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            sx={{ mt: 3, mb: 2 }}
-          >
-            Sign Up
-          </Button>
+          <SignUpButton />
           <Grid container justifyContent="flex-end">
             <Grid item>
               <Link href="/login" variant="body2">

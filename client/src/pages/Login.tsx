@@ -16,7 +16,7 @@ import PasswordInput from "../components/Inputs/TextFields/PasswordInput";
 import Footer from "../components/Navigation/Footer";
 import UserContext from "../context";
 import { getUser } from "../services/user";
-import { UserAuth } from "../styles";
+import { avatar, userForm } from "../styles";
 
 export default function Login() {
   const { user, setUser } = useContext(UserContext);
@@ -34,8 +34,8 @@ export default function Login() {
   };
   return (
     <Container component="main" maxWidth="xs">
-      <Box sx={UserAuth}>
-        <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+      <Box sx={userForm}>
+        <Avatar sx={avatar}>
           <LockOutlined />
         </Avatar>
         <Typography component="h1" variant="h5">

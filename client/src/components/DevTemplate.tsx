@@ -2,6 +2,10 @@ import { Box, Container, Link, Typography } from "@mui/material";
 import { useContext } from "react";
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import UserContext from "../context";
+import { personalBox, resumeContainer, resumeSectionBox } from "../styles";
+import LineBreak from "./Typography/LineBreak";
+import ResumeSectionSubtitle from "./Typography/ResumeSectionSubtitle";
+import ResumeSectionTitle from "./Typography/ResumeSectionTitle";
 
 export default function DevTemplate() {
   const { user } = useContext(UserContext);
@@ -269,32 +273,8 @@ export default function DevTemplate() {
   });
 
   return (
-    <Container
-      maxWidth="sm"
-      sx={{
-        display: "flex",
-        mt: 1.5,
-        flexDirection: "column",
-        height: "100%",
-        overflow: "auto",
-        "@media print": {
-          display: "block",
-          width: "100%",
-          height: "100%",
-          position: "fixed",
-          top: 0,
-          left: 0,
-        },
-      }}
-    >
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
+    <Container maxWidth="sm" sx={resumeContainer}>
+      <Box sx={personalBox}>
         <Typography
           sx={{
             "@media print": {
@@ -349,77 +329,19 @@ export default function DevTemplate() {
           </Link>
         </Typography>
       </Box>
-      <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-        <Typography
-          flexGrow={0}
-          fontSize={11}
-          fontWeight={700}
-          variant="subtitle2"
-          sx={{
-            "@media print": {
-              fontSize: "14px",
-            },
-          }}
-        >
-          EDUCATION
-        </Typography>
-        <hr
-          style={{
-            flexGrow: "1",
-            marginLeft: ".5rem",
-            borderWidth: ".1px",
-          }}
-        />
+      <Box sx={resumeSectionBox}>
+        <ResumeSectionTitle text="EDUCATION" />
+        <LineBreak />
       </Box>
       {educationElements}
-      <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-        <Typography
-          flexGrow={0}
-          fontSize={11}
-          fontWeight={700}
-          variant="subtitle2"
-          sx={{
-            "@media print": {
-              fontSize: "14px",
-            },
-          }}
-        >
-          SKILLS
-        </Typography>
-        <hr
-          style={{
-            flexGrow: "1",
-            marginLeft: ".5rem",
-            borderWidth: ".1px",
-          }}
-        />
+      <Box sx={resumeSectionBox}>
+        <ResumeSectionTitle text="SKILLS" />
+        <LineBreak />
       </Box>
       <Box sx={{ display: "flex" }}>
         <Box sx={{ maxWidth: "fit-content", textAlign: "right", pl: 5, pr: 2 }}>
-          <Typography
-            fontWeight={700}
-            variant="subtitle2"
-            fontSize={9}
-            sx={{
-              "@media print": {
-                fontSize: "12px",
-              },
-            }}
-          >
-            Programming Languages
-          </Typography>
-          <Typography
-            fontWeight={700}
-            variant="subtitle2"
-            fontSize={9}
-            sx={{
-              "@media print": {
-                fontSize: "12px",
-              },
-            }}
-          >
-            Technologies
-          </Typography>
+          <ResumeSectionSubtitle text="Programming Languages" />
+          <ResumeSectionSubtitle text="Technologies" />
         </Box>
         <Box
           sx={{
@@ -450,50 +372,14 @@ export default function DevTemplate() {
           </Typography>
         </Box>
       </Box>
-      <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-        <Typography
-          flexGrow={0}
-          fontSize={11}
-          fontWeight={700}
-          variant="subtitle2"
-          sx={{
-            "@media print": {
-              fontSize: "14px",
-            },
-          }}
-        >
-          NOTABLE PROJECTS
-        </Typography>
-        <hr
-          style={{
-            flexGrow: "1",
-            marginLeft: ".5rem",
-            borderWidth: ".1px",
-          }}
-        />
+      <Box sx={resumeSectionBox}>
+        <ResumeSectionTitle text="NOTABLE PROJECTS" />
+        <LineBreak />
       </Box>
       {projectElements}
-      <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-        <Typography
-          flexGrow={0}
-          fontSize={11}
-          fontWeight={700}
-          variant="subtitle2"
-          sx={{
-            "@media print": {
-              fontSize: "14px",
-            },
-          }}
-        >
-          EXPERIENCE
-        </Typography>
-        <hr
-          style={{
-            flexGrow: "1",
-            marginLeft: ".5rem",
-            borderWidth: ".1px",
-          }}
-        />
+      <Box sx={resumeSectionBox}>
+        <ResumeSectionTitle text="EXPERIENCE" />
+        <LineBreak />
       </Box>
       {experienceElements}
     </Container>
