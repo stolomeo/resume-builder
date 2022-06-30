@@ -2,7 +2,16 @@ import { Box, Container, Link, Typography } from "@mui/material";
 import { useContext } from "react";
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import UserContext from "../context";
-import { personalBox, resumeContainer, resumeSectionBox } from "../styles";
+import {
+  flexColumnCenter,
+  personalBox,
+  print10px,
+  print12px,
+  print18px,
+  printBlue,
+  resumeContainer,
+  resumeSectionBox,
+} from "../styles";
 import LineBreak from "./Typography/LineBreak";
 import ResumeSectionSubtitle from "./Typography/ResumeSectionSubtitle";
 import ResumeSectionTitle from "./Typography/ResumeSectionTitle";
@@ -25,50 +34,18 @@ export default function DevTemplate() {
             px: 3,
           }}
         >
-          <Typography
-            fontWeight={700}
-            fontSize=".6rem"
-            sx={{
-              "@media print": {
-                fontSize: "12px",
-              },
-            }}
-          >
+          <Typography fontWeight={700} fontSize=".6rem" sx={print12px}>
             {majorAndDegree}
           </Typography>
-          <Typography
-            fontWeight={700}
-            fontSize=".6rem"
-            sx={{
-              "@media print": {
-                fontSize: "12px",
-              },
-            }}
-          >
+          <Typography fontWeight={700} fontSize=".6rem" sx={print12px}>
             {graduationDate}
           </Typography>
         </Box>
         <Box sx={{ display: "flex", justifyContent: "space-between", px: 3 }}>
-          <Typography
-            fontStyle={"italic"}
-            fontSize=".5em"
-            sx={{
-              "@media print": {
-                fontSize: "12px",
-              },
-            }}
-          >
+          <Typography fontStyle={"italic"} fontSize=".5em" sx={print12px}>
             {schoolName}
           </Typography>
-          <Typography
-            fontStyle={"italic"}
-            fontSize=".5em"
-            sx={{
-              "@media print": {
-                fontSize: "12px",
-              },
-            }}
-          >
+          <Typography fontStyle={"italic"} fontSize=".5em" sx={print12px}>
             {schoolLocation}
           </Typography>
         </Box>
@@ -87,16 +64,7 @@ export default function DevTemplate() {
     } = projectItem;
     const pointItemTag = projectPointItems.map((projectPointItem) => {
       return (
-        <Typography
-          variant="body2"
-          px={5}
-          fontSize={9}
-          sx={{
-            "@media print": {
-              fontSize: "12px",
-            },
-          }}
-        >
+        <Typography variant="body2" px={5} fontSize={9} sx={print12px}>
           • {projectPointItem.projectPoint}
         </Typography>
       );
@@ -110,26 +78,10 @@ export default function DevTemplate() {
             px: 3,
           }}
         >
-          <Typography
-            fontWeight={700}
-            fontSize=".6rem"
-            sx={{
-              "@media print": {
-                fontSize: "12px",
-              },
-            }}
-          >
+          <Typography fontWeight={700} fontSize=".6rem" sx={print12px}>
             {projectName}
           </Typography>
-          <Typography
-            fontWeight={700}
-            fontSize=".6rem"
-            sx={{
-              "@media print": {
-                fontSize: "12px",
-              },
-            }}
-          >
+          <Typography fontWeight={700} fontSize=".6rem" sx={print12px}>
             {projectEndDate}
           </Typography>
         </Box>
@@ -186,16 +138,7 @@ export default function DevTemplate() {
       } = experienceItem;
       const pointItemTag = experiencePointItems.map((experiencePointItem) => {
         return (
-          <Typography
-            variant="body2"
-            px={5}
-            fontSize={9}
-            sx={{
-              "@media print": {
-                fontSize: "12px",
-              },
-            }}
-          >
+          <Typography variant="body2" px={5} fontSize={9} sx={print12px}>
             • {experiencePointItem.experiencePoint}
           </Typography>
         );
@@ -275,55 +218,19 @@ export default function DevTemplate() {
   return (
     <Container maxWidth="sm" sx={resumeContainer}>
       <Box sx={personalBox}>
-        <Typography
-          sx={{
-            "@media print": {
-              fontSize: "18px",
-            },
-          }}
-          fontSize={13}
-        >
+        <Typography sx={print18px} fontSize={13}>
           {fullName}
         </Typography>
-        <Typography
-          fontSize={11}
-          sx={{
-            "@media print": {
-              fontSize: "12px",
-            },
-          }}
-        >
+        <Typography fontSize={11} sx={print12px}>
           {phone} | {email}
         </Typography>
-        <Typography
-          variant="caption"
-          fontSize={8}
-          sx={{
-            "@media print": {
-              fontSize: "10px",
-            },
-          }}
-        >
-          <Link
-            href={githubLink}
-            sx={{
-              "@media print": {
-                color: "#1976d2",
-              },
-            }}
-          >
+        <Typography variant="caption" fontSize={8} sx={print10px}>
+          <Link href={githubLink} sx={printBlue}>
             <FaGithubSquare />
             github
           </Link>{" "}
           |{" "}
-          <Link
-            href={linkedinLink}
-            sx={{
-              "@media print": {
-                color: "#1976d2",
-              },
-            }}
-          >
+          <Link href={linkedinLink} sx={printBlue}>
             <FaLinkedin />
             linkedin
           </Link>
@@ -343,31 +250,11 @@ export default function DevTemplate() {
           <ResumeSectionSubtitle text="Programming Languages" />
           <ResumeSectionSubtitle text="Technologies" />
         </Box>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-          }}
-        >
-          <Typography
-            fontSize={8}
-            sx={{
-              "@media print": {
-                fontSize: "12px",
-              },
-            }}
-          >
+        <Box sx={flexColumnCenter}>
+          <Typography fontSize={8} sx={print12px}>
             {languageElements.join(" | ")}
           </Typography>
-          <Typography
-            fontSize={8}
-            sx={{
-              "@media print": {
-                fontSize: "12px",
-              },
-            }}
-          >
+          <Typography fontSize={8} sx={print12px}>
             {technologyItems.join(" | ")}
           </Typography>
         </Box>
