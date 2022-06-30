@@ -5,7 +5,7 @@ type Props = {
   count: number;
 };
 
-export default function Form({ count }: Props) {
+export default function ResumeForm({ count }: Props) {
   const formComponent = handleComponentSelection(count);
 
   return (

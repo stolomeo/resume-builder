@@ -2,20 +2,21 @@ import { LockOutlined } from "@mui/icons-material";
 import {
   Avatar,
   Box,
-  Button,
-  Checkbox,
   Container,
-  FormControlLabel,
   Grid,
   Link as MaterialLink,
-  TextField,
   Typography,
 } from "@mui/material";
 import { useContext, useState } from "react";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
+import SignInButton from "../components/Buttons/SignInButton";
+import RememberMeCheckbox from "../components/Inputs/Checkboxes/RememberMeCheckbox";
+import EmailInput from "../components/Inputs/TextFields/EmailInput";
+import PasswordInput from "../components/Inputs/TextFields/PasswordInput";
 import Footer from "../components/Navigation/Footer";
 import UserContext from "../context";
 import { getUser } from "../services/user";
+import { UserAuth } from "../styles";
 
 export default function Login() {
   const { user, setUser } = useContext(UserContext);
@@ -33,14 +34,7 @@ export default function Login() {
   };
   return (
     <Container component="main" maxWidth="xs">
-      <Box
-        sx={{
-          marginTop: 8,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
+      <Box sx={UserAuth}>
         <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
           <LockOutlined />
         </Avatar>
@@ -48,39 +42,10 @@ export default function Login() {
           Sign in
         </Typography>
         <Box component="form" noValidate sx={{ mt: 1 }} onSubmit={handleLogin}>
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            autoFocus
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            sx={{ mt: 3, mb: 2 }}
-          >
-            Sign In
-          </Button>
+          <EmailInput setEmail={setEmail} />
+          <PasswordInput />
+          <RememberMeCheckbox />
+          <SignInButton />
           <Grid container>
             <Grid item xs>
               <MaterialLink component={RouterLink} to="#" variant="body2">
