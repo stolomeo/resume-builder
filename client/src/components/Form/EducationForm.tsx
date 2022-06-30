@@ -1,7 +1,7 @@
 import { Box, Button, TextField } from "@mui/material";
 import { ChangeEvent, useContext } from "react";
-import UserContext from "../../../context/UserContext";
-import { EducationItemsType } from "../../../types/";
+import UserContext from "../../context";
+import { EducationItemsType } from "../../types";
 
 type Props = {
   educationItem: EducationItemsType;
@@ -10,15 +10,8 @@ type Props = {
 export default function EducationForm({ educationItem }: Props) {
   const { user, setUser } = useContext(UserContext);
 
-  const {
-    id,
-    university,
-    schoolCity,
-    schoolState,
-    degree,
-    major,
-    graduationDate,
-  } = educationItem;
+  const { id, majorAndDegree, schoolName, schoolLocation, graduationDate } =
+    educationItem;
 
   const handleChangeEducation = (e: ChangeEvent, id: string) => {
     const { name, value } = e.target as HTMLTextAreaElement;
@@ -45,48 +38,36 @@ export default function EducationForm({ educationItem }: Props) {
         <TextField
           variant="standard"
           type="text"
-          name="university"
-          placeholder="University"
-          value={university}
+          name="majorAndDegree"
+          label="Degree/Major"
+          placeholder="Bachelor of Science - Computer Science"
+          value={majorAndDegree}
           onChange={(e) => handleChangeEducation(e, id)}
         />
         <TextField
           variant="standard"
           type="text"
-          name="schoolCity"
-          placeholder="City"
-          value={schoolCity}
+          name="schoolName"
+          label="School Name"
+          placeholder="Harvard University"
+          value={schoolName}
           onChange={(e) => handleChangeEducation(e, id)}
         />
         <TextField
           variant="standard"
           type="text"
-          name="schoolState"
-          placeholder="State"
-          value={schoolState}
-          onChange={(e) => handleChangeEducation(e, id)}
-        />
-        <TextField
-          variant="standard"
-          type="text"
-          name="degree"
-          placeholder="Degree"
-          value={degree}
-          onChange={(e) => handleChangeEducation(e, id)}
-        />
-        <TextField
-          variant="standard"
-          type="text"
-          name="major"
-          placeholder="Major / area of study"
-          value={major}
+          name="schoolLocation"
+          label="School Location"
+          placeholder="Cambridge, MA"
+          value={schoolLocation}
           onChange={(e) => handleChangeEducation(e, id)}
         />
         <TextField
           variant="standard"
           type="text"
           name="graduationDate"
-          placeholder="Graduation Date"
+          label="Graduation Date"
+          placeholder="Dec 2020"
           value={graduationDate}
           onChange={(e) => handleChangeEducation(e, id)}
         />

@@ -1,6 +1,5 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
-import styled from "styled-components";
 
 export default function Footer() {
   return (
@@ -30,30 +29,3 @@ export default function Footer() {
     </AppBar>
   );
 }
-const FooterWrapper = styled.footer`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: ${({ theme }) => theme.fonts.roboto};
-  width: 100%;
-  padding: 0.5rem;
-  background-color: ${({ theme }) => theme.colors.dark};
-  color: ${({ theme }) => theme.colors.light};
-  position: fixed;
-  bottom: 0;
-  left: 0;
-`;
-
-const GithubLink = styled.a`
-  display: flex;
-  padding-bottom: 0.3rem;
-  margin-left: 0.7rem;
-  color: ${({ theme }) => theme.colors.light};
-  font-size: 1.8rem;
-  &:hover {
-    color: ${({ theme }) => theme.colors.darkHover};
-  }
-  &:active {
-    color: ${({ theme }) => theme.colors.darkActive};
-  }
-`;
