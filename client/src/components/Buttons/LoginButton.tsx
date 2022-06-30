@@ -1,9 +1,13 @@
 import { Button } from "@mui/material";
 
-export default function SignUpButton() {
+type Props = {
+  text: string;
+};
+
+export default function LoginButton({ text }: Props) {
   return (
     <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
-      Sign Up
+      {text}
     </Button>
   );
 }

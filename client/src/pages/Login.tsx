@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { useContext, useState } from "react";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
-import SignInButton from "../components/Buttons/SignInButton";
+import LoginButton from "../components/Buttons/LoginButton";
 import RememberMeCheckbox from "../components/Inputs/Checkboxes/RememberMeCheckbox";
 import EmailInput from "../components/Inputs/TextFields/EmailInput";
 import PasswordInput from "../components/Inputs/TextFields/PasswordInput";
@@ -45,7 +45,7 @@ export default function Login() {
           <EmailInput setEmail={setEmail} />
           <PasswordInput />
           <RememberMeCheckbox />
-          <SignInButton />
+          <LoginButton text="Sign in" />
           <Grid container>
             <Grid item xs>
               <MaterialLink component={RouterLink} to="#" variant="body2">

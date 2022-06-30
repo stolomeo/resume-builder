@@ -1,7 +1,7 @@
 import { Avatar, Box, Container, Grid, Link, Typography } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import SignUpButton from "../components/Buttons/SignUpButton";
+import LoginButton from "../components/Buttons/LoginButton";
 import MarketingCheckbox from "../components/Inputs/Checkboxes/MarketingCheckbox";
 import EmailInput from "../components/Inputs/TextFields/EmailInput";
 import FirstnameInput from "../components/Inputs/TextFields/FirstnameInput";
@@ -38,7 +38,7 @@ export default function Register() {
           Sign up
         </Typography>
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
-          <Grid container spacing={2}>
+          <Grid container spacing={1}>
             <Grid item xs={12} sm={6}>
               <FirstnameInput setFirstname={setFirstname} />
             </Grid>
@@ -55,7 +55,7 @@ export default function Register() {
               <MarketingCheckbox />
             </Grid>
           </Grid>
-          <SignUpButton />
+          <LoginButton text="Sign up" />
           <Grid container justifyContent="flex-end">
             <Grid item>
               <Link href="/login" variant="body2">

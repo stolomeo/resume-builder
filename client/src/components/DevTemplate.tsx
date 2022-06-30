@@ -13,8 +13,8 @@ import {
   resumeSectionBox,
 } from "../styles";
 import LineBreak from "./Typography/LineBreak";
+import ResumeSectionTitle from "./Typography/ResumeSectionHeader";
 import ResumeSectionSubtitle from "./Typography/ResumeSectionSubtitle";
-import ResumeSectionTitle from "./Typography/ResumeSectionTitle";
 
 export default function DevTemplate() {
   const { user } = useContext(UserContext);
