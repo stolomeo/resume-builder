@@ -12,9 +12,8 @@ import {
   Typography,
 } from "@mui/material";
 import { useContext, useState } from "react";
-
 import { Link as RouterLink, useNavigate } from "react-router-dom";
-import Footer from "../components/Footer";
+import Footer from "../components/Navigation/Footer";
 import UserContext from "../context";
 import { getUser } from "../services/user";
 

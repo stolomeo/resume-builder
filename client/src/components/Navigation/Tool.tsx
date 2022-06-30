@@ -9,8 +9,8 @@ import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import { nanoid } from "nanoid";
 import { Dispatch, SetStateAction, useContext } from "react";
-import UserContext from "../context/UserContext";
-import { createResume, getExampleResume } from "../services/resume";
+import UserContext from "../../context/UserContext";
+import { createResume, getExampleResume } from "../../services/resume";
 
 type Props = {
   setCount: Dispatch<SetStateAction<number>>;

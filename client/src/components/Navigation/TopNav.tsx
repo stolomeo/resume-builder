@@ -6,10 +6,10 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import UserContext from "../context";
-import isDarkModeContext from "../context/isDarkModeContext";
+import UserContext from "../../context";
+import isDarkModeContext from "../../context/isDarkModeContext";
 
-export default function Nav() {
+export default function TopNav() {
   const { isDarkMode, setIsDarkMode } = useContext(isDarkModeContext);
   const { user } = useContext(UserContext);
 

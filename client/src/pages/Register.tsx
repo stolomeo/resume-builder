@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Footer from "../components/Footer";
+import Footer from "../components/Navigation/Footer";
 import { createUser } from "../services/user";
 import emptyDevResume from "../utils/emptyDevResume";
 

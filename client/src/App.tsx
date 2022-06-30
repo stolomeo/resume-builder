@@ -2,7 +2,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import DevTemplate from "./components/DevTemplate";
-import Nav from "./components/Nav";
+import TopNav from "./components/Navigation/TopNav";
 import isDarkModeContext from "./context/isDarkModeContext";
 import UserContext, { blankUser } from "./context/UserContext";
 import Create from "./pages/Create";
@@ -22,7 +22,7 @@ function App() {
         <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
           <CssBaseline />
           <BrowserRouter>
-            <Nav />
+            <TopNav />
             <Routes>
               <Route index element={<Home />} />
               <Route path="login" element={<Login />} />

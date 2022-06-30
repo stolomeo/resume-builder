@@ -1,4 +1,4 @@
-import Education from "../components/Form/Education";
+import Education from "../components/Form/Education/Education";
 import Experience from "../components/Form/Experience/Experience";
 import PersonalForm from "../components/Form/Personal/PersonalForm";
 import Projects from "../components/Form/Projects/Projects";

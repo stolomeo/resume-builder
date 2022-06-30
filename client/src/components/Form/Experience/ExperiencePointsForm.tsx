@@ -12,7 +12,7 @@ export default function ExperiencePointsForm({ experiencePointItem }: Props) {
   const { user, setUser } = useContext(UserContext);
 
   const handleChangeExperiencePoint = (e: ChangeEvent, id: string) => {
-    const { name, value } = e.target as HTMLTextAreaElement;
+    const { value } = e.target as HTMLTextAreaElement;
     let items = user.resume.experienceItems;
     let itemIndex = 0;
     // Depth first search. Graph Theory. Runtime O(n^2)

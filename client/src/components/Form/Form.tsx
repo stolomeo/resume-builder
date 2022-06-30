@@ -1,13 +1,11 @@
 import { Box } from "@mui/material";
-import { Dispatch, SetStateAction } from "react";
 import { handleComponentSelection } from "../../utils/handleComponentSelection";
 
 type Props = {
   count: number;
-  setCount: Dispatch<SetStateAction<number>>;
 };
 
-export default function Form({ count, setCount }: Props) {
+export default function Form({ count }: Props) {
   const formComponent = handleComponentSelection(count);
 
   return (
