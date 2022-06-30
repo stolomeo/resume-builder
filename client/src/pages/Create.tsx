@@ -50,20 +50,6 @@ export default function Create() {
           },
         }}
       >
-        {/* <Box
-          sx={{
-            width: "100%",
-            height: "8vh",
-            position: "fixed",
-            bottom: "0",
-            left: "0",
-            right: "0",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "5rem",
-          }}
-        > */}
         <Toolbar
           sx={{ display: "flex", justifyContent: "center", gap: "2rem" }}
         >
