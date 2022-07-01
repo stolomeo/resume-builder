@@ -1,10 +1,10 @@
 import { Box } from "@mui/material";
 import { useState } from "react";
-import DevTemplate from "../components/DevTemplate";
 import BottomNav from "../components/Navigation/BottomNav";
 import Sidebar from "../components/Navigation/Sidebar";
 import Tool from "../components/Navigation/Tool";
-import ResumeForm from "../components/Resume/Form";
+import Form from "../components/Resume/Form";
+import Template from "../components/Resume/Template/";
 
 export default function Create() {
   const [count, setCount] = useState(20);
@@ -19,7 +19,7 @@ export default function Create() {
         }}
       >
         <Sidebar count={count} setCount={setCount} />
-        <ResumeForm count={count} />
+        <Form count={count} />
         <Box
           sx={{
             display: "flex",
@@ -28,7 +28,7 @@ export default function Create() {
           }}
         >
           <Tool setCount={setCount} />
-          <DevTemplate />
+          <Template />
         </Box>
       </Box>
       <BottomNav count={count} setCount={setCount} />

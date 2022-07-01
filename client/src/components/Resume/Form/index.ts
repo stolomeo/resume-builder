@@ -1,3 +1,3 @@
-import ResumeForm from "./ResumeForm";
+import Form from "./Form";
 
-export default ResumeForm;
+export default Form;

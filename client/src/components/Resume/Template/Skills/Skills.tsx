@@ -1,21 +1,25 @@
 import { Box, Typography } from "@mui/material";
 import { useContext } from "react";
-import UserContext from "../../../context";
-import { flexColumnCenter, print12px, resumeSectionBox } from "../../../styles";
-import LineBreak from "../../Typography/LineBreak";
-import ResumeSectionTitle from "../../Typography/ResumeSectionHeader";
-import ResumeSectionSubtitle from "../../Typography/ResumeSectionSubtitle";
+import UserContext from "../../../../context";
+import {
+  flexColumnCenter,
+  print12px,
+  resumeSectionBox,
+} from "../../../../styles";
+import LineBreak from "../../../Typography/LineBreak";
+import ResumeSectionTitle from "../../../Typography/ResumeSectionHeader";
+import ResumeSectionSubtitle from "../../../Typography/ResumeSectionSubtitle";
 
 export default function Skills() {
   const { user } = useContext(UserContext);
 
   const languageElements = user.resume.languageItems.map((languageItem) => {
-    const { id, language } = languageItem;
+    const { language } = languageItem;
     return language;
   });
 
   const technologyItems = user.resume.technologyItems.map((technologyItem) => {
-    const { id, technology } = technologyItem;
+    const { technology } = technologyItem;
     return technology;
   });
   return (
