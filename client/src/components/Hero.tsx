@@ -8,9 +8,8 @@ export default function Hero() {
         sx={{
           display: "flex",
           alignItems: "center",
-          maxWidth: "100vw",
           gap: "3rem",
-          padding: "0 7.8rem",
+          px: "7.8rem",
         }}
       >
         <Box

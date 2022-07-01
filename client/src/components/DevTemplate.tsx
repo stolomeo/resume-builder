@@ -126,50 +126,18 @@ export default function DevTemplate() {
               px: 3,
             }}
           >
-            <Typography
-              fontWeight={700}
-              fontSize=".6rem"
-              sx={{
-                "@media print": {
-                  fontSize: "12px",
-                },
-              }}
-            >
+            <Typography fontWeight={700} fontSize=".6rem" sx={print12px}>
               {employerName}
             </Typography>
-            <Typography
-              fontWeight={700}
-              fontSize=".6rem"
-              sx={{
-                "@media print": {
-                  fontSize: "12px",
-                },
-              }}
-            >
+            <Typography fontWeight={700} fontSize=".6rem" sx={print12px}>
               {startDate} - {endDate}
             </Typography>
           </Box>
           <Box sx={flexSpaceBtwnPx3}>
-            <Typography
-              fontStyle={"italic"}
-              fontSize=".5em"
-              sx={{
-                "@media print": {
-                  fontSize: "12px",
-                },
-              }}
-            >
+            <Typography fontStyle={"italic"} fontSize=".5em" sx={print12px}>
               {jobTitle}
             </Typography>
-            <Typography
-              fontStyle={"italic"}
-              fontSize=".5em"
-              sx={{
-                "@media print": {
-                  fontSize: "12px",
-                },
-              }}
-            >
+            <Typography fontStyle={"italic"} fontSize=".5em" sx={print12px}>
               {workLocation}
             </Typography>
           </Box>
