@@ -1,5 +1,9 @@
 import { Box, Link, Typography } from "@mui/material";
-import { flexSpaceBtwnPx3, print12px, printLiveLink } from "../../../../styles";
+import { flexSpaceBtwnPx3 } from "../../../../styles/common.style";
+import {
+  print12px,
+  printLiveLink,
+} from "../../../../styles/Resume/print.style";
 import { ProjectItemsType } from "../../../../types";
 import ProjectItemsDetails from "./ProjectItemsDetails";
 

@@ -12,7 +12,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { Dispatch, SetStateAction } from "react";
-import { sidebarBox } from "../../styles";
+import { sidebarBox } from "../../styles/Navigation/sidebar.style";
 
 type Props = {
   count: number;

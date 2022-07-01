@@ -1,6 +1,9 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
-import { footerAppBar, footerToolBar } from "../../styles";
+import {
+  footerAppBar,
+  footerToolBar,
+} from "../../styles/Navigation/footer.style";
 
 export default function Footer() {
   return (

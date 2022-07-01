@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import { print12px } from "../../../../styles";
+import { print12px } from "../../../../styles/Resume/print.style";
 
 type Props = {
   projectPoint: string;

@@ -3,12 +3,12 @@ import { useContext } from "react";
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import UserContext from "../../../../context";
 import {
-  personalBox,
   print10px,
   print12px,
   print18px,
   printBlue,
-} from "../../../../styles";
+} from "../../../../styles/Resume/print.style";
+import { personalBox } from "../../../../styles/Resume/template.style";
 
 export default function Personal() {
   const { user } = useContext(UserContext);

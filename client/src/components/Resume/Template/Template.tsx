@@ -1,5 +1,5 @@
 import { Container } from "@mui/material";
-import { resumeContainer } from "../../../styles";
+import { resumeContainer } from "../../../styles/Resume/template.style";
 import Education from "./Education";
 import Experience from "./Experience";
 import Personal from "./Personal";

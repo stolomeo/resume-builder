@@ -2,7 +2,7 @@ import { Box, Button, TextField } from "@mui/material";
 import { nanoid } from "nanoid";
 import { ChangeEvent, useContext } from "react";
 import UserContext from "../../../../context";
-import { formInputBox } from "../../../../styles";
+import { formInputBox } from "../../../../styles/Resume/form.style";
 import {
   ExperienceItemsType,
   ExperiencePointItemsType,

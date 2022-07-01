@@ -11,7 +11,7 @@ import { nanoid } from "nanoid";
 import { Dispatch, SetStateAction, useContext } from "react";
 import UserContext from "../../context/UserContext";
 import { createResume, getExampleResume } from "../../services/resume";
-import { toolAppBar, toolNavBar } from "../../styles";
+import { toolAppBar, toolNavBar } from "../../styles/Navigation/tool.style";
 
 type Props = {
   setCount: Dispatch<SetStateAction<number>>;

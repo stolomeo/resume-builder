@@ -16,7 +16,7 @@ import PasswordInput from "../components/Inputs/TextFields/PasswordInput";
 import Footer from "../components/Navigation/Footer";
 import UserContext from "../context";
 import { getUser } from "../services/user";
-import { avatar, userForm } from "../styles";
+import { avatar, userForm } from "../styles/user.style";
 
 export default function Login() {
   const { setUser } = useContext(UserContext);

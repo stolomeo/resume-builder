@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { formComponentBox } from "../../../styles";
+import { formComponentBox } from "../../../styles/Resume/form.style";
 import { handleComponentSelection } from "../../../utils/handleComponentSelection";
 
 type Props = {

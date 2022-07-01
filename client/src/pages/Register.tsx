@@ -9,7 +9,7 @@ import LastnameInput from "../components/Inputs/TextFields/LastnameInput";
 import PasswordInput from "../components/Inputs/TextFields/PasswordInput";
 import Footer from "../components/Navigation/Footer";
 import { createUser } from "../services/user";
-import { avatar, userForm } from "../styles";
+import { avatar, userForm } from "../styles/user.style";
 import emptyDevResume from "../utils/emptyDevResume";
 
 export default function Register() {

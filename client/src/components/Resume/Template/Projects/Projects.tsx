@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { useContext } from "react";
 import UserContext from "../../../../context";
-import { resumeSectionBox } from "../../../../styles";
+import { resumeSectionBox } from "../../../../styles/Resume/template.style";
 import LineBreak from "../../../Typography/LineBreak";
 import ResumeSectionTitle from "../../../Typography/ResumeSectionHeader";
 import ProjectItems from "./ProjectItems";

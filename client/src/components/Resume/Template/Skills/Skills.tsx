@@ -1,11 +1,9 @@
 import { Box, Typography } from "@mui/material";
 import { useContext } from "react";
 import UserContext from "../../../../context";
-import {
-  flexColumnCenter,
-  print12px,
-  resumeSectionBox,
-} from "../../../../styles";
+import { flexColumnCenter } from "../../../../styles/common.style";
+import { print12px } from "../../../../styles/Resume/print.style";
+import { resumeSectionBox } from "../../../../styles/Resume/template.style";
 import LineBreak from "../../../Typography/LineBreak";
 import ResumeSectionTitle from "../../../Typography/ResumeSectionHeader";
 import ResumeSectionSubtitle from "../../../Typography/ResumeSectionSubtitle";
