@@ -2,7 +2,7 @@ import { Avatar, Box, Container, Grid, Link, Typography } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LoginButton from "../components/Buttons/LoginButton";
-import MarketingCheckbox from "../components/Inputs/Checkboxes/MarketingCheckbox";
+import LoginCheckbox from "../components/Inputs/Checkboxes/LoginCheckbox";
 import EmailInput from "../components/Inputs/TextFields/EmailInput";
 import FirstnameInput from "../components/Inputs/TextFields/FirstnameInput";
 import LastnameInput from "../components/Inputs/TextFields/LastnameInput";
@@ -52,7 +52,10 @@ export default function Register() {
               <PasswordInput margin="none" />
             </Grid>
             <Grid item xs={12}>
-              <MarketingCheckbox />
+              <LoginCheckbox
+                value="allowExtraEmails"
+                label="I want to receive inspiration, marketing promotions and updates via email."
+              />
             </Grid>
           </Grid>
           <LoginButton text="Sign up" />

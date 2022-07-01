@@ -11,6 +11,7 @@ import { nanoid } from "nanoid";
 import { Dispatch, SetStateAction, useContext } from "react";
 import UserContext from "../../context/UserContext";
 import { createResume, getExampleResume } from "../../services/resume";
+import { toolAppBar, toolNavBar } from "../../styles";
 
 type Props = {
   setCount: Dispatch<SetStateAction<number>>;
@@ -102,23 +103,8 @@ export default function Tool({ setCount }: Props) {
   };
 
   return (
-    <AppBar
-      position="static"
-      sx={{
-        bgcolor: "inherit",
-        "@media print": {
-          display: "none",
-        },
-      }}
-    >
-      <Toolbar
-        variant="dense"
-        sx={{
-          gap: "1rem",
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
+    <AppBar position="static" sx={toolAppBar}>
+      <Toolbar variant="dense" sx={toolNavBar}>
         <IconButton size="medium" onClick={() => handleReset()}>
           <RestartAlt fontSize="medium" />
         </IconButton>

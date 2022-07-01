@@ -12,6 +12,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { Dispatch, SetStateAction } from "react";
+import { sidebarBox } from "../../styles";
 
 type Props = {
   count: number;
@@ -20,22 +21,7 @@ type Props = {
 
 export default function Sidebar({ count, setCount }: Props) {
   return (
-    <Box
-      sx={{
-        width: "15vw",
-        height: "84vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        border: "1px solid rgba(0, 0, 0, 0.1)",
-        position: "fixed",
-        top: "25",
-        left: "0",
-        "@media print": {
-          display: "none",
-        },
-      }}
-    >
+    <Box sx={sidebarBox}>
       <List>
         <ListItem disablePadding>
           <ListItemButton onClick={() => setCount((count = 20))}>

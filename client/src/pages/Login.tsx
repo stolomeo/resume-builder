@@ -10,7 +10,7 @@ import {
 import { useContext, useState } from "react";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import LoginButton from "../components/Buttons/LoginButton";
-import RememberMeCheckbox from "../components/Inputs/Checkboxes/RememberMeCheckbox";
+import LoginCheckbox from "../components/Inputs/Checkboxes/LoginCheckbox";
 import EmailInput from "../components/Inputs/TextFields/EmailInput";
 import PasswordInput from "../components/Inputs/TextFields/PasswordInput";
 import Footer from "../components/Navigation/Footer";
@@ -44,7 +44,7 @@ export default function Login() {
         <Box component="form" noValidate sx={{ mt: 1 }} onSubmit={handleLogin}>
           <EmailInput setEmail={setEmail} />
           <PasswordInput margin="normal" />
-          <RememberMeCheckbox />
+          <LoginCheckbox value="remember" label="Remember me" />
           <LoginButton text="Sign in" />
           <Grid container>
             <Grid item xs>

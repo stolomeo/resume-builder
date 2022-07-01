@@ -67,3 +67,46 @@ export const flexColumnCenter = {
   flexDirection: "column",
   justifyContent: "center",
 };
+
+export const footerAppBar = {
+  top: "auto",
+  bottom: 0,
+  bgcolor: "rgba(18, 18, 18,0.7)",
+  maxHeight: "6vh",
+  display: "flex",
+  justifyContent: "center",
+};
+
+export const footerToolBar = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+};
+
+export const sidebarBox = {
+  width: "15vw",
+  height: "84vh",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  border: "1px solid rgba(0, 0, 0, 0.1)",
+  position: "fixed",
+  top: "25",
+  left: "0",
+  "@media print": {
+    display: "none",
+  },
+};
+
+export const toolAppBar = {
+  bgcolor: "inherit",
+  "@media print": {
+    display: "none",
+  },
+};
+
+export const toolNavBar = {
+  gap: "1rem",
+  display: "flex",
+  justifyContent: "center",
+};
