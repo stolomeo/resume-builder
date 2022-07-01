@@ -7,23 +7,22 @@ import Typography from "@mui/material/Typography";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../../context";
-import isDarkModeContext from "../../context/isDarkModeContext";
+import {
+  topNavAppBar,
+  topNavToolBar,
+} from "../../styles/Navigation/topNav.style";
 
-export default function TopNav() {
-  const { isDarkMode, setIsDarkMode } = useContext(isDarkModeContext);
+type Props = {
+  isDarkMode: boolean;
+  setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export default function TopNav({ isDarkMode, setIsDarkMode }: Props) {
   const { user } = useContext(UserContext);
 
   return (
-    <AppBar
-      position="static"
-      sx={{
-        bgcolor: `background.paper`,
-        "@media print": {
-          display: "none",
-        },
-      }}
-    >
-      <Toolbar sx={{ height: "8vh", gap: 2 }}>
+    <AppBar position="static" sx={topNavAppBar}>
+      <Toolbar sx={topNavToolBar}>
         <IconButton
           component={Link}
           to="/"

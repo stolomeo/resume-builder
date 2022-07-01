@@ -3,7 +3,6 @@ import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import TopNav from "./components/Navigation/TopNav";
 import Template from "./components/Resume/Template/Template";
-import isDarkModeContext from "./context/isDarkModeContext";
 import UserContext, { blankUser } from "./context/UserContext";
 import Create from "./pages/Create";
 import Home from "./pages/Home";
@@ -17,23 +16,21 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   return (
-    <isDarkModeContext.Provider value={{ isDarkMode, setIsDarkMode }}>
-      <UserContext.Provider value={{ user, setUser }}>
-        <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
-          <CssBaseline />
-          <BrowserRouter>
-            <TopNav />
-            <Routes>
-              <Route index element={<Home />} />
-              <Route path="login" element={<Login />} />
-              <Route path="template" element={<Template />} />
-              <Route path="create" element={<Create />} />
-              <Route path="register" element={<Register />} />
-            </Routes>
-          </BrowserRouter>
-        </ThemeProvider>
-      </UserContext.Provider>
-    </isDarkModeContext.Provider>
+    <UserContext.Provider value={{ user, setUser }}>
+      <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+        <CssBaseline />
+        <BrowserRouter>
+          <TopNav isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="login" element={<Login />} />
+            <Route path="template" element={<Template />} />
+            <Route path="create" element={<Create />} />
+            <Route path="register" element={<Register />} />
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
+    </UserContext.Provider>
   );
 }
 
