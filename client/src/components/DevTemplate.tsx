@@ -4,11 +4,13 @@ import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import UserContext from "../context";
 import {
   flexColumnCenter,
+  flexSpaceBtwnPx3,
   personalBox,
   print10px,
   print12px,
   print18px,
   printBlue,
+  printLiveLink,
   resumeContainer,
   resumeSectionBox,
 } from "../styles";
@@ -27,13 +29,7 @@ export default function DevTemplate() {
 
     return (
       <>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            px: 3,
-          }}
-        >
+        <Box sx={flexSpaceBtwnPx3}>
           <Typography fontWeight={700} fontSize=".6rem" sx={print12px}>
             {majorAndDegree}
           </Typography>
@@ -41,7 +37,7 @@ export default function DevTemplate() {
             {graduationDate}
           </Typography>
         </Box>
-        <Box sx={{ display: "flex", justifyContent: "space-between", px: 3 }}>
+        <Box sx={flexSpaceBtwnPx3}>
           <Typography fontStyle={"italic"} fontSize=".5em" sx={print12px}>
             {schoolName}
           </Typography>
@@ -71,13 +67,7 @@ export default function DevTemplate() {
     });
     return (
       <>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            px: 3,
-          }}
-        >
+        <Box sx={flexSpaceBtwnPx3}>
           <Typography fontWeight={700} fontSize=".6rem" sx={print12px}>
             {projectName}
           </Typography>
@@ -85,7 +75,7 @@ export default function DevTemplate() {
             {projectEndDate}
           </Typography>
         </Box>
-        <Box sx={{ display: "flex", justifyContent: "space-between", px: 3 }}>
+        <Box sx={flexSpaceBtwnPx3}>
           <Typography
             fontStyle={"italic"}
             fontSize=".5em"
@@ -96,27 +86,11 @@ export default function DevTemplate() {
               },
             }}
           >
-            <Link
-              href={projectLiveLink}
-              sx={{
-                "@media print": {
-                  color: "#1976d2",
-                  fontSize: "12px",
-                },
-              }}
-            >
+            <Link href={projectLiveLink} sx={printLiveLink}>
               Live
             </Link>{" "}
             <span style={{ fontStyle: "normal" }}>|</span>{" "}
-            <Link
-              href={projectRepoLink}
-              sx={{
-                "@media print": {
-                  color: "#1976d2",
-                  fontSize: "12px",
-                },
-              }}
-            >
+            <Link href={projectRepoLink} sx={printLiveLink}>
               Repo
             </Link>
           </Typography>
@@ -175,7 +149,7 @@ export default function DevTemplate() {
               {startDate} - {endDate}
             </Typography>
           </Box>
-          <Box sx={{ display: "flex", justifyContent: "space-between", px: 3 }}>
+          <Box sx={flexSpaceBtwnPx3}>
             <Typography
               fontStyle={"italic"}
               fontSize=".5em"

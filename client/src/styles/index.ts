@@ -140,3 +140,16 @@ export const flexColumn = {
   display: "flex",
   flexDirection: "column",
 };
+
+export const printLiveLink = {
+  "@media print": {
+    color: "#1976d2",
+    fontSize: "12px",
+  },
+};
+
+export const flexSpaceBtwnPx3 = {
+  display: "flex",
+  justifyContent: "space-between",
+  px: 3,
+};
