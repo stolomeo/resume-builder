@@ -49,7 +49,7 @@ export default function Register() {
               <EmailInput setEmail={setEmail} />
             </Grid>
             <Grid item xs={12}>
-              <PasswordInput margin="none" />
+              <PasswordInput setPassword={setPassword} margin="none" />
             </Grid>
             <Grid item xs={12}>
               <LoginCheckbox

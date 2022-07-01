@@ -1,10 +1,11 @@
 import { TextField } from "@mui/material";
 
 type Props = {
+  setPassword: React.Dispatch<React.SetStateAction<string>>;
   margin: "none" | "dense" | "normal" | undefined;
 };
 
-export default function PasswordInput({ margin }: Props) {
+export default function PasswordInput({ setPassword, margin }: Props) {
   return (
     <TextField
       margin={margin}
@@ -15,6 +16,7 @@ export default function PasswordInput({ margin }: Props) {
       type="password"
       id="password"
       autoComplete="current-password"
+      onChange={(e) => setPassword(e.target.value)}
     />
   );
 }

@@ -19,7 +19,7 @@ import { getUser } from "../services/user";
 import { avatar, userForm } from "../styles";
 
 export default function Login() {
-  const { user, setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
   let navigate = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -43,7 +43,7 @@ export default function Login() {
         </Typography>
         <Box component="form" noValidate sx={{ mt: 1 }} onSubmit={handleLogin}>
           <EmailInput setEmail={setEmail} />
-          <PasswordInput margin="normal" />
+          <PasswordInput setPassword={setPassword} margin="normal" />
           <LoginCheckbox value="remember" label="Remember me" />
           <LoginButton text="Sign in" />
           <Grid container>
