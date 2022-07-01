@@ -43,7 +43,7 @@ export default function Login() {
         </Typography>
         <Box component="form" noValidate sx={{ mt: 1 }} onSubmit={handleLogin}>
           <EmailInput setEmail={setEmail} />
-          <PasswordInput />
+          <PasswordInput margin="normal" />
           <RememberMeCheckbox />
           <LoginButton text="Sign in" />
           <Grid container>

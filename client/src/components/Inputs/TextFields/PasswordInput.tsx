@@ -1,9 +1,13 @@
 import { TextField } from "@mui/material";
 
-export default function PasswordInput() {
+type Props = {
+  margin: "none" | "dense" | "normal" | undefined;
+};
+
+export default function PasswordInput({ margin }: Props) {
   return (
     <TextField
-      margin="normal"
+      margin={margin}
       required
       fullWidth
       name="password"

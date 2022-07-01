@@ -7,7 +7,6 @@ type Props = {
 export default function Email({ setEmail }: Props) {
   return (
     <TextField
-      margin="normal"
       required
       fullWidth
       id="email"
