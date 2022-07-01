@@ -1,5 +1,6 @@
-import { AppBar, Box, Button, LinearProgress, Toolbar } from "@mui/material";
+import { AppBar, Box, LinearProgress, Toolbar } from "@mui/material";
 import { Dispatch, SetStateAction } from "react";
+import BottomNavButton from "../Buttons/BottomNavButton";
 
 type Props = {
   count: number;
@@ -28,15 +29,11 @@ export default function BottomNav({ count, setCount }: Props) {
       }}
     >
       <Toolbar sx={{ display: "flex", justifyContent: "center", gap: "2rem" }}>
-        <Button variant="outlined" onClick={handlePrev}>
-          Prev
-        </Button>
+        <BottomNavButton text="Prev" handleChange={handlePrev} />
         <Box sx={{ width: "25%" }}>
           <LinearProgress variant="determinate" value={count} />
         </Box>
-        <Button variant="outlined" onClick={handleNext}>
-          Next
-        </Button>
+        <BottomNavButton text="Next" handleChange={handleNext} />
       </Toolbar>
     </AppBar>
   );
