@@ -10,7 +10,7 @@ import {
 import { useContext, useState } from "react";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 import LoginButton from "../components/Buttons/LoginButton";
-import LoginCheckbox from "../components/Inputs/Checkboxes/LoginCheckbox";
+import LoginCheckbox from "../components/Inputs/Checkboxes/";
 import EmailInput from "../components/Inputs/TextFields/EmailInput";
 import PasswordInput from "../components/Inputs/TextFields/PasswordInput";
 import Footer from "../components/Navigation/Footer";

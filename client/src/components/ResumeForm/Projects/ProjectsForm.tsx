@@ -2,6 +2,7 @@ import { Box, Button, TextField } from "@mui/material";
 import { nanoid } from "nanoid";
 import { ChangeEvent, useContext } from "react";
 import UserContext from "../../../context";
+import { formInputBox } from "../../../styles";
 import { ProjectItemsType, ProjectPointItemsType } from "../../../types";
 import ProjectPointsForm from "./ProjectPointsForm";
 
@@ -67,7 +68,7 @@ export default function ProjectsForm({ projectItem }: Props) {
 
   return (
     <>
-      <Box sx={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+      <Box sx={formInputBox}>
         <TextField
           variant="standard"
           type="text"

@@ -1,6 +1,7 @@
 import { Box, Button, TextField } from "@mui/material";
 import { ChangeEvent, useContext } from "react";
 import UserContext from "../../../context";
+import { formInputBox } from "../../../styles";
 import { EducationItemsType } from "../../../types";
 
 type Props = {
@@ -34,7 +35,7 @@ export default function EducationForm({ educationItem }: Props) {
   };
   return (
     <>
-      <Box sx={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+      <Box sx={formInputBox}>
         <TextField
           variant="standard"
           type="text"

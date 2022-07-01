@@ -2,6 +2,7 @@ import { Button, TextField } from "@mui/material";
 import { Box } from "@mui/system";
 import { ChangeEvent, useContext } from "react";
 import UserContext from "../../../context";
+import { formPointsBox } from "../../../styles";
 import { ProjectPointItemsType } from "../../../types";
 
 type Props = {
@@ -12,7 +13,7 @@ export default function ProjectPointsForm({ projectPointItem }: Props) {
   const { user, setUser } = useContext(UserContext);
 
   const handleChangeProjectPoint = (e: ChangeEvent, id: string) => {
-    const { name, value } = e.target as HTMLTextAreaElement;
+    const { value } = e.target as HTMLTextAreaElement;
     let items = user.resume.projectItems;
     let itemIndex = 0;
     // Depth first search. Graph Theory. Runtime O(n^2)
@@ -46,7 +47,7 @@ export default function ProjectPointsForm({ projectPointItem }: Props) {
 
   const { projectPoint, id } = projectPointItem;
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", mt: 1.5 }}>
+    <Box sx={formPointsBox}>
       <TextField
         variant="standard"
         type="text"

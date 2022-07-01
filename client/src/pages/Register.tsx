@@ -2,7 +2,7 @@ import { Avatar, Box, Container, Grid, Link, Typography } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LoginButton from "../components/Buttons/LoginButton";
-import LoginCheckbox from "../components/Inputs/Checkboxes/LoginCheckbox";
+import LoginCheckbox from "../components/Inputs/Checkboxes/";
 import EmailInput from "../components/Inputs/TextFields/EmailInput";
 import FirstnameInput from "../components/Inputs/TextFields/FirstnameInput";
 import LastnameInput from "../components/Inputs/TextFields/LastnameInput";

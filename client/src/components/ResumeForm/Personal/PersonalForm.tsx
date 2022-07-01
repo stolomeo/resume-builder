@@ -1,6 +1,7 @@
 import { Box, TextField } from "@mui/material";
 import { ChangeEvent, useContext } from "react";
 import UserContext from "../../../context";
+import { formInputBox } from "../../../styles";
 
 export default function PersonalForm() {
   const { user, setUser } = useContext(UserContext);
@@ -16,13 +17,7 @@ export default function PersonalForm() {
   };
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "1.5rem",
-      }}
-    >
+    <Box sx={formInputBox}>
       <TextField
         variant="standard"
         type="text"

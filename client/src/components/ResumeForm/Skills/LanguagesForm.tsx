@@ -1,6 +1,7 @@
 import { Box, Button, TextField } from "@mui/material";
 import { ChangeEvent, useContext } from "react";
 import UserContext from "../../../context";
+import { flexColumn } from "../../../styles";
 import { LanguageItemsType } from "../../../types";
 
 type Props = {
@@ -32,7 +33,7 @@ export default function LanguagesForm({ languageItem }: Props) {
 
   const { language, id } = languageItem;
   return (
-    <Box sx={{ display: "flex", flexDirection: "column" }}>
+    <Box sx={flexColumn}>
       <TextField
         variant="standard"
         type="text"
