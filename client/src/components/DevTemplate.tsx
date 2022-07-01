@@ -119,13 +119,7 @@ export default function DevTemplate() {
       });
       return (
         <>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              px: 3,
-            }}
-          >
+          <Box sx={flexSpaceBtwnPx3}>
             <Typography fontWeight={700} fontSize=".6rem" sx={print12px}>
               {employerName}
             </Typography>
