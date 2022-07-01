@@ -1,8 +1,8 @@
-import Education from "../components/ResumeForm/Education/Education";
-import Experience from "../components/ResumeForm/Experience/Experience";
-import PersonalForm from "../components/ResumeForm/Personal/PersonalForm";
-import Projects from "../components/ResumeForm/Projects/Projects";
-import Skills from "../components/ResumeForm/Skills/Skills";
+import Education from "../components/Resume/Form/Education/Education";
+import Experience from "../components/Resume/Form/Experience/Experience";
+import PersonalForm from "../components/Resume/Form/Personal/PersonalForm";
+import Projects from "../components/Resume/Form/Projects/Projects";
+import Skills from "../components/Resume/Form/Skills/Skills";
 
 export const handleComponentSelection = (count: number) => {
   if (count === 20) {

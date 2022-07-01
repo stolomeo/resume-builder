@@ -4,7 +4,7 @@ import DevTemplate from "../components/DevTemplate";
 import BottomNav from "../components/Navigation/BottomNav";
 import Sidebar from "../components/Navigation/Sidebar";
 import Tool from "../components/Navigation/Tool";
-import ResumeForm from "../components/ResumeForm";
+import ResumeForm from "../components/Resume/Form";
 
 export default function Create() {
   const [count, setCount] = useState(20);
