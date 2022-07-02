@@ -1,6 +1,6 @@
 import { Box, Button, Container, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import { heroBoxChild, heroBoxParent } from "../styles/hero.style";
+import { heroBoxChild, heroBoxParent } from "../../styles/hero.style";
 
 export default function Hero() {
   return (
