@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { UserType } from "../types";
+import { UserType } from "../types/user.type";
 import { _blankResume } from "../utils/blankResume";
 
 type UserContextType = {

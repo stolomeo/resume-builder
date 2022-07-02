@@ -2,7 +2,7 @@ import { Box, Button, TextField } from "@mui/material";
 import { ChangeEvent, useContext } from "react";
 import UserContext from "../../../../context";
 import { formInputBox } from "../../../../styles/Resume/form.style";
-import { EducationItemsType } from "../../../../types";
+import { EducationItemsType } from "../../../../types/resume.type";
 
 type Props = {
   educationItem: EducationItemsType;

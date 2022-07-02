@@ -6,7 +6,7 @@ import { formInputBox } from "../../../../styles/Resume/form.style";
 import {
   ExperienceItemsType,
   ExperiencePointItemsType,
-} from "../../../../types";
+} from "../../../../types/resume.type";
 import ExperiencePointsForm from "./ExperiencePointsForm";
 
 type Props = {

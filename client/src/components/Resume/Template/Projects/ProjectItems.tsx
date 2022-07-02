@@ -4,7 +4,7 @@ import {
   print12px,
   printLiveLink,
 } from "../../../../styles/Resume/print.style";
-import { ProjectItemsType } from "../../../../types";
+import { ProjectItemsType } from "../../../../types/resume.type";
 import ProjectItemsDetails from "./ProjectItemsDetails";
 
 type Props = {

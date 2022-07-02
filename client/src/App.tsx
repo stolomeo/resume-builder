@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { darkTheme, lightTheme } from "./theme/Theme";
-import { UserType } from "./types";
+import { UserType } from "./types/user.type";
 
 function App() {
   const [user, setUser] = useState<UserType>(blankUser);

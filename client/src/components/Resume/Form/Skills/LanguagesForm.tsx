@@ -2,7 +2,7 @@ import { Box, Button, TextField } from "@mui/material";
 import { ChangeEvent, useContext } from "react";
 import UserContext from "../../../../context";
 import { flexColumn } from "../../../../styles/common.style";
-import { LanguageItemsType } from "../../../../types";
+import { LanguageItemsType } from "../../../../types/resume.type";
 
 type Props = {
   languageItem: LanguageItemsType;

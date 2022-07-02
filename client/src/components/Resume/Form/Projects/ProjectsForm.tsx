@@ -3,7 +3,10 @@ import { nanoid } from "nanoid";
 import { ChangeEvent, useContext } from "react";
 import UserContext from "../../../../context";
 import { formInputBox } from "../../../../styles/Resume/form.style";
-import { ProjectItemsType, ProjectPointItemsType } from "../../../../types";
+import {
+  ProjectItemsType,
+  ProjectPointItemsType,
+} from "../../../../types/resume.type";
 import ProjectPointsForm from "./ProjectPointsForm";
 
 type Props = {

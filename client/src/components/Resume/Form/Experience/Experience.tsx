@@ -2,14 +2,14 @@ import { Button } from "@mui/material";
 import { nanoid } from "nanoid";
 import { useContext } from "react";
 import UserContext from "../../../../context";
-import { DevResumeType } from "../../../../types";
+import { ResumeType } from "../../../../types/resume.type";
 import ExperienceForm from "./ExperienceForm";
 
 export default function Experience() {
   const { user, setUser } = useContext(UserContext);
 
   const handleAddExperience = () => {
-    let resume: DevResumeType = user.resume;
+    let resume: ResumeType = user.resume;
     resume = {
       ...resume,
       experienceItems: [

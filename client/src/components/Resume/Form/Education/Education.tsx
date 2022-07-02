@@ -2,14 +2,14 @@ import { Button } from "@mui/material";
 import { nanoid } from "nanoid";
 import { useContext } from "react";
 import UserContext from "../../../../context";
-import { DevResumeType } from "../../../../types";
+import { ResumeType } from "../../../../types/resume.type";
 import EducationForm from "./EducationForm";
 
 export default function Education() {
   const { user, setUser } = useContext(UserContext);
 
   const handleAddEducation = () => {
-    let resume: DevResumeType = user.resume;
+    let resume: ResumeType = user.resume;
     resume = {
       ...resume,
       educationItems: [

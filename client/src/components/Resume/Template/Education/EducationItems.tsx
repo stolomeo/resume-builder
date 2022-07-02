@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { flexSpaceBtwnPx3 } from "../../../../styles/common.style";
 import { print12px } from "../../../../styles/Resume/print.style";
-import { EducationItemsType } from "../../../../types";
+import { EducationItemsType } from "../../../../types/resume.type";
 
 type Props = {
   educationItem: EducationItemsType;

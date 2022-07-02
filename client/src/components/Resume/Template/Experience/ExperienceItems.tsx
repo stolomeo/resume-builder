@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { flexSpaceBtwnPx3 } from "../../../../styles/common.style";
 import { print12px } from "../../../../styles/Resume/print.style";
-import { ExperienceItemsType } from "../../../../types";
+import { ExperienceItemsType } from "../../../../types/resume.type";
 import ExperienceItemDetail from "./ExperienceItemDetail";
 
 type Props = {

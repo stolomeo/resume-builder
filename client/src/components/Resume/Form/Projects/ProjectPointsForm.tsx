@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 import { ChangeEvent, useContext } from "react";
 import UserContext from "../../../../context";
 import { formPointsBox } from "../../../../styles/Resume/form.style";
-import { ProjectPointItemsType } from "../../../../types";
+import { ProjectPointItemsType } from "../../../../types/resume.type";
 
 type Props = {
   projectPointItem: ProjectPointItemsType;

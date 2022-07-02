@@ -1,9 +1,3 @@
-export type ResumeType = {
-  personalItems: PersonalItemsType;
-  experienceItems: ExperienceItemsType[];
-  educationItems: EducationItemsType[];
-  skillItems: ResumeSkillItems[];
-};
 export type PersonalItemsType = {
   [name: string]: string;
 };
@@ -16,7 +10,7 @@ export type EducationItemsType = {
   [name: string]: string;
 };
 
-export type ResumeSkillItems = {
+export type SkillItemsType = {
   [name: string]: string;
 };
 
@@ -50,15 +44,7 @@ export type ExperienceItemsType = {
   experiencePointItems: ExperiencePointItemsType[];
 };
 
-export type UserType = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
-  resume: DevResumeType;
-};
-
-export type DevResumeType = {
+export type ResumeType = {
   personalItems: PersonalItemsType;
   educationItems: EducationItemsType[];
   languageItems: LanguageItemsType[];

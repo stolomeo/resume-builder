@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 import { ChangeEvent, useContext } from "react";
 import UserContext from "../../../../context";
 import { formPointsBox } from "../../../../styles/Resume/form.style";
-import { ExperiencePointItemsType } from "../../../../types";
+import { ExperiencePointItemsType } from "../../../../types/resume.type";
 
 type Props = {
   experiencePointItem: ExperiencePointItemsType;

@@ -1,4 +1,4 @@
-import { UserType } from "../types";
+import { UserType } from "../types/user.type";
 import { getClient } from "./client";
 
 export const getExampleResume = async () => {
