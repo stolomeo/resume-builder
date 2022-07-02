@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import { UserType } from "../types";
-import { _emptyDevResume } from "../utils/emptyDevResume";
+import { _blankResume } from "../utils/blankResume";
 
 type UserContextType = {
   user: UserType;
@@ -12,7 +12,7 @@ export const blankUser: UserType = {
   lastName: "",
   email: "",
   password: "",
-  resume: _emptyDevResume,
+  resume: _blankResume,
 };
 
 const UserContext = createContext<UserContextType>({

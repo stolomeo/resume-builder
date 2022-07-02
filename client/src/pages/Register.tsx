@@ -1,5 +1,5 @@
 import { Avatar, Box, Container, Grid, Link, Typography } from "@mui/material";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import LoginButton from "../components/Buttons/LoginButton";
 import LoginCheckbox from "../components/Inputs/Checkboxes/";
@@ -10,7 +10,7 @@ import PasswordInput from "../components/Inputs/TextFields/PasswordInput";
 import Footer from "../components/Navigation/Footer";
 import { createUser } from "../services/user";
 import { avatar, userForm } from "../styles/user.style";
-import emptyDevResume from "../utils/emptyDevResume";
+import blankResume from "../utils/blankResume";
 
 export default function Register() {
   const [firstName, setFirstname] = useState("");
@@ -19,14 +19,14 @@ export default function Register() {
   const [password, setPassword] = useState("");
   let navigate = useNavigate();
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     await createUser({
       firstName,
       lastName,
       email,
       password,
-      resume: emptyDevResume,
+      resume: blankResume,
     });
     navigate("/");
   };
