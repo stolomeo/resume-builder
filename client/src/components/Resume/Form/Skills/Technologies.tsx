@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import { nanoid } from "nanoid";
 import { useContext } from "react";
-import UserContext from "../../../../context";
+import UserContext from "@context/UserContext";
 import { ResumeType } from "../../../../types/resume.type";
 import TechnologiesForm from "./TechnologiesForm";
 

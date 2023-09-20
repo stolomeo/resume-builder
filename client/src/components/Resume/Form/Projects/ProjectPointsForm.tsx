@@ -1,7 +1,7 @@
 import { Button, TextField } from "@mui/material";
 import { Box } from "@mui/system";
 import { ChangeEvent, useContext } from "react";
-import UserContext from "../../../../context";
+import UserContext from "@context/UserContext";
 import { getFlexboxStyles } from "@utils/customStyles";
 import { ProjectPointItemsType } from "../../../../types/resume.type";
 

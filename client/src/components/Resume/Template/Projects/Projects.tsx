@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { useContext } from "react";
-import UserContext from "../../../../context";
+import UserContext from "@context/UserContext";
 import LineBreak from "../../../Typography/LineBreak";
 import ResumeSectionTitle from "../../../Typography/ResumeSectionHeader";
 import ProjectItems from "./ProjectItems";

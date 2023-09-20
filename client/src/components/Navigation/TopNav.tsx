@@ -6,7 +6,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import UserContext from "../../context";
+import UserContext from "@context/UserContext";
 
 type Props = {
   isDarkMode: boolean;

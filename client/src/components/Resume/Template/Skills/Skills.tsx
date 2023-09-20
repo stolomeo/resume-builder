@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { useContext } from "react";
-import UserContext from "../../../../context";
+import UserContext from "@context/UserContext";
 import { getPrintStyle, resumeSectionStyles } from "@utils/customStyles";
 import LineBreak from "../../../Typography/LineBreak";
 import ResumeSectionTitle from "../../../Typography/ResumeSectionHeader";

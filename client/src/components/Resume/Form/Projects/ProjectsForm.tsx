@@ -1,7 +1,7 @@
 import { Box, Button, TextField } from "@mui/material";
 import { nanoid } from "nanoid";
 import { ChangeEvent, useContext } from "react";
-import UserContext from "../../../../context";
+import UserContext from "@context/UserContext";
 import { getFlexboxStyles } from "@utils/customStyles";
 import {
   ProjectItemsType,

@@ -8,7 +8,7 @@ import AppBar from "@mui/material/AppBar";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import { Dispatch, SetStateAction, useContext } from "react";
-import UserContext from "../../context/UserContext";
+import UserContext from "@context/UserContext";
 import { createResume, getExampleResume } from "../../services/resume";
 import { blankResume } from "@utils/blankResume";
 

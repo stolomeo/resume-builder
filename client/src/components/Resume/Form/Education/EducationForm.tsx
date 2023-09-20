@@ -1,7 +1,7 @@
 import { Box, Button, TextField } from "@mui/material";
 import { getFlexboxStyles } from "@utils/customStyles";
 import { ChangeEvent, useContext } from "react";
-import UserContext from "../../../../context";
+import UserContext from "@context/UserContext";
 import { EducationItemsType } from "../../../../types/resume.type";
 import { educationFormFields } from "../../../../utils/educationFormFields";
 

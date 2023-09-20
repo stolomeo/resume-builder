@@ -1,7 +1,7 @@
 import { Box, Link, Typography } from "@mui/material";
 import { useContext } from "react";
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
-import UserContext from "../../../../context";
+import UserContext from "@context/UserContext";
 import { getPrintStyle } from "@utils/customStyles";
 
 export default function Personal() {
