@@ -1,8 +1,6 @@
 import { Box, Typography } from "@mui/material";
-import { flexSpaceBtwnPx3 } from "../../../../styles/common.style";
-import { print12px } from "../../../../styles/Resume/print.style";
 import { ExperienceItemsType } from "../../../../types/resume.type";
-import ExperienceItemDetail from "./ExperienceItemDetail";
+import { getPrintStyle, getFlexboxStyles } from "@utils/customStyles";
 
 type Props = {
   experienceItem: ExperienceItemsType;
@@ -17,30 +15,50 @@ export default function ExperienceItems({ experienceItem }: Props) {
     experiencePointItems,
   } = experienceItem;
 
-  const pointItemTag = experiencePointItems.map((experiencePointItem) => {
-    const { id, experiencePoint } = experiencePointItem;
-    return <ExperienceItemDetail key={id} experiencePoint={experiencePoint} />;
-  });
-
   return (
     <>
-      <Box sx={flexSpaceBtwnPx3}>
-        <Typography fontWeight={700} fontSize=".6rem" sx={print12px}>
+      <Box sx={getFlexboxStyles({ justifyContent: "space-between", px: 3 })}>
+        <Typography
+          fontWeight={700}
+          fontSize=".6rem"
+          sx={getPrintStyle("12px")}
+        >
           {employerName}
         </Typography>
-        <Typography fontWeight={700} fontSize=".6rem" sx={print12px}>
+        <Typography
+          fontWeight={700}
+          fontSize=".6rem"
+          sx={getPrintStyle("12px")}
+        >
           {startDate} - {endDate}
         </Typography>
       </Box>
-      <Box sx={flexSpaceBtwnPx3}>
-        <Typography fontStyle={"italic"} fontSize=".5em" sx={print12px}>
+      <Box sx={getFlexboxStyles({ justifyContent: "space-between", px: 3 })}>
+        <Typography
+          fontStyle={"italic"}
+          fontSize=".5em"
+          sx={getPrintStyle("12px")}
+        >
           {jobTitle}
         </Typography>
-        <Typography fontStyle={"italic"} fontSize=".5em" sx={print12px}>
+        <Typography
+          fontStyle={"italic"}
+          fontSize=".5em"
+          sx={getPrintStyle("12px")}
+        >
           {workLocation}
         </Typography>
       </Box>
-      {pointItemTag}
+      {experiencePointItems.map((experiencePointItem) => (
+        <Typography
+          variant="body2"
+          px={5}
+          fontSize={9}
+          sx={getPrintStyle("12px")}
+        >
+          • {experiencePointItem.experiencePoint}
+        </Typography>
+      ))}
     </>
   );
 }

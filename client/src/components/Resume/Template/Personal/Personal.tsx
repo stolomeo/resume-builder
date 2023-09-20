@@ -2,12 +2,7 @@ import { Box, Link, Typography } from "@mui/material";
 import { useContext } from "react";
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import UserContext from "../../../../context";
-import {
-  print10px,
-  print12px,
-  print18px,
-  printBlue,
-} from "../../../../styles/Resume/print.style";
+import { getPrintStyle } from "@utils/customStyles";
 
 export default function Personal() {
   const { user } = useContext(UserContext);
@@ -23,19 +18,19 @@ export default function Personal() {
         alignItems: "center",
       }}
     >
-      <Typography sx={print18px} fontSize={13}>
+      <Typography sx={getPrintStyle("18px")} fontSize={13}>
         {fullName}
       </Typography>
-      <Typography fontSize={11} sx={print12px}>
+      <Typography fontSize={11} sx={getPrintStyle("12px")}>
         {phone} | {email}
       </Typography>
-      <Typography variant="caption" fontSize={8} sx={print10px}>
-        <Link href={githubLink} sx={printBlue}>
+      <Typography variant="caption" fontSize={8} sx={getPrintStyle("10px")}>
+        <Link href={githubLink} sx={getPrintStyle(null, "#1976d2")}>
           <FaGithubSquare />
           github
         </Link>{" "}
         |{" "}
-        <Link href={linkedinLink} sx={printBlue}>
+        <Link href={linkedinLink} sx={getPrintStyle(null, "#1976d2")}>
           <FaLinkedin />
           linkedin
         </Link>

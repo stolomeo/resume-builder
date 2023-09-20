@@ -6,7 +6,7 @@ type Props = {
   setCount: Dispatch<SetStateAction<number>>;
 };
 
-export default function BottomNav({ count, setCount }: Props) {
+export default function PaginationBar({ count, setCount }: Props) {
   const handleNext = () => {
     if (count === 100) return;
     setCount(count + 20);
@@ -29,13 +29,13 @@ export default function BottomNav({ count, setCount }: Props) {
     >
       <Toolbar sx={{ display: "flex", justifyContent: "center", gap: "2rem" }}>
         <Button variant="outlined" onClick={handlePrev}>
-          "Prev"
+          Prev
         </Button>
         <Box sx={{ width: "25%" }}>
           <LinearProgress variant="determinate" value={count} />
         </Box>
         <Button variant="outlined" onClick={handleNext}>
-          "Next"
+          Next
         </Button>
       </Toolbar>
     </AppBar>

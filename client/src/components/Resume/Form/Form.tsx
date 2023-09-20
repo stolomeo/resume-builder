@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { handleComponentSelection } from "../../../utils/handleComponentSelection";
+import { handleComponentSelection } from "@utils/handleComponentSelection";
 
 type Props = {
   count: number;

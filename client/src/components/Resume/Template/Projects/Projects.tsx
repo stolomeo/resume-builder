@@ -1,10 +1,10 @@
 import { Box } from "@mui/material";
 import { useContext } from "react";
 import UserContext from "../../../../context";
-import { resumeSectionBox } from "../../../../styles/Resume/template.style";
 import LineBreak from "../../../Typography/LineBreak";
 import ResumeSectionTitle from "../../../Typography/ResumeSectionHeader";
 import ProjectItems from "./ProjectItems";
+import { resumeSectionStyles } from "@utils/customStyles";
 
 export default function Projects() {
   const { user } = useContext(UserContext);
@@ -16,7 +16,7 @@ export default function Projects() {
 
   return (
     <>
-      <Box sx={resumeSectionBox}>
+      <Box sx={resumeSectionStyles}>
         <ResumeSectionTitle text="NOTABLE PROJECTS" />
         <LineBreak />
       </Box>

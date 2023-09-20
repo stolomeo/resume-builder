@@ -2,7 +2,7 @@ import { Button, TextField } from "@mui/material";
 import { Box } from "@mui/system";
 import { ChangeEvent, useContext } from "react";
 import UserContext from "../../../../context";
-import { formPointsBox } from "../../../../styles/Resume/form.style";
+import { getFlexboxStyles } from "@utils/customStyles";
 import { ExperiencePointItemsType } from "../../../../types/resume.type";
 
 type Props = {
@@ -49,7 +49,7 @@ export default function ExperiencePointsForm({ experiencePointItem }: Props) {
 
   const { experiencePoint, id } = experiencePointItem;
   return (
-    <Box sx={formPointsBox}>
+    <Box sx={getFlexboxStyles({ flexDirection: "column", mt: 1.5 })}>
       <TextField
         variant="standard"
         type="text"

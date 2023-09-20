@@ -26,7 +26,7 @@ const menuItems = [
   { count: 100, icon: <WorkHistory />, text: "Experience" },
 ];
 
-export default function Sidebar({ count, setCount }: Props) {
+export default function SideNavigationMenu({ setCount }: Props) {
   return (
     <Box
       sx={{

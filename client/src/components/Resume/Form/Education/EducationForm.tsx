@@ -1,8 +1,9 @@
 import { Box, Button, TextField } from "@mui/material";
+import { getFlexboxStyles } from "@utils/customStyles";
 import { ChangeEvent, useContext } from "react";
 import UserContext from "../../../../context";
-import { formInputBox } from "../../../../styles/Resume/form.style";
 import { EducationItemsType } from "../../../../types/resume.type";
+import { educationFormFields } from "../../../../utils/educationFormFields";
 
 type Props = {
   educationItem: EducationItemsType;
@@ -11,8 +12,7 @@ type Props = {
 export default function EducationForm({ educationItem }: Props) {
   const { user, setUser } = useContext(UserContext);
 
-  const { id, majorAndDegree, schoolName, schoolLocation, graduationDate } =
-    educationItem;
+  const { id } = educationItem;
 
   const handleChangeEducation = (e: ChangeEvent, id: string) => {
     const { name, value } = e.target as HTMLTextAreaElement;
@@ -35,43 +35,19 @@ export default function EducationForm({ educationItem }: Props) {
   };
   return (
     <>
-      <Box sx={formInputBox}>
-        <TextField
-          variant="standard"
-          type="text"
-          name="majorAndDegree"
-          label="Degree/Major"
-          placeholder="Bachelor of Science - Computer Science"
-          value={majorAndDegree}
-          onChange={(e) => handleChangeEducation(e, id)}
-        />
-        <TextField
-          variant="standard"
-          type="text"
-          name="schoolName"
-          label="School Name"
-          placeholder="Harvard University"
-          value={schoolName}
-          onChange={(e) => handleChangeEducation(e, id)}
-        />
-        <TextField
-          variant="standard"
-          type="text"
-          name="schoolLocation"
-          label="School Location"
-          placeholder="Cambridge, MA"
-          value={schoolLocation}
-          onChange={(e) => handleChangeEducation(e, id)}
-        />
-        <TextField
-          variant="standard"
-          type="text"
-          name="graduationDate"
-          label="Graduation Date"
-          placeholder="Dec 2020"
-          value={graduationDate}
-          onChange={(e) => handleChangeEducation(e, id)}
-        />
+      <Box sx={getFlexboxStyles({ flexDirection: "column", gap: "1.5rem" })}>
+        {educationFormFields.map((field) => (
+          <TextField
+            key={field.name}
+            variant="standard"
+            type="text"
+            name={field.name}
+            label={field.label}
+            placeholder={field.placeholder}
+            value={educationItem[field.name]}
+            onChange={(e) => handleChangeEducation(e, id)}
+          />
+        ))}
       </Box>
       <Button variant="outlined" onClick={() => handleDeleteEducation(id)}>
         Delete Education

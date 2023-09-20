@@ -16,10 +16,10 @@ import EmailTextField from "../components/TextFields/EmailTextField";
 import PasswordTextField from "../components/TextFields/PasswordTextField";
 import Footer from "../components/Navigation/Footer";
 import { createUser } from "../services/user";
-import { avatar, userForm } from "../styles/user.style";
+import { avatar, userForm } from "@utils/customStyles";
 import blankResume from "../utils/blankResume";
 
-export default function Register() {
+export default function RegistrationPage() {
   const [firstName, setFirstname] = useState("");
   const [lastName, setLastname] = useState("");
   const [email, setEmail] = useState("");

@@ -2,7 +2,7 @@ import { Box, Button, TextField } from "@mui/material";
 import { nanoid } from "nanoid";
 import { ChangeEvent, useContext } from "react";
 import UserContext from "../../../../context";
-import { formInputBox } from "../../../../styles/Resume/form.style";
+import { getFlexboxStyles } from "@utils/customStyles";
 import {
   ExperienceItemsType,
   ExperiencePointItemsType,
@@ -70,7 +70,7 @@ export default function ExperienceForm({ experienceItem }: Props) {
   );
   return (
     <>
-      <Box sx={formInputBox}>
+      <Box sx={getFlexboxStyles({ flexDirection: "column", gap: "1.5rem" })}>
         <TextField
           variant="standard"
           type="text"

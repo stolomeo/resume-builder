@@ -1,8 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { useContext } from "react";
 import UserContext from "../../../../context";
-import { print12px } from "../../../../styles/Resume/print.style";
-import { resumeSectionBox } from "../../../../styles/Resume/template.style";
+import { getPrintStyle, resumeSectionStyles } from "@utils/customStyles";
 import LineBreak from "../../../Typography/LineBreak";
 import ResumeSectionTitle from "../../../Typography/ResumeSectionHeader";
 import ResumeSectionSubtitle from "../../../Typography/ResumeSectionSubtitle";
@@ -21,7 +20,7 @@ export default function Skills() {
   });
   return (
     <>
-      <Box sx={resumeSectionBox}>
+      <Box sx={resumeSectionStyles}>
         <ResumeSectionTitle text="SKILLS" />
         <LineBreak />
       </Box>
@@ -37,10 +36,10 @@ export default function Skills() {
             justifyContent: "center",
           }}
         >
-          <Typography fontSize={8} sx={print12px}>
+          <Typography fontSize={8} sx={getPrintStyle("12px")}>
             {languageElements.join(" | ")}
           </Typography>
-          <Typography fontSize={8} sx={print12px}>
+          <Typography fontSize={8} sx={getPrintStyle("12px")}>
             {technologyItems.join(" | ")}
           </Typography>
         </Box>

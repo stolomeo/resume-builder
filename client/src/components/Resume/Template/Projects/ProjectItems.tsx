@@ -1,11 +1,8 @@
 import { Box, Link, Typography } from "@mui/material";
-import { flexSpaceBtwnPx3 } from "../../../../styles/common.style";
-import {
-  print12px,
-  printLiveLink,
-} from "../../../../styles/Resume/print.style";
+import { getPrintStyle } from "@utils/customStyles";
 import { ProjectItemsType } from "../../../../types/resume.type";
 import ProjectItemsDetails from "./ProjectItemsDetails";
+import { getFlexboxStyles } from "@utils/customStyles";
 
 type Props = {
   projectItem: ProjectItemsType;
@@ -27,15 +24,23 @@ export default function ProjectItems({ projectItem }: Props) {
 
   return (
     <>
-      <Box sx={flexSpaceBtwnPx3}>
-        <Typography fontWeight={700} fontSize=".6rem" sx={print12px}>
+      <Box sx={getFlexboxStyles({ justifyContent: "space-between", px: 3 })}>
+        <Typography
+          fontWeight={700}
+          fontSize=".6rem"
+          sx={getPrintStyle("12px")}
+        >
           {projectName}
         </Typography>
-        <Typography fontWeight={700} fontSize=".6rem" sx={print12px}>
+        <Typography
+          fontWeight={700}
+          fontSize=".6rem"
+          sx={getPrintStyle("12px")}
+        >
           {projectEndDate}
         </Typography>
       </Box>
-      <Box sx={flexSpaceBtwnPx3}>
+      <Box sx={getFlexboxStyles({ justifyContent: "space-between", px: 3 })}>
         <Typography
           fontStyle={"italic"}
           fontSize=".5em"
@@ -46,11 +51,11 @@ export default function ProjectItems({ projectItem }: Props) {
             },
           }}
         >
-          <Link href={projectLiveLink} sx={printLiveLink}>
+          <Link href={projectLiveLink} sx={getPrintStyle("12px", "#1976d2")}>
             Live
           </Link>{" "}
           <span style={{ fontStyle: "normal" }}>|</span>{" "}
-          <Link href={projectRepoLink} sx={printLiveLink}>
+          <Link href={projectRepoLink} sx={getPrintStyle("12px", "#1976d2")}>
             Repo
           </Link>
         </Typography>

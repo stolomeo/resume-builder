@@ -17,9 +17,9 @@ import PasswordTextField from "../components/TextFields/PasswordTextField";
 import Footer from "../components/Navigation/Footer";
 import UserContext from "../context";
 import { getUser } from "../services/user";
-import { avatar, userForm } from "../styles/user.style";
+import { avatar, userForm } from "@utils/customStyles";
 
-export default function Login() {
+export default function LoginPage() {
   const { setUser } = useContext(UserContext);
   let navigate = useNavigate();
 

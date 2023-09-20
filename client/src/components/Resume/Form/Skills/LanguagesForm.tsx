@@ -1,8 +1,8 @@
 import { Box, Button, TextField } from "@mui/material";
 import { ChangeEvent, useContext } from "react";
 import UserContext from "../../../../context";
-import { flexColumn } from "../../../../styles/common.style";
 import { LanguageItemsType } from "../../../../types/resume.type";
+import { getFlexboxStyles } from "@utils/customStyles";
 
 type Props = {
   languageItem: LanguageItemsType;
@@ -33,7 +33,7 @@ export default function LanguagesForm({ languageItem }: Props) {
 
   const { language, id } = languageItem;
   return (
-    <Box sx={flexColumn}>
+    <Box sx={getFlexboxStyles({ flexDirection: "column" })}>
       <TextField
         variant="standard"
         type="text"

@@ -2,7 +2,7 @@ import { Box, Button, TextField } from "@mui/material";
 import { nanoid } from "nanoid";
 import { ChangeEvent, useContext } from "react";
 import UserContext from "../../../../context";
-import { formInputBox } from "../../../../styles/Resume/form.style";
+import { getFlexboxStyles } from "@utils/customStyles";
 import {
   ProjectItemsType,
   ProjectPointItemsType,
@@ -71,7 +71,7 @@ export default function ProjectsForm({ projectItem }: Props) {
 
   return (
     <>
-      <Box sx={formInputBox}>
+      <Box sx={getFlexboxStyles({ flexDirection: "column", gap: "1.5rem" })}>
         <TextField
           variant="standard"
           type="text"

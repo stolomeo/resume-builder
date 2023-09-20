@@ -1,12 +1,12 @@
 import { Box } from "@mui/material";
 import { useState } from "react";
-import BottomNav from "../components/Navigation/BottomNav";
-import Sidebar from "../components/Navigation/Sidebar";
-import Tool from "../components/Navigation/Tool";
+import PaginationBar from "../components/Navigation/PaginationBar";
+import SideNavigationMenu from "../components/Navigation/SideNavigationMenu";
+import AppToolBar from "../components/Navigation/AppToolBar";
 import Form from "../components/Resume/Form";
-import Template from "../components/Resume/Template/";
+import Template from "../components/Resume/Template";
 
-export default function Create() {
+export default function CreateResumePage() {
   const [count, setCount] = useState(20);
 
   return (
@@ -18,7 +18,7 @@ export default function Create() {
           height: "84vh",
         }}
       >
-        <Sidebar count={count} setCount={setCount} />
+        <SideNavigationMenu count={count} setCount={setCount} />
         <Form count={count} />
         <Box
           sx={{
@@ -27,11 +27,11 @@ export default function Create() {
             width: "70%",
           }}
         >
-          <Tool setCount={setCount} />
+          <AppToolBar setCount={setCount} />
           <Template />
         </Box>
       </Box>
-      <BottomNav count={count} setCount={setCount} />
+      <PaginationBar count={count} setCount={setCount} />
     </>
   );
 }
