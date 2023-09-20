@@ -4,7 +4,7 @@ type Props = {
   setEmail: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export default function Email({ setEmail }: Props) {
+export default function EmailTextField({ setEmail }: Props) {
   return (
     <TextField
       required

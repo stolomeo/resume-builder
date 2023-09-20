@@ -2,17 +2,18 @@ import { LockOutlined } from "@mui/icons-material";
 import {
   Avatar,
   Box,
+  Button,
+  Checkbox,
   Container,
+  FormControlLabel,
   Grid,
   Link as MaterialLink,
   Typography,
 } from "@mui/material";
 import { useContext, useState } from "react";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
-import LoginButton from "../components/Buttons/LoginButton";
-import LoginCheckbox from "../components/Inputs/Checkboxes/";
-import EmailInput from "../components/Inputs/TextFields/EmailInput";
-import PasswordInput from "../components/Inputs/TextFields/PasswordInput";
+import EmailTextField from "../components/TextFields/EmailTextField";
+import PasswordTextField from "../components/TextFields/PasswordTextField";
 import Footer from "../components/Navigation/Footer";
 import UserContext from "../context";
 import { getUser } from "../services/user";
@@ -42,10 +43,20 @@ export default function Login() {
           Sign in
         </Typography>
         <Box component="form" noValidate sx={{ mt: 1 }} onSubmit={handleLogin}>
-          <EmailInput setEmail={setEmail} />
-          <PasswordInput setPassword={setPassword} margin="normal" />
-          <LoginCheckbox value="remember" label="Remember me" />
-          <LoginButton text="Sign in" />
+          <EmailTextField setEmail={setEmail} />
+          <PasswordTextField setPassword={setPassword} margin="normal" />
+          <FormControlLabel
+            control={<Checkbox value={"remember"} />}
+            label={"Remember me"}
+          />
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+          >
+            "Sign in"
+          </Button>
           <Grid container>
             <Grid item xs>
               <MaterialLink component={RouterLink} to="#" variant="body2">

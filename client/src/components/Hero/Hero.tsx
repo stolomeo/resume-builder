@@ -1,12 +1,18 @@
 import { Box, Button, Container, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import { heroBoxChild, heroBoxParent } from "../../styles/hero.style";
 
 export default function Hero() {
   return (
     <Container maxWidth="xl">
-      <Box sx={heroBoxParent}>
-        <Box sx={heroBoxChild}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: "3rem",
+          px: "7.8rem",
+        }}
+      >
+        <Box sx={{ display: "flex", flexDirection: "column", gap: "1.4rem" }}>
           <Typography component="h1" variant="h3" fontWeight="bold">
             Build a professional resume for free
           </Typography>

@@ -8,7 +8,6 @@ import {
   print18px,
   printBlue,
 } from "../../../../styles/Resume/print.style";
-import { personalBox } from "../../../../styles/Resume/template.style";
 
 export default function Personal() {
   const { user } = useContext(UserContext);
@@ -16,7 +15,14 @@ export default function Personal() {
     user.resume.personalItems;
 
   return (
-    <Box sx={personalBox}>
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
       <Typography sx={print18px} fontSize={13}>
         {fullName}
       </Typography>

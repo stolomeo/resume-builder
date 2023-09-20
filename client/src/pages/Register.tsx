@@ -1,12 +1,19 @@
-import { Avatar, Box, Container, Grid, Link, Typography } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Button,
+  Checkbox,
+  Container,
+  FormControlLabel,
+  Grid,
+  Link,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import LoginButton from "../components/Buttons/LoginButton";
-import LoginCheckbox from "../components/Inputs/Checkboxes/";
-import EmailInput from "../components/Inputs/TextFields/EmailInput";
-import FirstnameInput from "../components/Inputs/TextFields/FirstnameInput";
-import LastnameInput from "../components/Inputs/TextFields/LastnameInput";
-import PasswordInput from "../components/Inputs/TextFields/PasswordInput";
+import EmailTextField from "../components/TextFields/EmailTextField";
+import PasswordTextField from "../components/TextFields/PasswordTextField";
 import Footer from "../components/Navigation/Footer";
 import { createUser } from "../services/user";
 import { avatar, userForm } from "../styles/user.style";
@@ -40,25 +47,49 @@ export default function Register() {
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
-              <FirstnameInput setFirstname={setFirstname} />
+              <TextField
+                autoComplete="given-name"
+                name="firstName"
+                required
+                fullWidth
+                id="firstName"
+                label="First Name"
+                autoFocus
+                onChange={(e) => setFirstname(e.target.value)}
+              />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <LastnameInput setLastname={setLastname} />
+              <TextField
+                required
+                fullWidth
+                id="lastName"
+                label="Last Name"
+                name="lastName"
+                autoComplete="family-name"
+                onChange={(e) => setLastname(e.target.value)}
+              />
             </Grid>
             <Grid item xs={12}>
-              <EmailInput setEmail={setEmail} />
+              <EmailTextField setEmail={setEmail} />
             </Grid>
             <Grid item xs={12}>
-              <PasswordInput setPassword={setPassword} margin="none" />
+              <PasswordTextField setPassword={setPassword} margin="none" />
             </Grid>
             <Grid item xs={12}>
-              <LoginCheckbox
-                value="allowExtraEmails"
+              <FormControlLabel
+                control={<Checkbox value="allowExtraEmails" />}
                 label="I want to receive inspiration, marketing promotions and updates via email."
               />
             </Grid>
           </Grid>
-          <LoginButton text="Sign up" />
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+          >
+            Sign up
+          </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
               <Link href="/login" variant="body2">

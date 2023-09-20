@@ -1,7 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { useContext } from "react";
 import UserContext from "../../../../context";
-import { flexColumnCenter } from "../../../../styles/common.style";
 import { print12px } from "../../../../styles/Resume/print.style";
 import { resumeSectionBox } from "../../../../styles/Resume/template.style";
 import LineBreak from "../../../Typography/LineBreak";
@@ -31,7 +30,13 @@ export default function Skills() {
           <ResumeSectionSubtitle text="Programming Languages" />
           <ResumeSectionSubtitle text="Technologies" />
         </Box>
-        <Box sx={flexColumnCenter}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
           <Typography fontSize={8} sx={print12px}>
             {languageElements.join(" | ")}
           </Typography>

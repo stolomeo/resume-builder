@@ -5,7 +5,7 @@ type Props = {
   margin: "none" | "dense" | "normal" | undefined;
 };
 
-export default function PasswordInput({ setPassword, margin }: Props) {
+export default function PasswordTextField({ setPassword, margin }: Props) {
   return (
     <TextField
       margin={margin}
