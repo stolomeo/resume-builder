@@ -17,7 +17,7 @@ import PasswordTextField from "../components/TextFields/PasswordTextField";
 import Footer from "../components/Navigation/Footer";
 import { createUser } from "../services/user";
 import { avatar, userForm } from "@utils/customStyles";
-import blankResume from "../utils/blankResume";
+import { blankResume } from "@utils/blankResume";
 
 export default function RegistrationPage() {
   const [firstName, setFirstname] = useState("");

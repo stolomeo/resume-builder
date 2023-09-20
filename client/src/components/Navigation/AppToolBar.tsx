@@ -10,7 +10,7 @@ import Toolbar from "@mui/material/Toolbar";
 import { Dispatch, SetStateAction, useContext } from "react";
 import UserContext from "../../context/UserContext";
 import { createResume, getExampleResume } from "../../services/resume";
-import blankResume from "@utils/blankResume";
+import { blankResume } from "@utils/blankResume";
 
 type Props = {
   setCount: Dispatch<SetStateAction<number>>;
