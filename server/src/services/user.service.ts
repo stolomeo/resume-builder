@@ -15,9 +15,7 @@ export const getUserCollection = async () => {
 export const createUser = async (user: User) => {
   const usersCollection = await getUserCollection();
   const filter = { email: user.email };
-  // this option instructs the method to create a document if no documents match the filter
   const options = { upsert: true };
-  // create a document that sets the plot of the movie
   const updateDoc = {
     $set: user,
   };
