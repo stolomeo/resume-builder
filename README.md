@@ -23,7 +23,7 @@ npm start
 - [React](https://reactjs.org/)
 - [Express](https://expressjs.com/)
 - [MongoDB](https://www.mongodb.com/)
-- [MUI](https://mui.com/)
+- [Material UI](https://mui.com/material-ui/)
 - [ts-node](https://typestrong.org/ts-node/)
 - [CORS](https://www.npmjs.com/package/cors/)
 - [Axios](https://www.npmjs.com/package/axios)
