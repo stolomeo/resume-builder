@@ -8,7 +8,7 @@ import Skills from "./Skills";
 export default function Template() {
   return (
     <Container
-      maxWidth="sm"
+      maxWidth="md"
       sx={{
         display: "flex",
         mt: 1.5,
@@ -18,7 +18,7 @@ export default function Template() {
         "@media print": {
           display: "block",
           width: "100%",
-          height: "100%",
+          height: "auto",
           position: "fixed",
           top: 0,
           left: 0,

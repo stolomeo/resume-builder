@@ -8,6 +8,7 @@ export const getFlexboxStyles = (options: {
   return {
     display: "flex",
     ...(options.flexDirection && { flexDirection: options.flexDirection }),
+    ...(options.justifyContent && { justifyContent: options.justifyContent }),
     ...(options.gap && { gap: options.gap }),
     ...(options.mt && { mt: options.mt }),
     ...(options.px && { px: options.px }),
