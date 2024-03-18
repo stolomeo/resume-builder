@@ -8,8 +8,10 @@ export default function Hero() {
         sx={{
           display: "flex",
           alignItems: "center",
-          gap: "3rem",
-          px: "7.8rem",
+          justifyContent: "center",
+          pt: { xs: "9rem", lg: "0" },
+          gap: { lg: "3rem" },
+          px: { lg: "7.8rem" },
         }}
       >
         <Box sx={{ display: "flex", flexDirection: "column", gap: "1.4rem" }}>
@@ -25,12 +27,12 @@ export default function Hero() {
             to="/create"
             variant="contained"
             size="large"
-            sx={{ width: "30%" }}
+            sx={{ width: { md: "70%", lg: "30%" } }}
           >
             Get Started
           </Button>
         </Box>
-        <Box>
+        <Box sx={{ display: { xs: "none", md: "block" } }}>
           <iframe
             title="gif"
             src="https://giphy.com/embed/xFvopXeL86JpxR6kg4"
