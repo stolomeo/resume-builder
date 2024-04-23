@@ -10,14 +10,14 @@ import {
   Link as MaterialLink,
   Typography,
 } from "@mui/material";
+import { avatar, userForm } from "@utils/customStyles";
 import { useContext, useState } from "react";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
+import Footer from "../components/Navigation/Footer";
 import EmailTextField from "../components/TextFields/EmailTextField";
 import PasswordTextField from "../components/TextFields/PasswordTextField";
-import Footer from "../components/Navigation/Footer";
 import UserContext from "../context";
 import { getUser } from "../services/user";
-import { avatar, userForm } from "@utils/customStyles";
 
 export default function LoginPage() {
   const { setUser } = useContext(UserContext);
@@ -55,7 +55,7 @@ export default function LoginPage() {
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
           >
-            "Sign in"
+            Sign in
           </Button>
           <Grid container>
             <Grid item xs>
